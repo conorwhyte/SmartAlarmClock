@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        startTimer();
+        //startTimer();
 
         sensorMan = (SensorManager)getSystemService(SENSOR_SERVICE);
         accelerometer = sensorMan.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
@@ -95,6 +95,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             @Override
             public void onClick(View v) {
 
+                //Stop the alarm
                 myIntent.putExtra("extra", "no");
                 sendBroadcast(myIntent);
                 alarmManager.cancel(pending_intent);
@@ -111,6 +112,11 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     public void onResume() {
         super.onResume();
         sensorMan.registerListener(this, accelerometer, SensorManager.SENSOR_DELAY_UI);
+    }
+
+    public void openPuzzle(View view){
+        Intent intent = new Intent(this, StopAlarmActivity.class);
+        startActivity(intent);
     }
 
     @Override
@@ -139,6 +145,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
     }
 
+    //Timer Variables
     public void startTimer(){
 
         startTime = System.currentTimeMillis();
@@ -146,7 +153,6 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     }
 
     private int timer  ;
-
 
     long startTime = 0;
     Handler timerHandler = new Handler();
@@ -156,9 +162,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             int seconds = (int) (millis / 1000);
             int minutes = seconds / 60;
             seconds = seconds % 60;
-
             timer = seconds ;
-
             timerHandler.postDelayed(this, 500);
         }
     };
