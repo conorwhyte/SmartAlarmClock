@@ -16,7 +16,6 @@ public class Card {
         this.line1 = line1;
         this.line2 = line2;
         this.id = id;
-
     }
 
     public String getLine1() {
