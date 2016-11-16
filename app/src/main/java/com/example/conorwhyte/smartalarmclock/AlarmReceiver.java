@@ -26,6 +26,7 @@ public class AlarmReceiver extends BroadcastReceiver {
         service_intent.putExtra("quote id", richard_id);
         context.startService(service_intent);
 
+
         Log.e("MyActivity", "In the receiver with " + state);
 
 

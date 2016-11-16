@@ -85,6 +85,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                 pending_intent = PendingIntent.getBroadcast(MainActivity.this, 0, myIntent, PendingIntent.FLAG_UPDATE_CURRENT);
                 alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pending_intent);
                 setAlarmText("Alarm set to " + hour_string + ":" + minute_string);
+
             }
 
         });
@@ -115,8 +116,15 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     }
 
     public void openPuzzle(View view){
-        Intent intent = new Intent(this, StopAlarmActivity.class);
+        Intent intent = new Intent(this, CardListActivity.class);
         startActivity(intent);
+        finish();
+    }
+
+    public void openPuzzle2(){
+        Intent intent = new Intent(this, PunisherActivity.class);
+        startActivity(intent);
+        finish();
     }
 
     @Override

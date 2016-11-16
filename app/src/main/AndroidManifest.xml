@@ -27,7 +27,9 @@
 
         <activity android:name=".PunisherActivity" />
         <activity android:name=".PuzzleActivity" />
-        <activity android:name=".StopAlarmActivity"></activity>
+        <activity android:name=".StopAlarmActivity" />
+        <activity android:name=".ManagerHomeActivity" />
+        <activity android:name=".CardListActivity"></activity>
     </application>
 
 </manifest>

@@ -12,15 +12,6 @@
     </item>
     <item
         is-multidex="true"
-        jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="5e0ba02f0b8b9242d89649c8cd569b5ae8ab5698">
-        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_2557113d921d1ff6b7360f6efdee8c3a440a1f59/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
@@ -57,48 +48,12 @@
     </item>
     <item
         is-multidex="true"
-        jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
-        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-24.2.1_4ef132ff071361ef411a7a4f291ede6cad904503/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
-        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-24.2.1_083b0a9a23bfde5ba9dbbcf94405cbaf607732cf/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="87af5799db01b41ed0e42bbba9bfc047db38a9f2">
+        sha1="b4ae55f7bf3a26c4b0d2148c98d5b72e612495d7">
         <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_e60e813a197f33c0c56d64304bac60ebe8de2875/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/conorwhyte/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/24.2.1/support-annotations-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
-        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-24.2.1_b5be710676869e7e22e4ccc624cfb22ddd79af0b/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/24.2.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="7521486d9bfd2cd9e756e0cf75ed7d97f2ce2d3b">
-        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-24.2.1_94d38b68713e3ede20aa77005c87f6b3c76d7a43/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -117,24 +72,6 @@
         revision="24.0.3"
         sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
         <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-24.2.1_540dc7719c881c9b80f3484c9cf747f5de2dfe90/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.2.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
-        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-24.2.1_73fa87846f7780be547aa7357d97b4db849df2b3/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.2.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
-        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-24.2.1_672c3f3eadd3e617e74e2c85722135e1262810bc/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -171,6 +108,78 @@
         revision="24.0.3"
         sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
         <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-24.2.1_639956630f5f4aa07eec43ee5088b9a2874c1449/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="8d9e8a43e25810626e712af9f13386b9aad9c706">
+        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_2557113d921d1ff6b7360f6efdee8c3a440a1f59/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
+        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-24.2.1_4ef132ff071361ef411a7a4f291ede6cad904503/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
+        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-24.2.1_083b0a9a23bfde5ba9dbbcf94405cbaf607732cf/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/conorwhyte/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/24.2.1/support-annotations-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
+        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-24.2.1_b5be710676869e7e22e4ccc624cfb22ddd79af0b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="7521486d9bfd2cd9e756e0cf75ed7d97f2ce2d3b">
+        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-24.2.1_94d38b68713e3ede20aa77005c87f6b3c76d7a43/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
+        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-24.2.1_73fa87846f7780be547aa7357d97b4db849df2b3/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
+        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-24.2.1_672c3f3eadd3e617e74e2c85722135e1262810bc/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/21.0.3/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="00b0b7233e1ec64acebfac40d4983d32d4712426">
+        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-cardview-v7-21.0.3_d9ba4ff47fcd00a9e6118dfa2c096c273e8f50cb/classes.dex" />
     </item>
 
 </items>

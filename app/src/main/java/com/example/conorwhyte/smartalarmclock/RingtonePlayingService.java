@@ -45,6 +45,10 @@ public class RingtonePlayingService extends Service {
             Log.e("Going on here  ", "Served");
             media_song = MediaPlayer.create(this, R.raw.killerwhale_resident);
             media_song.start();
+            //Intent intent2 = new Intent(this, PunisherActivity.class);
+            //startActivity(intent2);
+            //finish();
+
         }
         if(startId ==0)
         {

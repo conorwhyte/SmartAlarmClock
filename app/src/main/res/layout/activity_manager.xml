@@ -1,0 +1,106 @@
+<android.support.v7.widget.CardView
+    android:background="?android:attr/selectableItemBackground"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/cv"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:clickable="true"
+        android:padding="16dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/person_photo"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="16dp"
+            android:src="@mipmap/ic_launcher"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/person_name"
+            android:text="Conor Whyte "
+            android:layout_toRightOf="@+id/person_photo"
+            android:layout_alignParentTop="true"
+            android:textSize="30sp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/person_age"
+            android:text="Age: 18"
+            android:layout_toRightOf="@+id/person_photo"
+            android:layout_below="@+id/person_name"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" €170"
+            android:id="@+id/textView"
+            android:layout_marginLeft = "10dp"
+            android:layout_below="@+id/person_name"
+            android:layout_toEndOf="@+id/person_age" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:clickable="true"
+        android:padding="16dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/person_photo1"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="16dp"
+            android:src="@mipmap/ic_launcher"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/person_name1"
+            android:text="Conor Whyte "
+            android:layout_toRightOf="@+id/person_photo1"
+            android:layout_alignParentTop="true"
+            android:textSize="30sp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/person_age1"
+            android:text="Age: 18"
+            android:layout_toRightOf="@+id/person_photo1"
+            android:layout_below="@+id/person_name1"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" €170"
+            android:id="@+id/textView1"
+            android:layout_marginLeft = "10dp"
+            android:layout_below="@+id/person_name1"
+            android:layout_toEndOf="@+id/person_age" />
+
+    </RelativeLayout>
+
+
+</android.support.v7.widget.CardView>
+
+
+
