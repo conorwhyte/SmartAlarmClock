@@ -1,4 +1,4 @@
-package com.example.paulledwith.mapimplimentation;
+package com.example.conorwhyte.smartalarmclock;
 
 /**
  * Created by Paul Ledwith on 11/11/2016.

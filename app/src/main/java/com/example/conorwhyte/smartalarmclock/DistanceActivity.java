@@ -1,4 +1,4 @@
-package com.example.paulledwith.mapimplimentation;
+package com.example.conorwhyte.smartalarmclock;
 
 /**
  * Created by Paul Ledwith on 15/11/2016.
@@ -8,6 +8,7 @@ import android.content.Context;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
+import android.location.LocationListener;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
@@ -19,7 +20,7 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.location.LocationListener;
+//import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -38,7 +39,7 @@ import java.util.HashMap;
 import java.util.List;
 
 
-public class DistanceActivity extends FragmentActivity implements LocationListener {
+public class DistanceActivity extends FragmentActivity implements android.location.LocationListener {
 
     GoogleMap map;
     ArrayList<LatLng> markerPoints;
@@ -187,7 +188,7 @@ public class DistanceActivity extends FragmentActivity implements LocationListen
             br.close();
 
         } catch (Exception e) {
-            Log.d("Exception while downloading url", e.toString());
+            Log.d("Exception download url", e.toString());
         } finally {
             iStream.close();
             urlConnection.disconnect();
@@ -197,6 +198,21 @@ public class DistanceActivity extends FragmentActivity implements LocationListen
 
     @Override
     public void onLocationChanged(Location location) {
+
+    }
+
+    @Override
+    public void onStatusChanged(String provider, int status, Bundle extras) {
+
+    }
+
+    @Override
+    public void onProviderEnabled(String provider) {
+
+    }
+
+    @Override
+    public void onProviderDisabled(String provider) {
 
     }
 

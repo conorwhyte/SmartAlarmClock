@@ -51,10 +51,15 @@ public class CardListActivity extends Activity {
 
         for (int i = 0 ; i < cardArrayAdapter.getCount(); i++){
 
-            cardArrayAdapter.getItem(i);
+            /*cardArrayAdapter.getItem(i);
+            FrameLayout layout =(FrameLayout) findViewById(R.id.frame);
+            layout.setBackgroundResource(R.drawable.card_state_pressed);
+            */
 
         }
 
+//        cardArrayAdapter.getItem(1).setBackground(this);
+  //      listView.setAdapter(cardArrayAdapter);
 
         new CountDownTimer(30000, 1000) {
             public void onTick(long millisUntilFinished) {
@@ -62,8 +67,8 @@ public class CardListActivity extends Activity {
 
                 if (secondsRemaining < 15){
 
-                    FrameLayout layout =(FrameLayout) findViewById(R.id.frame);
-                    layout.setBackgroundResource(R.drawable.card_state_pressed);
+                    //FrameLayout layout =(FrameLayout) findViewById(R.id.frame);
+                   // layout.setBackgroundResource(R.drawable.card_state_pressed);
                 }
 
                 //cardArrayAdapter.remove(card);
@@ -74,5 +79,10 @@ public class CardListActivity extends Activity {
 
             }
         }.start();
+    }
+
+    public void changeColour(){
+        FrameLayout layout =(FrameLayout) findViewById(R.id.frame);
+         layout.setBackgroundResource(R.drawable.card_state_pressed);
     }
 }
