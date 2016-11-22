@@ -16,16 +16,10 @@ public class AlarmReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-       //String state = intent.getExtras().getString("extra");
-       // String richard_id = intent.getExtras().getString("quote id");Toast.makeText(context, "Recieved!!", Toast.LENGTH_LONG).show();
-        //i = new Intent(context,DistanceActivity.class );
-        //i.setClass(context, DistanceActivity.class); //Test is a dummy class name where to redirectVITY_NEW_TASK);
-        //i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        //i.putExtra("msg", richard_id);
+       String state = intent.getExtras().getString("extra");
+        Toast.makeText(context, "Recieved!!", Toast.LENGTH_LONG).show();
         Intent i = new Intent();
-        //i.setClassName("com.example.conorwhyte.smartalarmclock", "DistanceActivity.class");
         i.setClassName("com.example.conorwhyte.smartalarmclock", "com.example.conorwhyte.smartalarmclock.CardListActivity");
-        // i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(i);
         /**  Intent service_intent = new Intent(context, RingtonePlayingService.class);

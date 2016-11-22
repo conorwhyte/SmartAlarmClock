@@ -448,7 +448,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="bdc94f65c31de26b67df2ba54e9244a86c6982eb">
+        sha1="dd5fcd2f446d5e45cf786a77578348b0d7035bba">
         <dex dex="/Users/padraigmitchell/git/SmartAlarmClock/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_d45967932b362c73ace98aac9ad8a567c1d0251f/classes.dex" />
     </item>
     <item
@@ -610,7 +610,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="fd7d4b92604fe5dde486d90392ccaaccc9e8c531">
+        sha1="f80553f17c301b639bf453fb8168117f37ab0ae7">
         <dex dex="/Users/padraigmitchell/git/SmartAlarmClock/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_b189e1ea2a6782f3bb756cd107cfb6b665d74412/classes.dex" />
     </item>
     <item
