@@ -19,9 +19,12 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
+
+    UserDetails user ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +32,22 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.main);
 
         //startTimer();
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            user = (UserDetails)extras.getSerializable("Object");
+        }
 
+
+        TextView txt = (TextView) this.findViewById(R.id.textView12);
+
+
+        if(user != null){
+            String name = Integer.toString(user.getCardTime(0));
+            txt.setText(name);
+        }
+        else{
+            txt.setText("ERROR");
+        }
     }
 
     public void openAlarm(View view){
@@ -39,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void openManager(View view){
         Intent intent = new Intent(this, CardListActivity.class);
+        intent.putExtra("Object", user);
         startActivity(intent);
     }
 
@@ -52,4 +71,11 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, PunisherActivity.class);
         startActivity(intent);
     }
+
+    public void openUserDetails(View view){
+        Intent intent = new Intent(this, AddUserDetailsActivity.class);
+        intent.putExtra("Object", user);
+        startActivity(intent);
+    }
+
 }

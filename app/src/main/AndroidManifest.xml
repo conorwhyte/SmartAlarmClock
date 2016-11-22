@@ -24,8 +24,7 @@
             </intent-filter>
         </activity>
 
-        <receiver android:name=".AlarmReceiver">
-        </receiver>
+        <receiver android:name=".AlarmReceiver"></receiver>
 
         <service
             android:name=".RingtonePlayingService"
@@ -55,7 +54,8 @@
         <activity
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps" />
-        <activity android:name=".AlarmActivity"></activity>
+        <activity android:name=".AlarmActivity" />
+        <activity android:name=".AddUserDetailsActivity"></activity>
     </application>
 
 </manifest>

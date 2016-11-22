@@ -17,6 +17,7 @@
         android:layout_below="@+id/button"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="29dp"
+        android:onClick="snoozeButton"
         android:id="@+id/button2" />
 
     <TextClock
@@ -36,6 +37,7 @@
         android:id="@+id/button"
         android:minHeight="60dp"
         android:minWidth="120dp"
+        android:onClick="stopButton"
         android:layout_below="@+id/textView"
         android:layout_centerHorizontal="true" />
 

@@ -2,11 +2,14 @@ package com.example.conorwhyte.smartalarmclock;
 
 import android.location.Location;
 
+import java.io.Serializable;
+import java.util.ArrayList;
+
 /**
  * Created by conorwhyte on 14/11/2016.
  */
 
-public class UserDetails {
+public class UserDetails implements Serializable{
 
     //Possible global variables needed from the user
     public long punisherContact ;
@@ -21,9 +24,11 @@ public class UserDetails {
     public int wakeTimeMinute ;
 
     public String[] cardName ;
+    public ArrayList<String> cardNa;
     public String[] cardDescription;
     public int[] cardWakeHour;
-    public int[] cardWakeNumber ;
+    public int[] cardWakeTime;
+    public ArrayList<Integer> cardTime ;
 
     public String alarmType ;
     public void chooseAlarmType(int chooseAlarm){
@@ -46,4 +51,26 @@ public class UserDetails {
         }
     }
 
+    public void setCardWakeTime(ArrayList<Integer> time) {
+        cardTime = time;
+    }
+
+    public void setCardName(ArrayList<String> name) {
+        cardNa = name;
+    }
+
+    public String getCardName(int i){
+        String name = cardNa.get(i);
+        return name ;
+    }
+
+    public int getCardTime(int i){
+        if(cardTime.isEmpty()){
+            return 0 ;
+        }
+        else{
+            int time = cardTime.get(i);
+            return time ;
+        }
+    }
 }

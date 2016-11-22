@@ -1,13 +1,17 @@
 package com.example.conorwhyte.smartalarmclock;
 
+import android.media.MediaPlayer;
+import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import java.util.Random;
 
 public class StopAlarmActivity extends AppCompatActivity {
 
+    MediaPlayer media_song ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -15,6 +19,8 @@ public class StopAlarmActivity extends AppCompatActivity {
 
         setQuote();
 
+        media_song = MediaPlayer.create(this, R.raw.killerwhale_resident);
+        media_song.start();
 
     }
 
@@ -58,5 +64,32 @@ public class StopAlarmActivity extends AppCompatActivity {
         TextView authorField = (TextView)this.findViewById(R.id.textView5) ;
         authorField.setText(String.valueOf(author));
 
+    }
+
+    public void stopButton(View view){
+        media_song.stop();
+        finish();
+    }
+
+    public void snoozeButton(View view){
+        media_song.stop();
+
+        new CountDownTimer(30000, 1000) {       //set snooze time here
+            public void onTick(long millisUntilFinished) {
+                long secondsRemaining = millisUntilFinished / 1000;
+
+                if (secondsRemaining < 15){
+
+                    //FrameLayout layout =(FrameLayout) findViewById(R.id.frame);
+                    // layout.setBackgroundResource(R.drawable.card_state_pressed);
+                }
+
+                //cardArrayAdapter.remove(card);
+            }
+
+            public void onFinish() {
+                media_song.start();
+            }
+        }.start();
     }
 }

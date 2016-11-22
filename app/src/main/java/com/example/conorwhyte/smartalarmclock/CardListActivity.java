@@ -1,24 +1,35 @@
 package com.example.conorwhyte.smartalarmclock;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.os.Handler;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 public class CardListActivity extends Activity {
 
     private static final String TAG = "CardListActivity";
     private CardArrayAdapter cardArrayAdapter;
     private ListView listView;
+    boolean inActivity = true ;
 
+    UserDetails user ;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.listview);
         listView = (ListView) findViewById(R.id.card_listView);
+
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            user = (UserDetails)extras.getSerializable("Object");
+        }
 
         listView.addHeaderView(new View(this));
         listView.addFooterView(new View(this));
@@ -49,36 +60,59 @@ public class CardListActivity extends Activity {
 
         listView.setAdapter(cardArrayAdapter);
 
-        for (int i = 0 ; i < cardArrayAdapter.getCount(); i++){
+        startTimer();
 
-            /*cardArrayAdapter.getItem(i);
-            FrameLayout layout =(FrameLayout) findViewById(R.id.frame);
-            layout.setBackgroundResource(R.drawable.card_state_pressed);
-            */
+    }
 
+    public void startTimer() {
+        //timerTextView = (TextView) findViewById(R.id.textView2);
+        //startTime = System.currentTimeMillis();
+        timerHandler.postDelayed(timerRunnable, 0);
+    }
+
+    public void stopTimer() {
+        timerHandler.removeCallbacks(timerRunnable);
+    }
+
+    long startTime = 0;
+    int localTimer ;
+    long localSecond ;
+    Handler timerHandler = new Handler();
+    Runnable timerRunnable = new Runnable() {
+        public void run() {
+            long millis = System.currentTimeMillis() - startTime;
+            int seconds = (int) (millis / 1000);
+            int minutes = seconds / 60;
+            seconds = seconds % 60;
+
+            localSecond = seconds ;
+            localTimer = minutes ;
+            timerHandler.postDelayed(this, 500);
+            checkTimer();
+        }
+    };
+
+    boolean[] alarmGone = {false, false, false};
+    public void checkTimer(){
+        int time ;
+        if (user != null){
+            time = user.getCardTime(0) ;
+        }
+        else {
+            time = 0 ;
         }
 
-//        cardArrayAdapter.getItem(1).setBackground(this);
-  //      listView.setAdapter(cardArrayAdapter);
+        if (localSecond == time && alarmGone[0] == false){ // Alert One
+            Intent intent = new Intent(this, StopAlarmActivity.class);
+            alarmGone[0] = true ;
+            startActivity(intent);
 
-        new CountDownTimer(30000, 1000) {
-            public void onTick(long millisUntilFinished) {
-                long secondsRemaining = millisUntilFinished / 1000;
-
-                if (secondsRemaining < 15){
-
-                    //FrameLayout layout =(FrameLayout) findViewById(R.id.frame);
-                   // layout.setBackgroundResource(R.drawable.card_state_pressed);
-                }
-
-                //cardArrayAdapter.remove(card);
-            }
-
-            public void onFinish() {
-
-
-            }
-        }.start();
+        }
+        else if (localSecond == 50 && alarmGone[1] == false){ // Alert Two
+            Intent intent = new Intent(this, StopAlarmActivity.class);
+            alarmGone[1] = true ;
+            startActivity(intent);
+        }
     }
 
     public void changeColour(){
