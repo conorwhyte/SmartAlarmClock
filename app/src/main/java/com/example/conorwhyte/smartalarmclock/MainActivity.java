@@ -86,6 +86,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void openAlarm(View view){
         Intent intent = new Intent(this, AlarmActivity.class);
+        intent.putExtra("Object", user);
         startActivity(intent);
     }
 

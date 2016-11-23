@@ -3,6 +3,7 @@ package com.example.conorwhyte.smartalarmclock;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -13,12 +14,16 @@ import android.widget.Toast;
 public class AlarmReceiver extends BroadcastReceiver {
    //Intent i;
 
+    UserDetails user ;
 
     @Override
     public void onReceive(Context context, Intent intent) {
-       String state = intent.getExtras().getString("extra");
+
+        String state = intent.getExtras().getString("extra");
+        user = (UserDetails)intent.getExtras().getSerializable("Object");
         Toast.makeText(context, "Recieved!!", Toast.LENGTH_LONG).show();
         Intent i = new Intent();
+        i.putExtra("Object", user);
         i.setClassName("com.example.conorwhyte.smartalarmclock", "com.example.conorwhyte.smartalarmclock.CardListActivity");
         i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(i);

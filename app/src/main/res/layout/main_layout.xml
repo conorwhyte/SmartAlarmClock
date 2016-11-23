@@ -14,11 +14,12 @@
         android:id="@+id/imageView" />
 
     <Button
-        android:text="EDIT DETAILS"
+        android:text="Open DIStance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:id="@+id/button11"
+        android:onClick="openDirection"
         android:layout_below="@+id/button10"
         android:layout_centerHorizontal="true" />
 
@@ -39,7 +40,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="26dp"
         android:id="@+id/button10"
-        android:onClick="openSetAlarm"
+        android:onClick="openAlarm"
         android:layout_below="@+id/textView13"
         android:layout_centerHorizontal="true" />
 
