@@ -14,22 +14,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:text="Card Name"
         android:ems="10"
         android:layout_below="@+id/textView11"
         android:layout_alignEnd="@+id/editText3"
         android:layout_marginTop="48dp"
         android:id="@+id/editText4" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="10"
-        android:layout_marginTop="34dp"
-        android:id="@+id/editText3"
-        android:layout_below="@+id/editText4"
-        android:layout_centerHorizontal="true" />
 
     <Button
         android:text="ADD"
@@ -52,11 +42,22 @@
         android:onClick="sendDetails"/>
 
     <TextView
-        android:text="Add Morning Details:"
+        android:text="Add Card Details:"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="46dp"
         android:id="@+id/textView11"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:layout_marginTop="34dp"
+        android:id="@+id/editText3"
+        android:layout_below="@+id/editText4"
+        android:layout_centerHorizontal="true"
+        android:text="0" />
 </RelativeLayout>

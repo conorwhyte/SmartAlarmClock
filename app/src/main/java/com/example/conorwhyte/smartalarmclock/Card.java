@@ -2,6 +2,7 @@ package com.example.conorwhyte.smartalarmclock;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.graphics.PorterDuffColorFilter;
 import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -41,6 +42,10 @@ public class Card {
 
     public int getId(){
         return id;
+    }
+
+    public void setState(Context context){
+
     }
 
 

@@ -11,6 +11,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class CardListActivity extends Activity {
 
@@ -42,6 +43,21 @@ public class CardListActivity extends Activity {
         }
         final int[] images = {R.drawable.breakfast, R.drawable.shower, R.drawable.suit, R.drawable.food, R.drawable.car};
 
+        if(user != null){
+            for (int i = 0; i < user.numberOfCards(); i++) {
+
+                String time = "10";
+                String name = "Name";
+                String name1 = user.getCardName(i);
+                String time1 = Integer.toString(user.getCardTime(i));
+                Card card = new Card(name1, time1, images[1]);
+                cardArrayAdapter.add(card);
+            }
+        }
+
+
+
+        /*
         //String sec = Long.toString(secondsRemaining[0]);
         final Card cardShower = new Card("Shower" , "8:05am", images[1] );
         cardArrayAdapter.add(cardShower);
@@ -57,6 +73,7 @@ public class CardListActivity extends Activity {
 
         Card cardLeave = new Card("Leave for Work" , "8:35am", images[4]);
         cardArrayAdapter.add(cardLeave);
+        */
 
         listView.setAdapter(cardArrayAdapter);
 
@@ -105,13 +122,17 @@ public class CardListActivity extends Activity {
         if (localSecond == time && alarmGone[0] == false){ // Alert One
             Intent intent = new Intent(this, StopAlarmActivity.class);
             alarmGone[0] = true ;
-            startActivity(intent);
+            //startActivity(intent);
+            Toast.makeText(getApplicationContext(),
+                    "Alarm", Toast.LENGTH_LONG).show();
 
         }
         else if (localSecond == 50 && alarmGone[1] == false){ // Alert Two
             Intent intent = new Intent(this, StopAlarmActivity.class);
             alarmGone[1] = true ;
-            startActivity(intent);
+            //startActivity(intent);
+            Toast.makeText(getApplicationContext(),
+                    "Alarm", Toast.LENGTH_LONG).show();
         }
     }
 

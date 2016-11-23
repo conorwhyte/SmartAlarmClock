@@ -385,7 +385,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="e1810be0b0f6303733be248316bda0d87c8a0c83">
+        sha1="603260da267c2001d2969aeaa2624a18fbea95d7">
         <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_e60e813a197f33c0c56d64304bac60ebe8de2875/classes.dex" />
     </item>
     <item
@@ -619,7 +619,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="cd6023586f16887895eedc6684296d021d539dae">
+        sha1="dae677d01634d73d3dcdcd7a57c39ce2290b64a0">
         <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_2557113d921d1ff6b7360f6efdee8c3a440a1f59/classes.dex" />
     </item>
     <item
