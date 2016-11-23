@@ -4,6 +4,9 @@ import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
 import android.media.MediaPlayer;
+import android.media.Ringtone;
+import android.media.RingtoneManager;
+import android.net.Uri;
 import android.os.IBinder;
 import android.util.Log;
 
@@ -43,16 +46,15 @@ public class RingtonePlayingService extends Service {
         if (!this.isRunning && startId == 1)
         {
             Log.e("Going on here  ", "Served");
-            media_song = MediaPlayer.create(this, R.raw.killerwhale_resident);
-            media_song.start();
-            //Intent intent2 = new Intent(this, PunisherActivity.class);
-            //startActivity(intent2);
-            //finish();
+            Uri notification = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+            Ringtone r = RingtoneManager.getRingtone(getApplicationContext(), notification);
+            r.play();
+
 
         }
         if(startId ==0)
         {
-            media_song.stop();
+           // media_song.stop();
             //mMediaPlayer.reset();
 
             // this.isRunning = false;
