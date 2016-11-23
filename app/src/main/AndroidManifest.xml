@@ -35,6 +35,10 @@
         <activity android:name=".StopAlarmActivity" />
         <activity android:name=".ManagerHomeActivity" />
         <activity android:name=".CardListActivity" />
+<<<<<<< HEAD
+        <activity android:name=".DistanceActivity"/>
+=======
+>>>>>>> origin/master
 
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
