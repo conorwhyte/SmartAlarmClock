@@ -4,24 +4,27 @@ package com.example.conorwhyte.smartalarmclock;
  * Created by Paul Ledwith on 15/11/2016.
  */
 
+
 import android.content.Context;
+import android.content.pm.PackageManager;
 import android.location.Address;
+import android.location.Criteria;
 import android.location.Geocoder;
 import android.location.Location;
-import android.location.LocationListener;
+import android.location.LocationManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-//import com.google.android.gms.location.LocationListener;
-import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.PolylineOptions;
@@ -41,11 +44,16 @@ import java.util.List;
 
 public class DistanceActivity extends FragmentActivity implements android.location.LocationListener {
 
-    GoogleMap map;
     ArrayList<LatLng> markerPoints;
     TextView tvDistanceDuration;
     private RadioGroup radioGroup;
     private String mode = "driving";
+    public double latitude = 0.0;
+    public double longitude = 0.0;
+    public LocationManager locationManager;
+    public Criteria criteria;
+    public String bestProvider;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,16 +61,12 @@ public class DistanceActivity extends FragmentActivity implements android.locati
         setContentView(R.layout.activity_distance);
 
         tvDistanceDuration = (TextView) findViewById(R.id.tv_distance_time);
-
         markerPoints = new ArrayList<LatLng>();
 
         radioGroup = (RadioGroup) findViewById(R.id.radioButton);
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                // TODO Auto-generated method stub
-
-                // Method 1 For Getting Index of RadioButton
                 int pos = radioGroup.indexOfChild(findViewById(checkedId));
                 switch (pos) {
                     case 0:
@@ -86,16 +90,11 @@ public class DistanceActivity extends FragmentActivity implements android.locati
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                Context context = getApplicationContext();
-                int duration = Toast.LENGTH_SHORT;
-
-                EditText locationPostalAddress = (EditText) findViewById(R.id.editText);
-                EditText destinationPostalAddress = (EditText) findViewById(R.id.editText2);
+                EditText locationPostalAddress = (EditText) findViewById(R.id.autocomplete);
+                EditText destinationPostalAddress = (EditText) findViewById(R.id.autocomplete2);
                 LatLng location = getLocationFromAddress(locationPostalAddress.getText().toString());
                 LatLng destination = getLocationFromAddress(destinationPostalAddress.getText().toString());
                 // Getting URL to the Google Directions API
-                Toast.makeText(context, mode, duration).show();
                 String url = getDirectionsUrl(location, destination, mode);
                 // Start downloading json data from Google Directions API
                 DownloadTask downloadTask = new DownloadTask();
@@ -128,11 +127,16 @@ public class DistanceActivity extends FragmentActivity implements android.locati
     }
 
 
-    private String getDirectionsUrl(LatLng origin, LatLng dest, String mode) {
-
+    private String getDirectionsUrl(LatLng loca, LatLng dest, String mode) {
         // Origin of route
-        String str_origin = "origin=" + origin.latitude + "," + origin.longitude;
-
+        String str_origin = "";
+        getLocation();
+        if(loca == null) {
+            str_origin = "origin=" + latitude + "," + longitude;
+        }
+        else {
+            str_origin = "origin=" + loca.latitude + "," + loca.longitude;
+        }
         // Destination of route
         String str_dest = "destination=" + dest.latitude + "," + dest.longitude;
 
@@ -196,9 +200,67 @@ public class DistanceActivity extends FragmentActivity implements android.locati
         return data;
     }
 
+    public static boolean isLocationEnabled(Context context) {
+        //...............
+        return true;
+    }
+
+    protected void getLocation() {
+        if (isLocationEnabled(DistanceActivity.this)) {
+            locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
+            criteria = new Criteria();
+            bestProvider = String.valueOf(locationManager.getBestProvider(criteria, true));
+
+            //You can still do this if you like, you might get lucky:
+            if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                Toast.makeText(DistanceActivity.this, "Location Services Must be turned on", Toast.LENGTH_SHORT).show();
+                return;
+            }
+            Location location = locationManager.getLastKnownLocation(bestProvider);
+            if (location != null) {
+                Log.e("TAG", "GPS is on");
+                latitude = location.getLatitude();
+                longitude = location.getLongitude();
+            }
+            else{
+                //This is what you need:
+                locationManager.requestLocationUpdates(bestProvider, 1000, 0, this);
+            }
+        }
+        else
+        {
+            //prompt user to enable location....
+            //.................
+        }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return;
+        }
+        locationManager.removeUpdates(this);
+
+    }
+
     @Override
     public void onLocationChanged(Location location) {
+        if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            return;
+        }
+        locationManager.removeUpdates(this);
 
+        //open the map:
+        latitude = location.getLatitude();
+        longitude = location.getLongitude();
     }
 
     @Override
@@ -215,7 +277,6 @@ public class DistanceActivity extends FragmentActivity implements android.locati
     public void onProviderDisabled(String provider) {
 
     }
-
 
     // Fetches data from url passed
     private class DownloadTask extends AsyncTask<String, Void, String> {
@@ -254,14 +315,13 @@ public class DistanceActivity extends FragmentActivity implements android.locati
      * A class to parse the Google Places in JSON format
      */
     private class ParserTask extends AsyncTask<String, Integer, List<List<HashMap<String, String>>>> {
-
+        JSONObject jObject;
         // Parsing the data in non-ui thread
         @Override
         protected List<List<HashMap<String, String>>> doInBackground(String... jsonData) {
 
-            JSONObject jObject;
-            List<List<HashMap<String, String>>> routes = null;
 
+            List<List<HashMap<String, String>>> routes = null;
             try {
                 jObject = new JSONObject(jsonData[0]);
                 DirectionsJSONParser parser = new DirectionsJSONParser();
@@ -274,7 +334,6 @@ public class DistanceActivity extends FragmentActivity implements android.locati
 
             return routes;
         }
-
 
         @Override
         protected void onPostExecute(List<List<HashMap<String, String>>> result) {
@@ -319,9 +378,10 @@ public class DistanceActivity extends FragmentActivity implements android.locati
                 }
 
             }
-
             tvDistanceDuration.setText("Distance:" + distance + ", Duration:" + duration);
 
         }
     }
+
+
 }

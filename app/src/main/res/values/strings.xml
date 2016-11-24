@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">SmartAlarmClock</string>
-    <string name="title_activity_maps">Map</string>    <string name="action_settings">Settings</string>	<string name="hello_world">Tap two locations in the map</string>    <string name="str_tv_distance_time">Distance</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Enter your current location and a destination</string>
+    <string name="str_tv_distance_time">Distance</string>
+    <string name="str_atv_places">Enter place here</string>
 </resources>
