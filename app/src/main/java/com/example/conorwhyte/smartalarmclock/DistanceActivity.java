@@ -6,6 +6,7 @@ package com.example.conorwhyte.smartalarmclock;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Criteria;
@@ -40,6 +41,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import static android.support.v7.media.MediaControlIntent.EXTRA_MESSAGE;
+
 
 public class DistanceActivity extends FragmentActivity implements android.location.LocationListener {
 
@@ -49,6 +52,8 @@ public class DistanceActivity extends FragmentActivity implements android.locati
     private String mode = "driving";
     public double latitude = 0.0;
     public double longitude = 0.0;
+    public double deslat = 0.0;
+    public double deslon = 0.0;
     public LocationManager locationManager;
     public Criteria criteria;
     public String bestProvider;
@@ -100,6 +105,14 @@ public class DistanceActivity extends FragmentActivity implements android.locati
                 downloadTask.execute(url);
             }
         });
+
+    }
+
+    public void sendMessage(View view) {
+        String pass = String.valueOf(latitude);
+        Toast.makeText(this, pass, Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(DistanceActivity.this, MapDirections.class);
+        DistanceActivity.this.startActivity(intent);
     }
 
     public LatLng getLocationFromAddress(String strAddress) {
@@ -135,9 +148,13 @@ public class DistanceActivity extends FragmentActivity implements android.locati
         }
         else {
             str_origin = "origin=" + loca.latitude + "," + loca.longitude;
+            latitude = loca.latitude;
+            longitude = loca.longitude;
         }
         // Destination of route
         String str_dest = "destination=" + dest.latitude + "," + dest.longitude;
+        deslat = dest.latitude;
+        deslon = dest.longitude;
 
         // Travel mode
         String str_mode = "mode=" + mode;
@@ -211,7 +228,10 @@ public class DistanceActivity extends FragmentActivity implements android.locati
             bestProvider = String.valueOf(locationManager.getBestProvider(criteria, true));
 
             //You can still do this if you like, you might get lucky:
-            if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION)
+                    != PackageManager.PERMISSION_GRANTED &&
+                    ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION)
+                            != PackageManager.PERMISSION_GRANTED) {
                 Toast.makeText(DistanceActivity.this, "Location Services Must be turned on", Toast.LENGTH_SHORT).show();
                 return;
             }
@@ -236,7 +256,10 @@ public class DistanceActivity extends FragmentActivity implements android.locati
     @Override
     protected void onPause() {
         super.onPause();
-        if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+        if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED &&
+                ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION)
+                        != PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling
             //    ActivityCompat#requestPermissions
             // here to request the missing permissions, and then overriding
@@ -252,7 +275,10 @@ public class DistanceActivity extends FragmentActivity implements android.locati
 
     @Override
     public void onLocationChanged(Location location) {
-        if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+        if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED &&
+                ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION)
+                        != PackageManager.PERMISSION_GRANTED) {
             return;
         }
         locationManager.removeUpdates(this);
@@ -336,9 +362,6 @@ public class DistanceActivity extends FragmentActivity implements android.locati
 
         @Override
         protected void onPostExecute(List<List<HashMap<String, String>>> result) {
-            ArrayList<LatLng> points = null;
-            PolylineOptions lineOptions = null;
-            MarkerOptions markerOptions = new MarkerOptions();
             String distance = "";
             String duration = "";
 
@@ -351,8 +374,6 @@ public class DistanceActivity extends FragmentActivity implements android.locati
 
             // Traversing through all the routes
             for (int i = 0; i < result.size(); i++) {
-                points = new ArrayList<LatLng>();
-                lineOptions = new PolylineOptions();
 
                 // Fetching i-th route
                 List<HashMap<String, String>> path = result.get(i);
@@ -368,12 +389,6 @@ public class DistanceActivity extends FragmentActivity implements android.locati
                         duration = (String) point.get("duration");
                         continue;
                     }
-
-                    double lat = Double.parseDouble(point.get("lat"));
-                    double lng = Double.parseDouble(point.get("lng"));
-                    LatLng position = new LatLng(lat, lng);
-
-                    points.add(position);
                 }
 
             }
