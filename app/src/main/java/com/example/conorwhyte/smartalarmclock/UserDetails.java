@@ -15,6 +15,8 @@ public class UserDetails implements Serializable{
     public long punisherContact ;
     public String punisherMessage ;
 
+    public boolean firstTime = true ;
+
     public int[] prepTime ;
     public int totalRepTime ;
     public Location destination ;
@@ -23,12 +25,19 @@ public class UserDetails implements Serializable{
     public int wakTimeHour ;
     public int wakeTimeMinute ;
 
-    public String[] cardName ;
-    public ArrayList<String> cardNa;
-    public String[] cardDescription;
-    public int[] cardWakeHour;
-    public int[] cardWakeTime;
+    int count = 0 ;
+
+    public ArrayList<String> cardName;
     public ArrayList<Integer> cardTime ;
+
+    public void setFirstTime(){
+        firstTime = false ;
+    }
+
+    public void addCount(){
+        count++;
+    }
+
 
     public String alarmType ;
     public void chooseAlarmType(int chooseAlarm){
@@ -56,21 +65,29 @@ public class UserDetails implements Serializable{
     }
 
     public void setCardName(ArrayList<String> name) {
-        cardNa = name;
+        cardName = name;
     }
 
     public String getCardName(int i){
-        String name = cardNa.get(i);
+        String name = cardName.get(i);
         return name ;
     }
 
     public int getCardTime(int i){
-        if(cardTime.isEmpty()){
+        if(cardTime == null){
             return 0 ;
         }
         else{
             int time = cardTime.get(i);
             return time ;
         }
+    }
+
+    public void setNumber(int i ){
+        count = i ;
+    }
+
+    public int numberOfCards(){
+        return count;
     }
 }

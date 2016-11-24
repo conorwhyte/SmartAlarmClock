@@ -39,11 +39,21 @@ public class AlarmActivity extends AppCompatActivity implements SensorEventListe
     private TextView alarmTextView;
     private Context context;
 
+    UserDetails user ;
+
     @TargetApi(Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            user = (UserDetails)extras.getSerializable("Object");
+        }
+
+        Intent intent = new Intent(this, AddUserDetailsActivity.class);
+        intent.putExtra("Object", user);
 
         //startTimer();
 
@@ -82,6 +92,7 @@ public class AlarmActivity extends AppCompatActivity implements SensorEventListe
                     hour_string = String.valueOf(hour - 12) ;
                 }
                 myIntent.putExtra("extra", "yes");
+                myIntent.putExtra("Object", user);
                 pending_intent = PendingIntent.getBroadcast(AlarmActivity.this, 0, myIntent, PendingIntent.FLAG_UPDATE_CURRENT);
                 alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pending_intent);
                 setAlarmText("Alarm set to " + hour_string + ":" + minute_string);

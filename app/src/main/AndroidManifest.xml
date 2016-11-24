@@ -35,9 +35,12 @@
         <activity android:name=".StopAlarmActivity" />
         <activity android:name=".ManagerHomeActivity" />
         <activity android:name=".CardListActivity" />
+        <activity android:name=".DistanceActivity"/>
+        <activity android:name=".MapDirections"/>
+
 
         <meta-data
-            android:name="com.google.android.maps.v2.API_KEY"
+            android:name="com.google.android.maps.v4.API_KEY"
             android:value="AIzaSyBNEagd68QNkTC3hwX_bCvD0b_NhAF_3xk" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
