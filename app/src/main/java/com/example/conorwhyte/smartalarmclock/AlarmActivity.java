@@ -64,7 +64,10 @@ public class AlarmActivity extends AppCompatActivity implements SensorEventListe
         mAccelLast = SensorManager.GRAVITY_EARTH;
 
         this.context = this;
-        alarmTextView = (TextView) findViewById(R.id.update_text);
+
+        // message on open
+        Toast.makeText(getApplicationContext(), "Enter your desired alarm time: ", Toast.LENGTH_SHORT).show();
+
         final Intent myIntent = new Intent(this.context, AlarmReceiver.class);
         alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
         // set the alarm to the time that you picked
@@ -85,17 +88,25 @@ public class AlarmActivity extends AppCompatActivity implements SensorEventListe
                 final int minute = alarmTimePicker.getMinute();;
                 String minute_string = String.valueOf(minute);
                 String hour_string = String.valueOf(hour);
-                if (minute < 10) {
-                    minute_string = "0" + String.valueOf(minute);
-                }
-                if (hour > 12) {
-                    hour_string = String.valueOf(hour - 12) ;
-                }
+                Boolean pm = false;
+                String alarmtext;
+
+                if (minute < 10) {minute_string = "0" + String.valueOf(minute);}
+                if (hour > 12) {hour_string = String.valueOf(hour - 12); pm = true;}
+                if (hour == 12) {pm = true;}
+
+                if(pm){minute_string += " pm";}
+                else {minute_string += " am";}
+
                 myIntent.putExtra("extra", "yes");
                 myIntent.putExtra("Object", user);
+
                 pending_intent = PendingIntent.getBroadcast(AlarmActivity.this, 0, myIntent, PendingIntent.FLAG_UPDATE_CURRENT);
                 alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pending_intent);
-                setAlarmText("Alarm set to " + hour_string + ":" + minute_string);
+
+                alarmtext = hour_string + ":" + minute_string;
+
+                Toast.makeText(getApplicationContext(), "Alarm set for " + alarmtext , Toast.LENGTH_SHORT).show();
 
             }
 
@@ -111,32 +122,22 @@ public class AlarmActivity extends AppCompatActivity implements SensorEventListe
                 myIntent.putExtra("extra", "no");
                 sendBroadcast(myIntent);
                 alarmManager.cancel(pending_intent);
-                setAlarmText("Alarm canceled");
+                //setAlarmText("Alarm canceled");
+                Toast.makeText(getApplicationContext(), "Alarm Cancelled", Toast.LENGTH_SHORT).show();
             }
         });
     }
-
-    public void setAlarmText(String alarmText) {
-        alarmTextView.setText(alarmText);
-    }
-
 
     public void onResume() {
         super.onResume();
         sensorMan.registerListener(this, accelerometer, SensorManager.SENSOR_DELAY_UI);
     }
 
-    public void openPuzzle(View view){
-        Intent intent = new Intent(this, CardListActivity.class);
-        startActivity(intent);
-        finish();
-    }
-
-    public void openPuzzle2(){
-        Intent intent = new Intent(this, PunisherActivity.class);
-        startActivity(intent);
-        finish();
-    }
+//    public void openPuzzle(View view){
+//        Intent intent = new Intent(this, CardListActivity.class);
+//        startActivity(intent);
+//        finish();
+//    }
 
     @Override
     protected void onPause() {
@@ -158,7 +159,7 @@ public class AlarmActivity extends AppCompatActivity implements SensorEventListe
             mAccel = mAccel * 0.9f + delta;
 
             if(mAccel > 0.5 && timer > 10){
-                Toast.makeText(getApplicationContext(), "Movement", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Movement Detected", Toast.LENGTH_SHORT).show();
             }
         }
 
