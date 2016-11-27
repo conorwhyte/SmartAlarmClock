@@ -13,6 +13,18 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+/**
+ * This is the activity where the card list will be displayed, each card is added in depending on
+ * which ones the user entered on inital setup, and can be edited in the menu at any time. Its also in
+ * this activity where we set off each other individual alarm to signify its time to start a new activity
+ * during the morning.
+ *
+ * Created with the help of following tutorial:
+ * http://javapapers.com/android/android-cards-list-view/
+ *
+ * Author: Conor Whyte
+ */
+
 public class CardListActivity extends Activity {
 
     private static final String TAG = "CardListActivity";
@@ -81,6 +93,7 @@ public class CardListActivity extends Activity {
 
     }
 
+    //Timer methods used to indicate when the alarm should go off next
     public void startTimer() {
         //timerTextView = (TextView) findViewById(R.id.textView2);
         //startTime = System.currentTimeMillis();
@@ -109,6 +122,7 @@ public class CardListActivity extends Activity {
         }
     };
 
+    //Method used to set off each individual alarm based on the users input
     boolean[] alarmGone = {false, false, false};
     public void checkTimer(){
         int time ;

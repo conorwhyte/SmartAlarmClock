@@ -1,6 +1,13 @@
 package com.example.conorwhyte.smartalarmclock;
 
 /**
+ * This class stores each card in an ArrayAdapter of cards for display in the card list activity,
+ * each card gets passed into this class and given a view. Images are set in this class for each
+ * card also.
+ *
+ * Created with the help of following tutorial:
+ * http://javapapers.com/android/android-cards-list-view/
+ *
  * Created by conorwhyte on 16/11/2016.
  */
 import android.content.Context;

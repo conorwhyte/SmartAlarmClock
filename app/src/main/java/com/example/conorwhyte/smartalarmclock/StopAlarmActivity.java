@@ -9,6 +9,13 @@ import android.widget.TextView;
 
 import java.util.Random;
 
+/**
+ * This activity is used not only to set off the alarm noise, but also to stop and snooze it. It sets
+ * a daily motivational quote at random also. This is simply the traditional stop and start alarm.
+ *
+ * Author: Conor Whyte
+ */
+
 public class StopAlarmActivity extends AppCompatActivity {
 
     MediaPlayer media_song ;
@@ -24,7 +31,7 @@ public class StopAlarmActivity extends AppCompatActivity {
 
     }
 
-
+    //Sets the daily quote at random
     String quote ;
     String author ;
     public void setQuote(){
@@ -66,11 +73,13 @@ public class StopAlarmActivity extends AppCompatActivity {
 
     }
 
+    //Used to stop the alarm when button is pressed
     public void stopButton(View view){
         media_song.stop();
         finish();
     }
 
+    //Used to snooze the alarm once the button is pressed
     public void snoozeButton(View view){
         media_song.stop();
 
