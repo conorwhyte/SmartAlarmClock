@@ -58,8 +58,6 @@ public class CardListActivity extends Activity {
         if(user != null){
             for (int i = 0; i < user.numberOfCards(); i++) {
 
-                String time = "10";
-                String name = "Name";
                 String name1 = user.getCardName(i);
                 String time1 = Integer.toString(user.getCardTime(i));
                 Card card = new Card(name1, time1, images[1]);
@@ -138,15 +136,16 @@ public class CardListActivity extends Activity {
             alarmGone[0] = true ;
             //startActivity(intent);
             Toast.makeText(getApplicationContext(),
-                    "Alarm", Toast.LENGTH_LONG).show();
+                    "Alarm 1", Toast.LENGTH_LONG).show();
 
         }
-        else if (localSecond == 50 && alarmGone[1] == false){ // Alert Two
+
+        if (localSecond == time && alarmGone[0] == true && alarmGone[1] == false){ // Alert Two
             Intent intent = new Intent(this, StopAlarmActivity.class);
             alarmGone[1] = true ;
             //startActivity(intent);
             Toast.makeText(getApplicationContext(),
-                    "Alarm", Toast.LENGTH_LONG).show();
+                    "Alarm 2", Toast.LENGTH_LONG).show();
         }
     }
 

@@ -68,9 +68,8 @@ public class MainActivity extends AppCompatActivity {
     public void popUp() {
         final Intent intent = new Intent(this, AddUserDetailsActivity.class);
         AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
-        alertDialog.setTitle("First Time USer");
-        alertDialog.setMessage("PLease fill in some details about your morning " +
-                ", or being in a location where your GPS location cannot be found");
+        alertDialog.setTitle("First Time User");
+        alertDialog.setMessage("Please fill in some details about your morning!");
         alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {

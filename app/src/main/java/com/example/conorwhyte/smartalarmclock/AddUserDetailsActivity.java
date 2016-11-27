@@ -8,6 +8,9 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ProgressBar;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -26,6 +29,7 @@ public class AddUserDetailsActivity extends AppCompatActivity {
     ArrayList<String> name = new ArrayList<String>();
     ArrayList<Integer> time = new ArrayList<Integer>();
     int count = 0 ;
+    int totalTime = 0;
 
     UserDetails newUser = new UserDetails();
 
@@ -49,7 +53,10 @@ public class AddUserDetailsActivity extends AppCompatActivity {
         }
         else {
             int timeRequired = Integer.parseInt(editText1.getText().toString());
-            count++ ;
+            count++;
+            int progress = count;
+            updateProgress(progress);       // updates activity count
+            updateTime(timeRequired);      // update total time
             name.add(morningName);
             time.add(timeRequired);
         }
@@ -91,5 +98,23 @@ public class AddUserDetailsActivity extends AppCompatActivity {
                     }
                 });
         alertDialog.show();
+    }
+
+    public void updateProgress(Integer count)
+    {
+
+        TextView textView = (TextView) findViewById(R.id.activityCount);
+        textView.setText(count + " Activities");
+
+        return;
+    }
+
+    public void updateTime(Integer time)
+    {
+        totalTime += time;
+        TextView textView = (TextView) findViewById(R.id.totalTime);
+        textView.setText(totalTime + " Minutes Total");
+
+        return;
     }
 }
