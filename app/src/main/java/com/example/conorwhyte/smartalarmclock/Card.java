@@ -16,6 +16,12 @@ import static android.content.Context.LAYOUT_INFLATER_SERVICE;
 import static android.graphics.Color.*;
 
 /**
+ * This is an individual card which will be passed into the ArrayAdapter. Here the name, time and
+ * image id of the card is set.
+ *
+ * Created with the help of following tutorial:
+ * http://javapapers.com/android/android-cards-list-view/
+ *
  * Created by conorwhyte on 16/11/2016.
  */
 
@@ -42,10 +48,6 @@ public class Card {
 
     public int getId(){
         return id;
-    }
-
-    public void setState(Context context){
-
     }
 
 

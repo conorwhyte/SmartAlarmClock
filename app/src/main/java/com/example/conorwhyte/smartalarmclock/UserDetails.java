@@ -1,11 +1,14 @@
 package com.example.conorwhyte.smartalarmclock;
 
 import android.location.Location;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
+ * This class stores all the user details needed for the application. It is an object which will be
+ * used in almost every activity, as it stores card times, travel time etc. It has methods to retreive
+ * and set certain information.
+ *
  * Created by conorwhyte on 14/11/2016.
  */
 

@@ -11,11 +11,23 @@ import android.widget.EditText;
 
 import java.util.ArrayList;
 
+/**
+ * The following class is used to get the user Details for the cards, or the morning routine.
+ * Each one has a name and a time associated with it, which is an indication as to how long the
+ * activity will take. If null a popup will show up to prompt the user to try again. This will
+ * be opened on the first time the user uses the app. It then sends the user object back to the
+ * main activity with all relevant information stored in the user object.
+ *
+ * Author: Conor Whyte
+ */
+
 public class AddUserDetailsActivity extends AppCompatActivity {
 
     ArrayList<String> name = new ArrayList<String>();
     ArrayList<Integer> time = new ArrayList<Integer>();
     int count = 0 ;
+
+    UserDetails newUser = new UserDetails();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +35,7 @@ public class AddUserDetailsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_user_details);
     }
 
+    //add a morning routine
     public void addDetails(View view){
 
         EditText editText = (EditText) findViewById(R.id.editText4);
@@ -47,7 +60,7 @@ public class AddUserDetailsActivity extends AppCompatActivity {
         */
     }
 
-    UserDetails newUser = new UserDetails();
+    //finish with the morning routines and go back to menu, sends user object back 
     public void sendDetails(View view){
         newUser.setCardWakeTime(time);
         newUser.setCardName(name);
@@ -60,7 +73,7 @@ public class AddUserDetailsActivity extends AppCompatActivity {
         finish();
     }
 
-
+    //popup for if the user has not entered details correctly
     public void popUpEmptyTextView() {
         final Intent intent = new Intent(this, AddUserDetailsActivity.class);
         AlertDialog alertDialog = new AlertDialog.Builder(AddUserDetailsActivity.this).create();
