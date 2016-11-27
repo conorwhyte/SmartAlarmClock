@@ -69,7 +69,10 @@ public class MainActivity extends AppCompatActivity {
         final Intent intent = new Intent(this, AddUserDetailsActivity.class);
         AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
         alertDialog.setTitle("First Time User");
-        alertDialog.setMessage("Please fill in some details about your morning!");
+        alertDialog.setMessage("Please fill in some details about your morning!\n" +
+                "Please turn location services on, " +
+                ", or being in a location where your GPS location cannot be found" +
+                " you can enter your location manually.");
         alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {

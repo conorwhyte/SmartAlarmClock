@@ -290,15 +290,18 @@ public class DistanceActivity extends FragmentActivity implements android.locati
 
                     // permission was granted, yay! Do the
                     // contacts-related task you need to do.
-                    Toast.makeText(this, "Location Services is enabled", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Permission granted to your Location Services", Toast.LENGTH_SHORT).show();
                 } else {
 
                     // permission denied, boo! Disable the
                     // functionality that depends on this permission.
-                    Toast.makeText(this, "Location Services is disabled", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Permission denied to your Location Services", Toast.LENGTH_SHORT).show();
                 }
                 return;
             }
+
+            // other 'case' lines to check for other
+            // permissions this app might request
         }
     }
 
