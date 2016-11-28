@@ -25,8 +25,10 @@ public class UserDetails implements Serializable{
     public Location destination ;
     public int journeyTime ;
 
-    public int wakTimeHour ;
-    public int wakeTimeMinute ;
+
+    public int wakeTimeHour = 9 ;
+    public int wakeTimeMinute = 59 ;
+
 
     int count = 0 ;
 
@@ -82,6 +84,7 @@ public class UserDetails implements Serializable{
         }
         else{
             int time = cardTime.get(i);
+            totalRepTime = time ;
             return time ;
         }
     }
@@ -92,5 +95,34 @@ public class UserDetails implements Serializable{
 
     public int numberOfCards(){
         return count;
+    }
+
+    public void setJourneyTime(int time){
+        journeyTime = time ;
+    }
+
+    public int returnJourneyTime(){
+        return journeyTime;
+    }
+
+
+    public int returnTotalPrepTime(){
+        int sum = 0;
+        for(Integer d : cardTime)
+            sum += d;
+        return sum;
+    }
+
+    public int returnTotalTime(){
+        return journeyTime + returnTotalPrepTime() ;
+    }
+
+    public int getAlarmHour(){
+        return wakeTimeHour ;
+    }
+
+
+    public int getAlarmMin(){
+        return wakeTimeMinute -returnTotalTime() ;
     }
 }

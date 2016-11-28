@@ -63,10 +63,20 @@ public class DistanceActivity extends FragmentActivity implements android.locati
     public Criteria criteria;
     public String bestProvider;
 
+    UserDetails user ;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_distance);
+
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            user = (UserDetails)extras.getSerializable("Object");
+        }
+        else{
+            user = new UserDetails();
+        }
 
         // check for location permission
         int permissionCheck = ContextCompat.checkSelfPermission(this,
@@ -118,6 +128,9 @@ public class DistanceActivity extends FragmentActivity implements android.locati
                 // Start downloading json data from Google Directions API
                 DownloadTask downloadTask = new DownloadTask();
                 downloadTask.execute(url);
+
+
+
             }
         });
 
@@ -373,6 +386,9 @@ public class DistanceActivity extends FragmentActivity implements android.locati
     /**
      * A class to parse the Google Places in JSON format
      */
+    int travelMins ;
+    int travelHours ;
+
     private class ParserTask extends AsyncTask<String, Integer, List<List<HashMap<String, String>>>> {
         JSONObject jObject;
 
@@ -394,6 +410,7 @@ public class DistanceActivity extends FragmentActivity implements android.locati
 
             return routes;
         }
+
 
         @Override
         protected void onPostExecute(List<List<HashMap<String, String>>> result) {
@@ -436,6 +453,14 @@ public class DistanceActivity extends FragmentActivity implements android.locati
                 if (m.matches()) {
                     minutes = Integer.parseInt(m.group(1));
                     tvDistanceDuration.setText("Distance:" + distance + ", Duration:" + minutes + " Minutes");
+                    travelMins = minutes;
+                    user.setJourneyTime(travelMins);
+
+                    //Conor Code
+                    Intent intent = new Intent(DistanceActivity.this, AlarmActivity.class);
+                    intent.putExtra("Object", user);
+                    startActivity(intent);
+                    finish();
 
                 }
             } else {
@@ -445,6 +470,8 @@ public class DistanceActivity extends FragmentActivity implements android.locati
                     minutes = Integer.parseInt(m.group(2));
                     tvDistanceDuration.setText("Distance: " + distance + ", Duration: " + hours + " Hours " + minutes + " Minutes");
 
+                    travelHours = hours ;
+                    travelMins = minutes ;
                 }
             }
         }

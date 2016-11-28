@@ -51,6 +51,9 @@ public class AlarmActivity extends AppCompatActivity implements SensorEventListe
         if (extras != null) {
             user = (UserDetails)extras.getSerializable("Object");
         }
+        else{
+            user = new UserDetails();
+        }
 
         Intent intent = new Intent(this, AddUserDetailsActivity.class);
         intent.putExtra("Object", user);
@@ -84,8 +87,17 @@ public class AlarmActivity extends AppCompatActivity implements SensorEventListe
 
                 calendar.set(Calendar.HOUR_OF_DAY, alarmTimePicker.getHour());
                 calendar.set(Calendar.MINUTE, alarmTimePicker.getMinute());
-                final int hour = alarmTimePicker.getHour();
-                final int minute = alarmTimePicker.getMinute();;
+                final int hour ;
+                final int minute ;
+                if(user.getAlarmHour() != -1){
+                    hour = user.getAlarmHour();
+                    minute = user.getAlarmMin();
+                }
+                else{
+                    hour = alarmTimePicker.getHour();
+                    minute = alarmTimePicker.getMinute();
+                }
+
                 String minute_string = String.valueOf(minute);
                 String hour_string = String.valueOf(hour);
                 Boolean pm = false;
