@@ -40,17 +40,6 @@
         android:layout_below="@+id/timePicker"
         android:layout_alignParentStart="true" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="Did you set the alarm"
-        android:ems="10"
-        android:id="@+id/update_text"
-        android:layout_alignTop="@+id/timePicker"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="81dp" />
-
     <Button
         android:text="Button"
         android:layout_width="wrap_content"

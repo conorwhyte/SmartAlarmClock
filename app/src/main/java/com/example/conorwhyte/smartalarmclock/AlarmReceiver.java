@@ -21,7 +21,7 @@ public class AlarmReceiver extends BroadcastReceiver {
 
         String state = intent.getExtras().getString("extra");
         user = (UserDetails)intent.getExtras().getSerializable("Object");
-        Toast.makeText(context, "Recieved!!", Toast.LENGTH_LONG).show();
+        Toast.makeText(context, "Beep beep, time to move!", Toast.LENGTH_LONG).show();
         Intent i = new Intent();
         i.putExtra("Object", user);
         i.setClassName("com.example.conorwhyte.smartalarmclock", "com.example.conorwhyte.smartalarmclock.CardListActivity");
