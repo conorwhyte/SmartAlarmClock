@@ -43,6 +43,8 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import static android.support.v7.media.MediaControlIntent.EXTRA_MESSAGE;
 
@@ -156,10 +158,9 @@ public class DistanceActivity extends FragmentActivity implements android.locati
         // Origin of route
         String str_origin = "";
         getLocation();
-        if(loca == null) {
+        if (loca == null) {
             str_origin = "origin=" + latitude + "," + longitude;
-        }
-        else {
+        } else {
             str_origin = "origin=" + loca.latitude + "," + loca.longitude;
             latitude = loca.latitude;
             longitude = loca.longitude;
@@ -262,17 +263,13 @@ public class DistanceActivity extends FragmentActivity implements android.locati
             Location location = locationManager.getLastKnownLocation(bestProvider);
             if (location != null) {
                 Log.e("TAG", "GPS is on");
-                Toast.makeText(DistanceActivity.this, "GPS is on!", Toast.LENGTH_SHORT).show();
                 latitude = location.getLatitude();
                 longitude = location.getLongitude();
-            }
-            else{
+            } else {
                 //This is what you need:
                 locationManager.requestLocationUpdates(bestProvider, 1000, 0, this);
             }
-        }
-        else
-        {
+        } else {
             //prompt user to enable location....
             //.................
         }
@@ -378,6 +375,7 @@ public class DistanceActivity extends FragmentActivity implements android.locati
      */
     private class ParserTask extends AsyncTask<String, Integer, List<List<HashMap<String, String>>>> {
         JSONObject jObject;
+
         // Parsing the data in non-ui thread
         @Override
         protected List<List<HashMap<String, String>>> doInBackground(String... jsonData) {
@@ -401,6 +399,10 @@ public class DistanceActivity extends FragmentActivity implements android.locati
         protected void onPostExecute(List<List<HashMap<String, String>>> result) {
             String distance = "";
             String duration = "";
+            int hours = 0;
+            int minutes = 0;
+            Pattern time = Pattern.compile("(\\d+)(?:\\D+)(\\d+)(?:\\D+)");
+            Matcher m;
 
 
             if (result.size() < 1) {
@@ -427,10 +429,24 @@ public class DistanceActivity extends FragmentActivity implements android.locati
                         continue;
                     }
                 }
-
             }
-            tvDistanceDuration.setText("Distance:" + distance + ", Duration:" + duration);
+            if (duration.length() < 8) {
+                time = Pattern.compile("(\\d+)(?:\\D+)");
+                m = time.matcher(duration);
+                if (m.matches()) {
+                    minutes = Integer.parseInt(m.group(1));
+                    tvDistanceDuration.setText("Distance:" + distance + ", Duration:" + minutes + " Minutes");
 
+                }
+            } else {
+                m = time.matcher(duration);
+                if (m.matches()) {
+                    hours = Integer.parseInt(m.group(1));
+                    minutes = Integer.parseInt(m.group(2));
+                    tvDistanceDuration.setText("Distance: " + distance + ", Duration: " + hours + " Hours " + minutes + " Minutes");
+
+                }
+            }
         }
     }
 
