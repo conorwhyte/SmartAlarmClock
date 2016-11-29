@@ -3,660 +3,660 @@
 
     <item
         is-multidex="true"
-        jar="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="6b9e453412bd3f6be86ffb6ea9afd678cad04c6d">
-        <dex dex="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_cb759f6b505f53ae964d5d71e44e23b8ada7cbf8/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-plus/9.8.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="3daa7a9c9009fd386872a84c177a76979bdcafd6">
-        <dex dex="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-plus-9.8.0_259e681e28beaa06a3f47109aff63d7de9e72608/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/libs/internal_impl-24.2.1.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
         sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
-        <dex dex="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_d1d2e498639d0bd1ebd10e9952846696a606c9b1/classes.dex" />
+        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_f97706bed9d09400f98e97cf15f2987d0076529d/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/exploded-aar/com.google.firebase/firebase-storage/9.8.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="7fd91ec2730fdaa82906aad32a3f3d3e574bae56">
-        <dex dex="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-storage-9.8.0_cb0c6f5b355ce1bc19a4b6e9a34e7cc3a0bec031/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-panorama/9.8.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="2d3035050a075484cbf2e33f1ce1f779bae4d451">
-        <dex dex="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-panorama-9.8.0_2a54d74aec7b7b15445b39bee6f1e6c3f1e5db52/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
-        <dex dex="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_9e532ed91ec278e0a319b75c3dfc0838a0c56d22/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-instantapps/9.8.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="00d358528c5a8731a6e19bca910cbb3fd755ee31">
-        <dex dex="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-instantapps-9.8.0_65b29a3e375e912a41ae9e13695923d8e18d3ee7/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
-        <dex dex="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-24.2.1_4c52b24edefcac15fbbb1aa721a8ed2ec8ec90d3/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
-        <dex dex="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-24.2.1_461f3b137ceedf227c0efdb49d9ca50542d4461c/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks/9.8.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="bf2e1838e4428616c1aa26edf43de72b5b99bf84">
-        <dex dex="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-tasks-9.8.0_ac088472fb72be18c181d3d5e8edb73da370f7ed/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tagmanager/9.8.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="a972970c8beddb69c198f61f3fc55f0606a7dfe3">
-        <dex dex="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-tagmanager-9.8.0_8ddef12a4937bb277edf481fbd04130623b4d42e/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/9.8.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="f2d240dd085626f03f759c41d628a0c8b63e491f">
-        <dex dex="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-ads-9.8.0_37a4fdf7a221515e0853f7fc948ea6a99843d56f/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-analytics/9.8.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="16afe57c1d7f8165d107c7806ce7b0c71de87159">
-        <dex dex="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-analytics-9.8.0_d6f5906d23ca69199a16579b1ff44e500ed1e672/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-clearcut/9.8.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="ee5304fd374e0b4ebf6b42d4037fbfb2c5336511">
-        <dex dex="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-clearcut-9.8.0_eb0d608e679a873235b4690e9a4a793edf402714/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-places/9.8.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="679251204de40ace98776a6f4e3a649c27e3d89f">
-        <dex dex="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-places-9.8.0_a8478d71830a37ab5153f9783dda0fdf4bf82f2a/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads-lite/9.8.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="e9b2cfdfd59b03643f1e240668275378b96615a8">
-        <dex dex="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-ads-lite-9.8.0_ad39a3d4ba5d4555e446e45d48ca437bf01d685c/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/24.2.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="c5e6490573cd2cc8018417f60ddd251138b6ed61">
-        <dex dex="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-cardview-v7-24.2.1_a746240a38788aff9304968f757996ef45f1667a/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gass/9.8.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="363a20f1d25336e827dd24020f2ecdc42d62638f">
-        <dex dex="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-gass-9.8.0_c36487c4028333191551e29c04c2684bcda409e1/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/24.0.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="b327fbe2fad414bc38cf0ce8f7efe1a38f572837">
-        <dex dex="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-mediarouter-v7-24.0.0_bc33d11ff461b165bb988efd9e13c8dc68afb936/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/9.8.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="e3234cd25e23069abd48ecd2117bc0e8011bf45a">
-        <dex dex="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-appindexing-9.8.0_70fffff4741539c825c70d76831f7b1f504839b9/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/exploded-aar/com.google.firebase/firebase-database/9.8.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="03df48d3713661d66ad024b1e406259a4c26fcac">
-        <dex dex="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-database-9.8.0_1a72b1b1508ce14be82f6acf3291c972588ce987/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/24.2.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="7521486d9bfd2cd9e756e0cf75ed7d97f2ce2d3b">
-        <dex dex="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-24.2.1_7226e79943a725750049ccb1d45c5e253a44a35a/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/exploded-aar/com.google.firebase/firebase-auth-common/9.8.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="4438b1a7848a7c571122ba618aa1304514aabee6">
-        <dex dex="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-auth-common-9.8.0_f8f1a1c3cbf756d220849c5adefb3dd39c0637fd/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.2.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-24.2.1_e552ac4828380908c47553dcb2c8de6106ead196/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/24.0.0/jars/libs/internal_impl-24.0.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="b6763651ec29b4c95e7bbe63fc393ffcc8c4c2c5">
-        <dex dex="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.0.0_cf087752f5b55d79959ace0a0e14ce8d5e9d55d3/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-games/9.8.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="fbb3885c40e431cd2b0dc69c0cab2bf6d5da7b43">
-        <dex dex="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-games-9.8.0_2f2d1fd78aa3d1b5c7d84018a0f53950a0b1a9f4/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-auth-base/9.8.0/jars/classes.jar"
+        jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-auth-base/9.8.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
         sha1="a1ed98e01bd58976d80c062fd0ea2968a1ff68a1">
-        <dex dex="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-auth-base-9.8.0_e858ac5b2e3e5f4d5f19fec08f27c886368d3b20/classes.dex" />
+        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-auth-base-9.8.0_0d6267aef663057c143c74c92a2208eae952995b/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/exploded-aar/com.google.firebase/firebase-common/9.8.0/jars/classes.jar"
+        jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="c61641e333fa88da21758bab8cc28ee16604b05f">
-        <dex dex="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-common-9.8.0_60e3be0742a3b9ef500980fcf5d53fe5b49956d6/classes.dex" />
+        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
+        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-24.2.1_3f074776624bbec6bc2a7566e958f9da6494aa39/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/libs/internal_impl-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="867dad63c33388ff8c7644b236579355036d075f">
-        <dex dex="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_df08a7dffc53b06bc0bdc21c89b5e8c1e9c1f52b/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.8.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="055eed08c9cff50cac0db69c74c4d9ff7aef3d84">
-        <dex dex="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-cast-framework-9.8.0_fc967f5022e117e805bab74176d8c074f07071fb/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/exploded-aar/com.google.firebase/firebase-config/9.8.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="289cad663c288ce965463cb9ece8b35cc7de0fac">
-        <dex dex="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-config-9.8.0_68894be3bc2dd8b1449637f2588f45ccea9e6639/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
-        <dex dex="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-24.2.1_17d4300c511cf03d0d0ced7782f08dae5768716d/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.2.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
-        <dex dex="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-24.2.1_9556bbec49b2fc13262e956e50c9c34dfc3bb06b/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/exploded-aar/com.android.support/multidex/1.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="78ea232052df889856dcb7b7b542707c89bb3bfb">
-        <dex dex="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-multidex-1.0.1_1c4559a453cc444e4c4d536d5e9dd491c6bd9aba/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/9.8.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="04bbbddf868aa02dd33f9e90d8f5d908c360f638">
-        <dex dex="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-location-9.8.0_a62af0af212d72ba5b090749a15dcb4ca3a6c009/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/exploded-aar/com.google.firebase/firebase-auth/9.8.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="15e59454416c6341bd3ed2533b585cd340682dd1">
-        <dex dex="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-auth-9.8.0_0e10988aa023a73923b906641b5ae117e2a63d62/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-fitness/9.8.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="a7a04d6b7c01e569a285fa627cf64f5b05295906">
-        <dex dex="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-fitness-9.8.0_64ddbab9f04abc1b02cded78398ab88abb39883c/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="f0d2c5bb216ceae15db3ab9fa5d115257ce3e382">
-        <dex dex="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_e0554c45f99c17867c105a40e73e603062500a12/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appinvite/9.8.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="e56f31b23ddb067f95f01255295167db7c798612">
-        <dex dex="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-appinvite-9.8.0_ee12ad0b104678774ebfa0cb5b461109c83c8e20/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-drive/9.8.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="0b53c4b90654b67ee3892a8e2e7b819c083ab7a6">
-        <dex dex="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-drive-9.8.0_cdf1a5daeffbb8ce7ec48fbd0c96806a97a84111/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/9.8.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="9f6d236bac26d02b410e4ee186ba517ace5ee661">
-        <dex dex="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-basement-9.8.0_478140fc5fd47b1bc143fc9e34fd1646e2e0a27e/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-iid/9.8.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="85299bf1924dde0200109a58033c5ef84ecb6991">
-        <dex dex="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-iid-9.8.0_dfde30214312361ce0168643e5e9baed2a19b0d6/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast/9.8.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="74ac7cbcf0de4a88e59612dc3a9e3f9e71acb4ca">
-        <dex dex="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-cast-9.8.0_39c91a6433e16a9a61913db9063d40c2fec1d4a5/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-identity/9.8.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="cef85cfc7df40e29fbea58844dd4c1e7d0b15542">
-        <dex dex="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-identity-9.8.0_3a5e1febdecd7e3fe7c6ff7a8d2eca923b566b34/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/conor/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/24.2.1/support-annotations-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
-        <dex dex="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-24.2.1_eea41ae7bfc8ddc5e95fe04f8a6c8a606497e54b/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wearable/9.8.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="0b8e087da59c0b062c33f49a335e59f907086da2">
-        <dex dex="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-wearable-9.8.0_d07247981562a4e5b9aa6815e71c6bbe617dd5e0/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/exploded-aar/com.google.firebase/firebase-auth-module/9.8.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="3f8f779a22cbb4c4d0759467a4f1011bb5252970">
-        <dex dex="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-auth-module-9.8.0_91230bc26ac90f40015fca3499e6aab800ad9915/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/exploded-aar/com.android.support/design/24.2.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="e03f47f3d1017a093bb3239d4ec47c3447f40744">
-        <dex dex="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-24.2.1_326e152b39eb05924ec8fd7f4297dd668ca73f53/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/9.8.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="122ec9237acd8a57d974b9d529987f1ee6ca5aea">
-        <dex dex="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-maps-9.8.0_900171c7a879d5fb93d6331c9b094c51c93b9167/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.8.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="7e92aadd0697922316d1395c1887a23aebec640a">
-        <dex dex="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-base-9.8.0_565c0704e9cf92423dc23eefeff07b526c2a816a/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-vision/9.8.0/jars/classes.jar"
+        jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-vision/9.8.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
         sha1="a30aea7df545072ad3c06f56b2efc13e67222140">
-        <dex dex="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-vision-9.8.0_2b566bb1cd028705a65b2ab2242543944c066961/classes.dex" />
+        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-vision-9.8.0_59118b6bdaf9e68afe8aa372f913539fe63140e9/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/9.8.0/jars/classes.jar"
+        jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/exploded-aar/com.google.firebase/firebase-auth/9.8.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="9dae58326f6f6a515022468cce56dd04ec3b9fdb">
-        <dex dex="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-gcm-9.8.0_ee5e35fd62c8b8f0fa084823fc45589a6014d3c0/classes.dex" />
+        sha1="15e59454416c6341bd3ed2533b585cd340682dd1">
+        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-auth-9.8.0_bdac53d940a90baa9ffaf2883167c8cd7f9aefa4/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tagmanager-api/9.8.0/jars/classes.jar"
+        jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/9.8.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="266570862e5792ef3c51143a8b8593cf54fac68d">
-        <dex dex="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-tagmanager-api-9.8.0_2b37bb20c6cd1686608d04aed6725b225a410a39/classes.dex" />
+        sha1="04bbbddf868aa02dd33f9e90d8f5d908c360f638">
+        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-location-9.8.0_510d6744bc56c0b4c561a5cf857ed870fce2e840/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/classes.jar"
+        jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/libs/internal_impl-24.2.1.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
-        <dex dex="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-24.2.1_e5512c8f70a02d4c10418885937910b2e61dc86c/classes.dex" />
+        sha1="867dad63c33388ff8c7644b236579355036d075f">
+        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_39586d6c8235da07bbec2a5030e6decb9c34ed40/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-analytics-impl/9.8.0/jars/classes.jar"
+        jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/24.0.0/jars/libs/internal_impl-24.0.0.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="50e35ae101a679c4c8ef3dda075b1df9d5d947d9">
-        <dex dex="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-analytics-impl-9.8.0_358ed087e40041907b3e603d5d33828a21925d9a/classes.dex" />
+        sha1="b6763651ec29b4c95e7bbe63fc393ffcc8c4c2c5">
+        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.0.0_7d29e002b725f2b5af086d65b93f061a2bbd6d63/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/jars/classes.jar"
+        jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-panorama/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="2d3035050a075484cbf2e33f1ce1f779bae4d451">
+        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-panorama-9.8.0_2ea410291f78b18bc8040cb3c3c54e8256c4986f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
         sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
-        <dex dex="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-24.2.1_e4aa7539bcba652d5e36e9d01c57eb147c0092f7/classes.dex" />
+        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-24.2.1_938d25ebcde33adc4f0789c0d5be7bc178186d5d/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
-        <dex dex="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-24.2.1_5972bfcf6772daaf2ea20a84b705a2cd165f30dc/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-nearby/9.8.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="c81df6bd515398ebe45089b0b16c55752a131f6a">
-        <dex dex="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-nearby-9.8.0_b93e77b61675d8360f6b3ee491f466e40849df65/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.2.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
-        <dex dex="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-24.2.1_a786aabe61802ec2eaa320f9e606dd90cf82ad9a/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-safetynet/9.8.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="20a3c4e355150c15c13dd58045d43ad0c717d916">
-        <dex dex="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-safetynet-9.8.0_de1dfe3ca69f060a9b093b47586cc9583e3c948f/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-awareness/9.8.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="a2537b11ae24b42172d34e2a613fc0b903c56158">
-        <dex dex="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-awareness-9.8.0_758e5a0ddb649811c97b633cfae97a0b53b8d549/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/exploded-aar/com.google.firebase/firebase-database-connection/9.8.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="5f47ede9561595584dca71104baa0fecb36dda87">
-        <dex dex="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-database-connection-9.8.0_6dbd6bd971c1cdb663ef45dcaf8ea52f35fb47c3/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/9.8.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="6b6f292b8b951dcf2ecf2b20853e3eabc7d65c48">
-        <dex dex="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-iid-9.8.0_8cd6c1c42ccc6575bcd129a387ca78e70e0c421b/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics-impl/9.8.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="190a642ba16d1421296a4d794606279b80039c59">
-        <dex dex="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-analytics-impl-9.8.0_3988fa5bf6336c27bd3125f677986fea84c65ed3/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/9.8.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="910c013c511f752c4bbe24c5f492f669f4a3ccc0">
-        <dex dex="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-wallet-9.8.0_42ee63a81598f7affda232dac10119245d1fd1b3/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/exploded-aar/com.google.firebase/firebase-storage-common/9.8.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="ec9104b53aee77dfcfd2fe1c4add23ff7c4df55f">
-        <dex dex="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-storage-common-9.8.0_fb9ab8140a98719342bb6a7d31e122a270625654/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-auth/9.8.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="ca851be26ff89f5b32cc222cee98139fb3fac830">
-        <dex dex="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-auth-9.8.0_263e3a8b00f91c5221d625089cfafd522beeec71/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
         sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
-        <dex dex="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_188d59d66550d492714448752655fb2fed236a84/classes.dex" />
+        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_8a9cb8ed3e364d284c38c046c02c931617715451/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/exploded-aar/com.google.firebase/firebase-messaging/9.8.0/jars/classes.jar"
+        jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tagmanager-api/9.8.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="5ffe8867f51cfc726e9fb21db1e5b6962ebf25a0">
-        <dex dex="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-messaging-9.8.0_23566c549efeb6e33321f1dc9392b3ad25e4f1a7/classes.dex" />
+        sha1="266570862e5792ef3c51143a8b8593cf54fac68d">
+        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-tagmanager-api-9.8.0_24e7dfb5a62b4f30de1d4fff5f32d90b8e030ff1/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/exploded-aar/com.google.firebase/firebase-config/9.8.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
-        <dex dex="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_46b771753d52097a308536502029d07fb8d6bec6/classes.dex" />
+        sha1="289cad663c288ce965463cb9ece8b35cc7de0fac">
+        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-config-9.8.0_0e4f3ea1b0415ac2873867da48bcb2a9fc0a3d67/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/exploded-aar/com.google.firebase/firebase-crash/9.8.0/jars/classes.jar"
+        jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-nearby/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="c81df6bd515398ebe45089b0b16c55752a131f6a">
+        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-nearby-9.8.0_a4293c9891aa3e45e503256d244182f413f566c4/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-games/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="fbb3885c40e431cd2b0dc69c0cab2bf6d5da7b43">
+        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-games-9.8.0_19d78b5765f70a50165f31c65bd53ba378e5fce9/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="5738c75f99283fa07f00769c50b1c87efe49d6b8">
+        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_e60e813a197f33c0c56d64304bac60ebe8de2875/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/exploded-aar/com.google.firebase/firebase-auth-module/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="3f8f779a22cbb4c4d0759467a4f1011bb5252970">
+        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-auth-module-9.8.0_51a3513e71c3d9b7a79307e26ec7c180ec1c934b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-instantapps/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="00d358528c5a8731a6e19bca910cbb3fd755ee31">
+        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-instantapps-9.8.0_8f2d0112fe8b2c765d211f0b8210f9de3f6ca672/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/exploded-aar/com.google.firebase/firebase-crash/9.8.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
         sha1="b4671be3d1288bf4e5f527cd33e42909fbe4ecc6">
-        <dex dex="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-crash-9.8.0_1b24624f5cb588ccdb645bbfbfa1d3d99f0a0196/classes.dex" />
+        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-crash-9.8.0_515f012fe2b3a073e53de4219aa857a74563ebfd/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/exploded-aar/com.android.support/palette-v7/24.0.0/jars/classes.jar"
+        jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="055eed08c9cff50cac0db69c74c4d9ff7aef3d84">
+        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-cast-framework-9.8.0_c74a8d916683f6ce0a14f11e2a55c5cbac9c2c49/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
+        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-24.2.1_540dc7719c881c9b80f3484c9cf747f5de2dfe90/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/exploded-aar/com.android.support/design/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="e03f47f3d1017a093bb3239d4ec47c3447f40744">
+        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-24.2.1_b836bd8dd4a4bbb84f37d03864362edb27976cf1/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/exploded-aar/com.google.firebase/firebase-database-connection/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="5f47ede9561595584dca71104baa0fecb36dda87">
+        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-database-connection-9.8.0_c1233d5d6be3f307418f7cfc5e9b9c47b1009581/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-24.2.1_639956630f5f4aa07eec43ee5088b9a2874c1449/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-analytics-impl/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="50e35ae101a679c4c8ef3dda075b1df9d5d947d9">
+        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-analytics-impl-9.8.0_8c1b5b15e377abdaddf49bbd38db57a9a82137c5/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="f2d240dd085626f03f759c41d628a0c8b63e491f">
+        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-ads-9.8.0_7a0f1bc4c89c05e8686ef0c5c44ade906694f97f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/exploded-aar/com.google.firebase/firebase-storage-common/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="ec9104b53aee77dfcfd2fe1c4add23ff7c4df55f">
+        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-storage-common-9.8.0_28de563a92e646c3dc77ea6ed771772d36cf5c3a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="74ac7cbcf0de4a88e59612dc3a9e3f9e71acb4ca">
+        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-cast-9.8.0_023a9f8737d4962f6f56d21e051fdb2129adad5a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
+        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-24.2.1_083b0a9a23bfde5ba9dbbcf94405cbaf607732cf/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/24.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="b327fbe2fad414bc38cf0ce8f7efe1a38f572837">
+        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-mediarouter-v7-24.0.0_0c2e83ef679dc34ecf607afb845d09e933e9f174/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="bf2e1838e4428616c1aa26edf43de72b5b99bf84">
+        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-tasks-9.8.0_64a635bdd752f9bfa99a95352bc8a152a6d6e198/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/conorwhyte/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/24.2.1/support-annotations-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
+        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-24.2.1_b5be710676869e7e22e4ccc624cfb22ddd79af0b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-analytics/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="16afe57c1d7f8165d107c7806ce7b0c71de87159">
+        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-analytics-9.8.0_364d2dfc1c6756ad213d6697c4e4ae90c0596333/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics-impl/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="190a642ba16d1421296a4d794606279b80039c59">
+        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-analytics-impl-9.8.0_0da71594497d6b263b9dcbd5d5ded32c2ad8f61a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-fitness/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="a7a04d6b7c01e569a285fa627cf64f5b05295906">
+        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-fitness-9.8.0_409a81927afac65dc3b46088e9ded136ea4c982f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
+        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-24.2.1_73fa87846f7780be547aa7357d97b4db849df2b3/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-drive/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="0b53c4b90654b67ee3892a8e2e7b819c083ab7a6">
+        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-drive-9.8.0_4d882407b0729dde81bbc358c5e23be94443e59b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="7e92aadd0697922316d1395c1887a23aebec640a">
+        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-base-9.8.0_b2993db7bc86bb20aa78c8af47ee5b93916c55d8/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-iid/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="85299bf1924dde0200109a58033c5ef84ecb6991">
+        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-iid-9.8.0_a8e90cb2c5d6ca14fbf1a2250210489f20c059f0/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-identity/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="cef85cfc7df40e29fbea58844dd4c1e7d0b15542">
+        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-identity-9.8.0_7353f55e817c00881e88db277d3914dc26b3d31f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-auth/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="ca851be26ff89f5b32cc222cee98139fb3fac830">
+        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-auth-9.8.0_d4a236ef1fd6b9246df4f34d65d6465e93a6436f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appinvite/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="e56f31b23ddb067f95f01255295167db7c798612">
+        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-appinvite-9.8.0_4e88e2126b54e3225ca1a59d1c7626909160fabf/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gass/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="363a20f1d25336e827dd24020f2ecdc42d62638f">
+        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-gass-9.8.0_b6e4cb559947f8e6e68bfe97d1c60e6d037ba0ca/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/exploded-aar/com.android.support/palette-v7/24.0.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
         sha1="734e80dffea7bd76c18ae256822a124c30d85850">
-        <dex dex="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-palette-v7-24.0.0_22b72f7a986d4c5acb8454354f183d3a2fed0a71/classes.dex" />
+        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-palette-v7-24.0.0_fb7651b7542ab86edf88e24686361ddd291772e7/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics/9.8.0/jars/classes.jar"
+        jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads-lite/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="e9b2cfdfd59b03643f1e240668275378b96615a8">
+        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-ads-lite-9.8.0_18568d09ec49e72bcdfe6768a1e2bf9b7b258f7b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="122ec9237acd8a57d974b9d529987f1ee6ca5aea">
+        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-maps-9.8.0_5aa763cd3118f4712fade1f39f1ddb7b0bac8cc0/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="9dae58326f6f6a515022468cce56dd04ec3b9fdb">
+        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-gcm-9.8.0_1c76fbe9fd600001d6a1bf2c02cd9c09d3a7be68/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="6b6f292b8b951dcf2ecf2b20853e3eabc7d65c48">
+        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-iid-9.8.0_feb0cf818b5212651492bfa18c19edff9a555a3b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-awareness/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="a2537b11ae24b42172d34e2a613fc0b903c56158">
+        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-awareness-9.8.0_2297ecb3b5b7c6681f2d41348dd517bff11cfaaf/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/exploded-aar/com.google.firebase/firebase-common/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="c61641e333fa88da21758bab8cc28ee16604b05f">
+        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-common-9.8.0_47f39e29fae6dbef464243d29b4c6ca465a36a07/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-plus/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="3daa7a9c9009fd386872a84c177a76979bdcafd6">
+        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-plus-9.8.0_28a1e8fd2a508baf8959bef00bab7ac15ee0c9a1/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/exploded-aar/com.google.firebase/firebase-database/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="03df48d3713661d66ad024b1e406259a4c26fcac">
+        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-database-9.8.0_eff79e04dcdd9bd437fc57825a236605128f075d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
+        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_d4db89aa62cd56b11b01fdf3d5d573b7e3d681c3/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-places/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="679251204de40ace98776a6f4e3a649c27e3d89f">
+        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-places-9.8.0_94042e54aca9f098bc343eadb1cfd69229181ec3/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
+        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_b992c1cf206dbc3d32044a4e81944792724dae10/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-safetynet/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="20a3c4e355150c15c13dd58045d43ad0c717d916">
+        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-safetynet-9.8.0_05f77dc7b17cb887ccdecb93b45e38d4169d9a2e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
+        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-24.2.1_e79baef8acedbf289772f35d5d59f2a6ca26401e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/exploded-aar/com.google.firebase/firebase-messaging/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="5ffe8867f51cfc726e9fb21db1e5b6962ebf25a0">
+        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-messaging-9.8.0_db26e9aa012f3de96eab2f6ae177a3eda8fe75b6/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="f59c4ebec7317ddc05b8247e61f0f7326372a2c2">
+        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_2557113d921d1ff6b7360f6efdee8c3a440a1f59/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics/9.8.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
         sha1="9ff04cc3470178a44512624036751a803418c2ca">
-        <dex dex="/home/conor/AndroidStudioProjects/SmartAlarmClockGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-analytics-9.8.0_934d45efeb992c7bfdb7caecbe4d4b496e9ebacd/classes.dex" />
+        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-analytics-9.8.0_c0c073e2b3a4bb4a941149790fc8a5d5cac266b2/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="910c013c511f752c4bbe24c5f492f669f4a3ccc0">
+        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-wallet-9.8.0_12f5b59ca9307fb8028232476f5af7f837e4476c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-clearcut/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="ee5304fd374e0b4ebf6b42d4037fbfb2c5336511">
+        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-clearcut-9.8.0_b60d993eb6c6280e74708782f808a7775309997c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
+        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-24.2.1_4ef132ff071361ef411a7a4f291ede6cad904503/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/exploded-aar/com.google.firebase/firebase-storage/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="7fd91ec2730fdaa82906aad32a3f3d3e574bae56">
+        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-storage-9.8.0_45d5846458e46dd892c45c78bec9dba3aae9e2d1/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wearable/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="0b8e087da59c0b062c33f49a335e59f907086da2">
+        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-wearable-9.8.0_38633ece381ef91406f5071594ad45c8d8eb99ed/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/exploded-aar/com.google.firebase/firebase-auth-common/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="4438b1a7848a7c571122ba618aa1304514aabee6">
+        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-auth-common-9.8.0_7441c9088f397c3f3c37b89191d1f238a69802a8/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="7521486d9bfd2cd9e756e0cf75ed7d97f2ce2d3b">
+        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-24.2.1_94d38b68713e3ede20aa77005c87f6b3c76d7a43/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tagmanager/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="a972970c8beddb69c198f61f3fc55f0606a7dfe3">
+        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-tagmanager-9.8.0_bb9123df547188edee29b4d2deea3866b7bb2480/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
+        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-24.2.1_672c3f3eadd3e617e74e2c85722135e1262810bc/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="c5e6490573cd2cc8018417f60ddd251138b6ed61">
+        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-cardview-v7-24.2.1_25ac6431230fbec74dc67805e24085991d11db9a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="9f6d236bac26d02b410e4ee186ba517ace5ee661">
+        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-basement-9.8.0_086c5cb25c94da8723dc7b1ebdad5729e1ff0224/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="e3234cd25e23069abd48ecd2117bc0e8011bf45a">
+        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-appindexing-9.8.0_359c90550ff25de6ea3c3106fdc249aa4795851b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/exploded-aar/com.android.support/multidex/1.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="78ea232052df889856dcb7b7b542707c89bb3bfb">
+        <dex dex="/Users/conorwhyte/Desktop/SmartAlarmClock-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-multidex-1.0.1_5bc19830205c6d9b97f2a8362d151d9de2e89e38/classes.dex" />
     </item>
 
 </items>
