@@ -1,12 +1,20 @@
 package com.example.conorwhyte.smartalarmclock;
 
+import android.content.pm.PackageManager;
+import android.location.Location;
+import android.location.LocationManager;
 import android.media.MediaPlayer;
 import android.os.CountDownTimer;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import com.google.android.gms.maps.model.LatLng;
+
+import java.text.DecimalFormat;
 import java.util.Random;
 
 /**
@@ -18,17 +26,15 @@ import java.util.Random;
 
 public class StopAlarmActivity extends AppCompatActivity {
 
-    MediaPlayer media_song ;
+    MediaPlayer media_song;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stop_alarm);
 
         setQuote();
-
         media_song = MediaPlayer.create(this, R.raw.killerwhale_resident);
         media_song.start();
-
     }
 
     //Sets the daily quote at random
