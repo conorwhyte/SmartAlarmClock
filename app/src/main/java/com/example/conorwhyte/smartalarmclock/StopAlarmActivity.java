@@ -1,5 +1,6 @@
 package com.example.conorwhyte.smartalarmclock;
 
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationManager;
@@ -33,6 +34,10 @@ public class StopAlarmActivity extends AppCompatActivity {
         setContentView(R.layout.activity_stop_alarm);
 
         setQuote();
+        Intent service_intent = new Intent(getApplicationContext(), RingtonePlayingService.class);
+        service_intent.putExtra("extra", "yes");
+        getApplicationContext().startService(service_intent);
+
     }
 
     //Sets the daily quote at random
@@ -79,6 +84,9 @@ public class StopAlarmActivity extends AppCompatActivity {
 
     //Used to stop the alarm when button is pressed
     public void stopButton(View view){
+        Intent service_intent = new Intent(getApplicationContext(), RingtonePlayingService.class);
+        service_intent.putExtra("extra", "no");
+        getApplicationContext().startService(service_intent);
         finish();
     }
 
