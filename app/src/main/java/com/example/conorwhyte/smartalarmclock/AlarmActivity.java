@@ -53,7 +53,7 @@ public class AlarmActivity extends AppCompatActivity implements SensorEventListe
         }
         else{
             user = new UserDetails();
-        }
+                  }
 
         Intent intent = new Intent(this, AddUserDetailsActivity.class);
         intent.putExtra("Object", user);
@@ -87,17 +87,16 @@ public class AlarmActivity extends AppCompatActivity implements SensorEventListe
 
                 calendar.set(Calendar.HOUR_OF_DAY, alarmTimePicker.getHour());
                 calendar.set(Calendar.MINUTE, alarmTimePicker.getMinute());
-                final int hour ;
-                final int minute ;
-                if(user.getAlarmHour() != -1){
-                    hour = user.getAlarmHour();
-                    minute = user.getAlarmMin();
-                }
-                else{
-                    hour = alarmTimePicker.getHour();
-                    minute = alarmTimePicker.getMinute();
-                }
-
+                               final int hour ;
+                                final int minute ;
+                                if(user.getAlarmHour() != -1){
+                                        hour = user.getAlarmHour();
+                                        minute = user.getAlarmMin();
+                                    }
+                                else{
+                                        hour = alarmTimePicker.getHour();
+                                        minute = alarmTimePicker.getMinute();
+                                    }
                 String minute_string = String.valueOf(minute);
                 String hour_string = String.valueOf(hour);
                 Boolean pm = false;
@@ -110,9 +109,10 @@ public class AlarmActivity extends AppCompatActivity implements SensorEventListe
                 if(pm){minute_string += " pm";}
                 else {minute_string += " am";}
 
-                myIntent.putExtra("extra", "yes");
-                myIntent.putExtra("Object", user);
-
+                Bundle extras = new Bundle();
+                extras.putSerializable("Object", user);
+                extras.putString("extra", "yes");
+                myIntent.putExtras(extras);
                 pending_intent = PendingIntent.getBroadcast(AlarmActivity.this, 0, myIntent, PendingIntent.FLAG_UPDATE_CURRENT);
                 alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pending_intent);
 
@@ -135,7 +135,6 @@ public class AlarmActivity extends AppCompatActivity implements SensorEventListe
                 sendBroadcast(myIntent);
                 alarmManager.cancel(pending_intent);
                 //setAlarmText("Alarm canceled");
-                Toast.makeText(getApplicationContext(), "Alarm Cancelled", Toast.LENGTH_SHORT).show();
             }
         });
     }

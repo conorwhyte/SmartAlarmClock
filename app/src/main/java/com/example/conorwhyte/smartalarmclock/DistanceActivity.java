@@ -29,9 +29,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.android.gms.maps.model.PolylineOptions;
-
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
@@ -41,12 +38,20 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import static android.support.v7.media.MediaControlIntent.EXTRA_MESSAGE;
+
+
+/*
+
+                RETURNSECONDS NEEDS AN EDIT
+            NEEDS INTERNAL STORAGE OF ALARM TIME
+*/
 
 
 public class DistanceActivity extends FragmentActivity implements android.location.LocationListener {
@@ -62,6 +67,7 @@ public class DistanceActivity extends FragmentActivity implements android.locati
     public LocationManager locationManager;
     public Criteria criteria;
     public String bestProvider;
+    public LatLng destination;
 
     UserDetails user ;
 
@@ -122,7 +128,7 @@ public class DistanceActivity extends FragmentActivity implements android.locati
                 EditText locationPostalAddress = (EditText) findViewById(R.id.autocomplete);
                 EditText destinationPostalAddress = (EditText) findViewById(R.id.autocomplete2);
                 LatLng location = getLocationFromAddress(locationPostalAddress.getText().toString());
-                LatLng destination = getLocationFromAddress(destinationPostalAddress.getText().toString());
+                destination = getLocationFromAddress(destinationPostalAddress.getText().toString());
                 // Getting URL to the Google Directions API
                 String url = getDirectionsUrl(location, destination, mode);
                 // Start downloading json data from Google Directions API
@@ -166,11 +172,39 @@ public class DistanceActivity extends FragmentActivity implements android.locati
         return p1;
     }
 
+    /*
+
+                RETURNSECONDS NEEDS AN EDIT
+            NEEDS INTERNAL STORAGE OF ALARM TIME
+     */
+
+    public long returnSeconds() {
+        Calendar calendar1 = Calendar.getInstance();
+        Calendar calendar2 = Calendar.getInstance();
+        int year = Calendar.getInstance().get(Calendar.YEAR);
+        int month = Calendar.getInstance().get(Calendar.MONTH);
+        int day = Calendar.getInstance().get(Calendar.DAY_OF_MONTH);
+        calendar1.set(1970, 01, 01, 0, 0);
+
+         /*time should go here needs to be edited
+         * here so the seconds will be from the
+         * time the alarm is due to go off
+         */
+
+        calendar2.set(year, 12, 1, 9, 0);
+        long milliseconds1 = calendar1.getTimeInMillis();
+        long milliseconds2 = calendar2.getTimeInMillis();
+        long diff = milliseconds2 - milliseconds1;
+        long seconds = diff / 1000;
+        return seconds;
+    }
 
     private String getDirectionsUrl(LatLng loca, LatLng dest, String mode) {
-        // Origin of route
+        String str_mode = "";
         String str_origin = "";
         getLocation();
+
+        // Origin of route
         if (loca == null) {
             str_origin = "origin=" + latitude + "," + longitude;
         } else {
@@ -184,7 +218,11 @@ public class DistanceActivity extends FragmentActivity implements android.locati
         deslon = dest.longitude;
 
         // Travel mode
-        String str_mode = "mode=" + mode;
+        if (mode.equals("transit")){
+            str_mode = "mode=" + mode + "&arrival_time="+returnSeconds();
+        }else {
+            str_mode = "mode=" + mode;
+        }
 
         // Sensor enabled
         String sensor = "sensor=false";
@@ -192,12 +230,8 @@ public class DistanceActivity extends FragmentActivity implements android.locati
         // Building the parameters to the web service
         String parameters = str_origin + "&" + str_dest + "&" + str_mode + "&" + sensor;
 
-        // Output format
-        String output = "json";
-
         // Building the url to the web service
-        String url = "https://maps.googleapis.com/maps/api/directions/" + output + "?" + parameters;
-
+        String url = "https://maps.googleapis.com/maps/api/directions/json?" + parameters;
 
         return url;
     }
@@ -469,11 +503,12 @@ public class DistanceActivity extends FragmentActivity implements android.locati
                     hours = Integer.parseInt(m.group(1));
                     minutes = Integer.parseInt(m.group(2));
                     tvDistanceDuration.setText("Distance: " + distance + ", Duration: " + hours + " Hours " + minutes + " Minutes");
-
                     travelHours = hours ;
                     travelMins = minutes ;
                 }
             }
+            Toast.makeText(DistanceActivity.this, "Duration: " + hours + " Hours " + minutes + " Minutes", Toast.LENGTH_LONG).show();
+
         }
     }
 

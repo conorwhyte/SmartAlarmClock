@@ -134,9 +134,9 @@ public class CardListActivity extends Activity {
         if (localSecond == time && alarmGone[0] == false){ // Alert One
             Intent intent = new Intent(this, StopAlarmActivity.class);
             alarmGone[0] = true ;
-            //startActivity(intent);
-            Toast.makeText(getApplicationContext(),
-                    "Alarm 1", Toast.LENGTH_LONG).show();
+            startActivity(intent);
+
+
 
         }
 

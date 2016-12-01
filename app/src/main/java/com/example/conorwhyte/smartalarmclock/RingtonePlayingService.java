@@ -4,8 +4,12 @@ import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
 import android.media.MediaPlayer;
+import android.media.Ringtone;
+import android.media.RingtoneManager;
+import android.net.Uri;
 import android.os.IBinder;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.example.conorwhyte.smartalarmclock.R;
 
@@ -13,8 +17,9 @@ public class RingtonePlayingService extends Service {
     MediaPlayer media_song;
     private boolean isRunning;
     private Context context;
-    MediaPlayer mMediaPlayer;
     private int startId;
+    private Ringtone ringtone;
+
 
     @Override
     public IBinder onBind(Intent intent)
@@ -26,6 +31,8 @@ public class RingtonePlayingService extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
+
+
         String state = intent.getExtras().getString("extra");
         assert state != null;
         switch (state)
@@ -43,8 +50,10 @@ public class RingtonePlayingService extends Service {
         if (!this.isRunning && startId == 1)
         {
             Log.e("Going on here  ", "Served");
-            media_song = MediaPlayer.create(this, R.raw.killerwhale_resident);
-            media_song.start();
+            Uri uri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM);
+            ringtone = RingtoneManager.getRingtone(this, uri);
+            ringtone.play();
+
             //Intent intent2 = new Intent(this, PunisherActivity.class);
             //startActivity(intent2);
             //finish();
@@ -52,10 +61,7 @@ public class RingtonePlayingService extends Service {
         }
         if(startId ==0)
         {
-            media_song.stop();
-            //mMediaPlayer.reset();
-
-            // this.isRunning = false;
+            ringtone.stop();
         }
 
         return START_NOT_STICKY;

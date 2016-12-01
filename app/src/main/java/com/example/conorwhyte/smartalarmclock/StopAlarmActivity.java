@@ -1,12 +1,21 @@
 package com.example.conorwhyte.smartalarmclock;
 
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.location.Location;
+import android.location.LocationManager;
 import android.media.MediaPlayer;
 import android.os.CountDownTimer;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import com.google.android.gms.maps.model.LatLng;
+
+import java.text.DecimalFormat;
 import java.util.Random;
 
 /**
@@ -18,16 +27,16 @@ import java.util.Random;
 
 public class StopAlarmActivity extends AppCompatActivity {
 
-    MediaPlayer media_song ;
+    MediaPlayer media_song;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stop_alarm);
 
         setQuote();
-
-        media_song = MediaPlayer.create(this, R.raw.killerwhale_resident);
-        media_song.start();
+        Intent service_intent = new Intent(getApplicationContext(), RingtonePlayingService.class);
+        service_intent.putExtra("extra", "yes");
+        getApplicationContext().startService(service_intent);
 
     }
 
@@ -75,13 +84,14 @@ public class StopAlarmActivity extends AppCompatActivity {
 
     //Used to stop the alarm when button is pressed
     public void stopButton(View view){
-        media_song.stop();
+        Intent service_intent = new Intent(getApplicationContext(), RingtonePlayingService.class);
+        service_intent.putExtra("extra", "no");
+        getApplicationContext().startService(service_intent);
         finish();
     }
 
     //Used to snooze the alarm once the button is pressed
     public void snoozeButton(View view){
-        media_song.stop();
 
         new CountDownTimer(30000, 1000) {       //set snooze time here
             public void onTick(long millisUntilFinished) {
@@ -97,7 +107,7 @@ public class StopAlarmActivity extends AppCompatActivity {
             }
 
             public void onFinish() {
-                media_song.start();
+
             }
         }.start();
     }
