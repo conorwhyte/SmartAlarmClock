@@ -135,7 +135,6 @@ public class AlarmActivity extends AppCompatActivity implements SensorEventListe
                 sendBroadcast(myIntent);
                 alarmManager.cancel(pending_intent);
                 //setAlarmText("Alarm canceled");
-                Toast.makeText(getApplicationContext(), "Alarm Cancelled", Toast.LENGTH_SHORT).show();
             }
         });
     }

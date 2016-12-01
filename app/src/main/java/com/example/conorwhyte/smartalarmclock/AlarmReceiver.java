@@ -35,18 +35,16 @@ public class AlarmReceiver extends BroadcastReceiver {
             Toast.makeText(context, "Beep beep, time to move!", Toast.LENGTH_LONG).show();
 
         }
+
         else
         {
-            Toast.makeText(context, "Alarm Stopped", Toast.LENGTH_LONG).show();
-
+            Intent i = new Intent();
+            i.putExtra("Object", user);
+            i.setClassName("com.example.conorwhyte.smartalarmclock", "com.example.conorwhyte.smartalarmclock.CardListActivity");
+            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            context.startActivity(i);
         }
 
-      //  user = (UserDetails)intent.getExtras().getSerializable("Object");
-      //  Intent i = new Intent();
-        //i.putExtra("Object", user);
-        //i.setClassName("com.example.conorwhyte.smartalarmclock", "com.example.conorwhyte.smartalarmclock.CardListActivity");
-        //i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-       // context.startActivity(i);
         Intent service_intent = new Intent(context, RingtonePlayingService.class);
         service_intent.putExtra("extra", state);
         context.startService(service_intent);

@@ -33,8 +33,6 @@ public class StopAlarmActivity extends AppCompatActivity {
         setContentView(R.layout.activity_stop_alarm);
 
         setQuote();
-        media_song = MediaPlayer.create(this, R.raw.killerwhale_resident);
-        media_song.start();
     }
 
     //Sets the daily quote at random
@@ -81,13 +79,11 @@ public class StopAlarmActivity extends AppCompatActivity {
 
     //Used to stop the alarm when button is pressed
     public void stopButton(View view){
-        media_song.stop();
         finish();
     }
 
     //Used to snooze the alarm once the button is pressed
     public void snoozeButton(View view){
-        media_song.stop();
 
         new CountDownTimer(30000, 1000) {       //set snooze time here
             public void onTick(long millisUntilFinished) {
@@ -103,7 +99,7 @@ public class StopAlarmActivity extends AppCompatActivity {
             }
 
             public void onFinish() {
-                media_song.start();
+
             }
         }.start();
     }

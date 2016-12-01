@@ -543,21 +543,21 @@
     </item>
     <item
         is-multidex="true"
+        jar="/Users/padraigmitchell/git/SmartAlarmClock/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="7edbaa59251309bc2cd0e592a74a7d84dba1d85d">
+        <dex dex="/Users/padraigmitchell/git/SmartAlarmClock/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_b189e1ea2a6782f3bb756cd107cfb6b665d74412/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/Users/padraigmitchell/git/SmartAlarmClock/app/build/intermediates/exploded-aar/com.google.firebase/firebase-database-connection/9.8.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
         sha1="5f47ede9561595584dca71104baa0fecb36dda87">
         <dex dex="/Users/padraigmitchell/git/SmartAlarmClock/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-database-connection-9.8.0_fde74bea443deef271519c10b3006234fb4ba711/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/padraigmitchell/git/SmartAlarmClock/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="d6359525d26d60891965b2e975cd711277b03cd3">
-        <dex dex="/Users/padraigmitchell/git/SmartAlarmClock/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_b189e1ea2a6782f3bb756cd107cfb6b665d74412/classes.dex" />
     </item>
     <item
         is-multidex="true"
