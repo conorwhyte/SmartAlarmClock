@@ -23,7 +23,7 @@ public class ViewDetailsActivity extends AppCompatActivity {
 
 
         TextView txt = (TextView) this.findViewById(R.id.textView15);
-        String time = Integer.toString(user.returnTotalTime());
+        String time = Integer.toString(user.getTotalCardTimes());
         txt.setText("Total Time: " + time);
     }
 }

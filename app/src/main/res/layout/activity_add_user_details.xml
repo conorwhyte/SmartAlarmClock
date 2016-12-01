@@ -10,47 +10,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.conorwhyte.smartalarmclock.AddUserDetailsActivity">
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="Card Name"
-        android:ems="10"
-        android:layout_below="@+id/textView11"
-        android:layout_alignEnd="@+id/editText3"
-        android:layout_marginTop="48dp"
-        android:id="@+id/editText4" />
-
-    <Button
-        android:text="ADD"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/editText3"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="60dp"
-        android:id="@+id/button8"
-        android:onClick="addDetails"/>
-
-    <Button
-        android:text="FINISH"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignEnd="@+id/button8"
-        android:layout_marginBottom="32dp"
-        android:id="@+id/button9"
-        android:onClick="sendDetails"/>
-
-    <TextView
-        android:text="Add Card Details:"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="46dp"
-        android:id="@+id/textView11"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
-
-    <EditText
+    <AutoCompleteTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="number"
@@ -59,5 +19,64 @@
         android:id="@+id/editText3"
         android:layout_below="@+id/editText4"
         android:layout_centerHorizontal="true"
-        android:text="0" />
+        android:hint="Duration in Minutes: " />
+
+    <TextView
+        android:text="Add Activity Cards"
+        android:textSize="32sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView11"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <AutoCompleteTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="Activity Name"
+        android:ems="10"
+        android:layout_marginTop="55dp"
+        android:id="@+id/editText4"
+        android:layout_below="@+id/totalTime"
+        android:layout_alignStart="@+id/editText3" />
+
+    <TextView
+        android:hint="0 Minutes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/totalTime"
+        android:layout_below="@+id/activityCount"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp" />
+
+    <TextView
+        android:hint="0 Activities Added"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/activityCount"
+        android:layout_marginTop="11dp"
+        android:layout_below="@+id/textView11"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:text="ADD"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button8"
+        android:onClick="addDetails"
+        android:layout_above="@+id/editText3"
+        android:layout_toEndOf="@+id/activityCount"
+        android:layout_marginStart="15dp" />
+
+    <Button
+        android:text="FINISH"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button9"
+        android:onClick="sendDetails"
+        android:layout_below="@+id/editText3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="43dp" />
+
 </RelativeLayout>

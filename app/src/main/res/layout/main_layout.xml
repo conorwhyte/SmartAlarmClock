@@ -52,4 +52,14 @@
         android:layout_alignStart="@+id/imageView"
         android:layout_marginBottom="29dp"
         android:id="@+id/textView14" />
+
+    <Button
+        android:text="User Details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:onClick="openUserDetails"
+        android:id="@+id/button12" />
+
 </RelativeLayout>

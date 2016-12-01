@@ -15,114 +15,88 @@ import java.util.ArrayList;
 public class UserDetails implements Serializable{
 
     //Possible global variables needed from the user
-    public long punisherContact ;
-    public String punisherMessage ;
 
-    public boolean firstTime = true ;
+    private boolean firstTime = true ;
 
-    public int[] prepTime ;
-    public int totalRepTime ;
-    public Location destination ;
-    public int journeyTime ;
+    private ArrayList<String> cardNames = new ArrayList<String>();
+    private ArrayList<Integer> cardTimes = new ArrayList<Integer>();
+    private Location home;
+    private Location destination;
+    private int journeyTime;
+    private int arrivalHour;
+    private int arrivalMinute;
+    private int alarmHour = 9;
+    private int alarmMinute = 59;
 
+    // add / get cards
+    public void addCard(String name)
+        {this.cardNames.add(name);}
+    public ArrayList<String> getCardNames()
+        {return this.cardNames;}
 
-    public int wakeTimeHour = 9 ;
-    public int wakeTimeMinute = 59 ;
+    // add / get times
+    public void addTime(Integer time)
+        {this.cardTimes.add(time);}
+    public ArrayList<Integer> getCardTimes()
+        {return this.cardTimes;}
 
+    // set / get home location
+    public void setHome(Location home)
+        {this.home = home;}
+    public Location getHome()
+        {return this.home;}
 
-    int count = 0 ;
+    // set / get destination location
+    public void setDestination(Location dest)
+        {this.destination = dest;}
+    public Location getDestination()
+        {return this.destination;}
 
-    public ArrayList<String> cardName;
-    public ArrayList<Integer> cardTime ;
-
-    public void setFirstTime(){
-        firstTime = false ;
-    }
-
-    public void addCount(){
-        count++;
-    }
-
-
-    public String alarmType ;
-    public void chooseAlarmType(int chooseAlarm){
-        switch (chooseAlarm){
-            case 0:
-                alarmType = "normal";
-                break;
-            case 1:
-                alarmType = "movement";
-                break;
-            case 2:
-                alarmType = "puzzle";
-                break;
-            case 3:
-                alarmType = "punisher";
-                break;
-            default :
-                alarmType = "normal";
-                break;
+    // get card count / get total time of all cards
+    public int getCardCount()
+        {if(this.cardNames.isEmpty()){return 0;}
+            return getCardNames().size();}
+    public int getTotalCardTimes()
+        {int total = 0;
+         for(int i = 0; i < getCardTimes().size(); i++)
+            {total += getCardTimes().get(i);}
+         return total;
         }
-    }
 
-    public void setCardWakeTime(ArrayList<Integer> time) {
-        cardTime = time;
-    }
+    // set first time true or false
+    public void setFirstTime(boolean set)
+        {this.firstTime = set ;}
+    public boolean getFirstTime()
+        {return this.firstTime;}
 
-    public void setCardName(ArrayList<String> name) {
-        cardName = name;
-    }
+    // set / get journey time
+    public void setJourneyTime(int time)
+        {this.journeyTime = time;}
+    public int getJourneyTime()
+        {return this.journeyTime;}
 
-    public String getCardName(int i){
-        String name = cardName.get(i);
-        return name ;
-    }
+    // get total time of journey and cards
+    public int getTotalTime()
+        {return getJourneyTime() + getTotalCardTimes();}
 
-    public int getCardTime(int i){
-        if(cardTime == null){
-            return 0 ;
-        }
-        else{
-            int time = cardTime.get(i);
-            totalRepTime = time ;
-            return time ;
-        }
-    }
+    public void setArrivalHour(Integer h)
+        {this.arrivalHour = h;}
+    public int getArrivalHour()
+        {return this.arrivalHour;}
+    public void setArrivalMin(Integer m)
+        {this.arrivalMinute = m;}
+    public int getArrivalMin()
+        {return this.arrivalMinute;}
 
-    public void setNumber(int i ){
-        count = i ;
-    }
+    // set / get alarm hour
+    public void setAlarmHour(Integer h)
+        {this.alarmHour = h;}
+    public int getAlarmHour()
+        {return this.alarmHour;}
 
-    public int numberOfCards(){
-        return count;
-    }
-
-    public void setJourneyTime(int time){
-        journeyTime = time ;
-    }
-
-    public int returnJourneyTime(){
-        return journeyTime;
-    }
-
-
-    public int returnTotalPrepTime(){
-        int sum = 0;
-        for(Integer d : cardTime)
-            sum += d;
-        return sum;
-    }
-
-    public int returnTotalTime(){
-        return journeyTime + returnTotalPrepTime() ;
-    }
-
-    public int getAlarmHour(){
-        return wakeTimeHour ;
-    }
-
-
-    public int getAlarmMin(){
-        return wakeTimeMinute -returnTotalTime() ;
-    }
+    // set / get alarm minute
+    public void setAlarmMinute(Integer m)
+        {this.alarmMinute = m;}
+    public int getAlarmMin()
+        {return this.alarmMinute - getTotalTime();}
 }

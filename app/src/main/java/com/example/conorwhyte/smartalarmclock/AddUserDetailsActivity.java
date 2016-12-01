@@ -8,6 +8,9 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ProgressBar;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -26,6 +29,7 @@ public class AddUserDetailsActivity extends AppCompatActivity {
     ArrayList<String> name = new ArrayList<String>();
     ArrayList<Integer> time = new ArrayList<Integer>();
     int count = 0 ;
+    int totalTime = 0;
 
     UserDetails newUser = new UserDetails();
 
@@ -33,6 +37,13 @@ public class AddUserDetailsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_user_details);
+
+        if(!MainActivity.user.getFirstTime()) // if not first time user
+            {
+                newUser = MainActivity.user;
+                updateProgress(newUser.getCardCount());
+                updateTime(newUser.getTotalTime());
+            }
     }
 
     //add a morning routine
@@ -49,7 +60,10 @@ public class AddUserDetailsActivity extends AppCompatActivity {
         }
         else {
             int timeRequired = Integer.parseInt(editText1.getText().toString());
-            count++ ;
+            count++;
+            int progress = count + newUser.getCardCount();
+            updateProgress(progress);       // updates activity count
+            updateTime(timeRequired);      // update total time
             name.add(morningName);
             time.add(timeRequired);
         }
@@ -60,12 +74,16 @@ public class AddUserDetailsActivity extends AppCompatActivity {
         */
     }
 
-    //finish with the morning routines and go back to menu, sends user object back 
-    public void sendDetails(View view){
-        newUser.setCardWakeTime(time);
-        newUser.setCardName(name);
-        newUser.setNumber(count);
-        newUser.setFirstTime();
+    //finish with the morning routines and go back to menu, sends user object back
+    public void sendDetails(View view)
+    {
+        for(int i = 0; i < time.size(); i++)
+        {
+            newUser.addCard(name.get(i));
+            newUser.addTime(time.get(i));
+        }
+
+        newUser.setFirstTime(false);
 
         Intent i = new Intent(getApplicationContext(), MainActivity.class);
         i.putExtra("Object", newUser);
@@ -79,7 +97,7 @@ public class AddUserDetailsActivity extends AppCompatActivity {
         AlertDialog alertDialog = new AlertDialog.Builder(AddUserDetailsActivity.this).create();
         alertDialog.setTitle("ERROR");
         alertDialog.setMessage("One of the fields have been left empty, please try again."
-                );
+        );
         alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
@@ -91,5 +109,22 @@ public class AddUserDetailsActivity extends AppCompatActivity {
                     }
                 });
         alertDialog.show();
+    }
+
+    public void updateProgress(Integer count)
+    {
+        TextView textView = (TextView) findViewById(R.id.activityCount);
+        textView.setText(count + " Activities");
+
+        return;
+    }
+
+    public void updateTime(Integer time)
+    {
+        totalTime += time;
+        TextView textView = (TextView) findViewById(R.id.totalTime);
+        textView.setText(totalTime + " Minutes Total");
+
+        return;
     }
 }
