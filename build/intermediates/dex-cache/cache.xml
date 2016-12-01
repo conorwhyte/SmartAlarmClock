@@ -223,7 +223,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="75577494bb1bb153ae98b94bd77d9d1831fab8e1">
+        sha1="4e8fba518e2d2a6d8a320d0a119d2e6a008da520">
         <dex dex="/Users/padraigmitchell/git/SmartAlarmClock/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_d45967932b362c73ace98aac9ad8a567c1d0251f/classes.dex" />
     </item>
     <item
@@ -417,15 +417,6 @@
     </item>
     <item
         is-multidex="true"
-        jar="/Users/padraigmitchell/git/SmartAlarmClock/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-clearcut/9.8.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="ee5304fd374e0b4ebf6b42d4037fbfb2c5336511">
-        <dex dex="/Users/padraigmitchell/git/SmartAlarmClock/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-clearcut-9.8.0_d02bedad3c43a87c0fb98b697df4268f02261f91/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="/Users/padraigmitchell/git/SmartAlarmClock/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.8.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
@@ -441,6 +432,15 @@
         revision="24.0.3"
         sha1="ca851be26ff89f5b32cc222cee98139fb3fac830">
         <dex dex="/Users/padraigmitchell/git/SmartAlarmClock/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-auth-9.8.0_5624397daf49fcf379d64c4a768b5a7592160070/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/padraigmitchell/git/SmartAlarmClock/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-clearcut/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="ee5304fd374e0b4ebf6b42d4037fbfb2c5336511">
+        <dex dex="/Users/padraigmitchell/git/SmartAlarmClock/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-clearcut-9.8.0_d02bedad3c43a87c0fb98b697df4268f02261f91/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -547,7 +547,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="7edbaa59251309bc2cd0e592a74a7d84dba1d85d">
+        sha1="1c267e2e3c301435d9fec9ede41eee239deef753">
         <dex dex="/Users/padraigmitchell/git/SmartAlarmClock/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_b189e1ea2a6782f3bb756cd107cfb6b665d74412/classes.dex" />
     </item>
     <item
@@ -624,21 +624,21 @@
     </item>
     <item
         is-multidex="true"
-        jar="/Users/padraigmitchell/git/SmartAlarmClock/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads-lite/9.8.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="e9b2cfdfd59b03643f1e240668275378b96615a8">
-        <dex dex="/Users/padraigmitchell/git/SmartAlarmClock/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-ads-lite-9.8.0_c9c1c8471b7fa656ffc584638a8d95d5f64fb9d0/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="/Users/padraigmitchell/git/SmartAlarmClock/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-analytics-impl/9.8.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
         sha1="50e35ae101a679c4c8ef3dda075b1df9d5d947d9">
         <dex dex="/Users/padraigmitchell/git/SmartAlarmClock/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-analytics-impl-9.8.0_6655614a279ae07c1946fccca6fa8c64dac0d0cf/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/padraigmitchell/git/SmartAlarmClock/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads-lite/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="e9b2cfdfd59b03643f1e240668275378b96615a8">
+        <dex dex="/Users/padraigmitchell/git/SmartAlarmClock/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-ads-lite-9.8.0_c9c1c8471b7fa656ffc584638a8d95d5f64fb9d0/classes.dex" />
     </item>
     <item
         is-multidex="true"

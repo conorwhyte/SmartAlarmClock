@@ -3,6 +3,7 @@ package com.example.conorwhyte.smartalarmclock;
 import android.app.Activity;
 import android.content.Intent;
 import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
@@ -13,26 +14,41 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.appindexing.Action;
+import com.google.android.gms.appindexing.AppIndex;
+import com.google.android.gms.appindexing.Thing;
+import com.google.android.gms.common.api.GoogleApiClient;
+
 /**
  * This is the activity where the card list will be displayed, each card is added in depending on
  * which ones the user entered on inital setup, and can be edited in the menu at any time. Its also in
  * this activity where we set off each other individual alarm to signify its time to start a new activity
  * during the morning.
- *
+ * <p>
  * Created with the help of following tutorial:
  * http://javapapers.com/android/android-cards-list-view/
- *
+ * <p>
  * Author: Conor Whyte
  */
 
 public class CardListActivity extends Activity {
 
     private static final String TAG = "CardListActivity";
-    private CardArrayAdapter cardArrayAdapter;
     private ListView listView;
-    boolean inActivity = true ;
+    private CardArrayAdapter cardArrayAdapter;
+    private int current = 0;                            //alarm
+    public long startTime = System.currentTimeMillis();
 
-    UserDetails user ;
+
+    boolean inActivity = true;
+
+    UserDetails user;
+    /**
+     * ATTENTION: This was auto-generated to implement the App Indexing API.
+     * See https://g.co/AppIndexing/AndroidStudio for more information.
+     */
+    private GoogleApiClient client;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,7 +57,7 @@ public class CardListActivity extends Activity {
 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
-            user = (UserDetails)extras.getSerializable("Object");
+            user = (UserDetails) extras.getSerializable("Object");
         }
 
         listView.addHeaderView(new View(this));
@@ -50,12 +66,12 @@ public class CardListActivity extends Activity {
         cardArrayAdapter = new CardArrayAdapter(getApplicationContext(), R.layout.list_item_card);
 
         for (int i = 0; i < 10; i++) {
-            //Card card = new Card("Card " + (i+1) + " Line 1", "Card " + (i+1) + " Line 2");
-            //cardArrayAdapter.add(card);
+            //  Card card = new Card("Card " + (i+1) + " Line 1", "Card " + (i+1) + " Line 2");
+            // cardArrayAdapter.add(card);
         }
         final int[] images = {R.drawable.breakfast, R.drawable.shower, R.drawable.suit, R.drawable.food, R.drawable.car};
 
-        if(user != null){
+        if (user != null) {
             for (int i = 0; i < user.numberOfCards(); i++) {
 
                 String name1 = user.getCardName(i);
@@ -89,6 +105,9 @@ public class CardListActivity extends Activity {
 
         startTimer();
 
+        // ATTENTION: This was auto-generated to implement the App Indexing API.
+        // See https://g.co/AppIndexing/AndroidStudio for more information.
+        client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
 
     //Timer methods used to indicate when the alarm should go off next
@@ -102,9 +121,8 @@ public class CardListActivity extends Activity {
         timerHandler.removeCallbacks(timerRunnable);
     }
 
-    long startTime = 0;
-    int localTimer ;
-    long localSecond ;
+    int localTimer;
+    long localSecond;
     Handler timerHandler = new Handler();
     Runnable timerRunnable = new Runnable() {
         public void run() {
@@ -113,44 +131,107 @@ public class CardListActivity extends Activity {
             int minutes = seconds / 60;
             seconds = seconds % 60;
 
-            localSecond = seconds ;
-            localTimer = minutes ;
+
+            localSecond = seconds;
+            localTimer = minutes;
             timerHandler.postDelayed(this, 500);
             checkTimer();
         }
     };
 
     //Method used to set off each individual alarm based on the users input
-    boolean[] alarmGone = {false, false, false};
-    public void checkTimer(){
-        int time ;
-        if (user != null){
-            time = user.getCardTime(0) ;
-        }
-        else {
-            time = 0 ;
+    boolean last_alarm = false;
+
+    public void checkTimer() {
+        int time;
+        if (user != null) {
+            time = user.getCardTime(current);
+        } else {
+            time = 0;
         }
 
-        if (localSecond == time && alarmGone[0] == false){ // Alert One
+        String currentmins = Integer.toString(localTimer);
+
+        Toast.makeText(getApplicationContext(),
+                currentmins, Toast.LENGTH_LONG).show();
+        //  if(current<user.numberOfCards()){
+        if (localTimer == time && !last_alarm) { // Alert One
             Intent intent = new Intent(this, StopAlarmActivity.class);
-            alarmGone[0] = true ;
+            current++;                              //change time being checked
+            if (current == user.numberOfCards() - 1)
+            {
+                last_alarm = true;
+            }
+            refreshCards(current);
+            startTime = System.currentTimeMillis();
             startActivity(intent);
 
-
-
         }
-
-        if (localSecond == time && alarmGone[0] == true && alarmGone[1] == false){ // Alert Two
+        else if (localTimer == time && last_alarm) { // Alert Two
             Intent intent = new Intent(this, StopAlarmActivity.class);
-            alarmGone[1] = true ;
-            //startActivity(intent);
-            Toast.makeText(getApplicationContext(),
-                    "Alarm 2", Toast.LENGTH_LONG).show();
+            current++;
+             //refreshCards(-1);                      //return initial layout
+            listView.setAdapter(cardArrayAdapter);
+            startActivity(intent);
+            stopTimer();                            //old timer for this card
+
         }
     }
 
-    public void changeColour(){
-        FrameLayout layout =(FrameLayout) findViewById(R.id.frame);
-         layout.setBackgroundResource(R.drawable.card_state_pressed);
+    public void changeColour() {
+        FrameLayout layout = (FrameLayout) findViewById(R.id.frame);
+        layout.setBackgroundResource(R.drawable.card_state_pressed);
+    }
+
+    public void refreshCards(int position) {
+        cardArrayAdapter = new CardArrayAdapter(getApplicationContext(), R.layout.list_item_card);
+        final int[] images = {R.drawable.breakfast, R.drawable.shower, R.drawable.suit, R.drawable.food, R.drawable.car};
+        if (position < user.numberOfCards()) {
+            for (int i = position; i < user.numberOfCards(); i++) {
+
+                String name1 = user.getCardName(i);
+                String time1 = Integer.toString(user.getCardTime(i));
+                Card card = new Card(name1, time1, images[1]);
+                cardArrayAdapter.add(card);
+            }
+            listView.setAdapter(cardArrayAdapter);
+        }
+
+    }
+
+    /**
+     * ATTENTION: This was auto-generated to implement the App Indexing API.
+     * See https://g.co/AppIndexing/AndroidStudio for more information.
+     */
+    public Action getIndexApiAction() {
+        Thing object = new Thing.Builder()
+                .setName("CardList Page") // TODO: Define a title for the content shown.
+                // TODO: Make sure this auto-generated URL is correct.
+                .setUrl(Uri.parse("http://[ENTER-YOUR-URL-HERE]"))
+                .build();
+        return new Action.Builder(Action.TYPE_VIEW)
+                .setObject(object)
+                .setActionStatus(Action.STATUS_TYPE_COMPLETED)
+                .build();
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        // ATTENTION: This was auto-generated to implement the App Indexing API.
+        // See https://g.co/AppIndexing/AndroidStudio for more information.
+        client.connect();
+        AppIndex.AppIndexApi.start(client, getIndexApiAction());
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+
+        // ATTENTION: This was auto-generated to implement the App Indexing API.
+        // See https://g.co/AppIndexing/AndroidStudio for more information.
+        AppIndex.AppIndexApi.end(client, getIndexApiAction());
+        client.disconnect();
     }
 }
