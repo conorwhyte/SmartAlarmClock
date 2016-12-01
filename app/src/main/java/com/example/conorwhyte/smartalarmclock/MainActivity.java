@@ -7,6 +7,7 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -21,6 +22,8 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
+
 import java.util.ArrayList;
 import java.util.Calendar;
 
@@ -28,25 +31,49 @@ public class MainActivity extends AppCompatActivity {
 
     UserDetails user;
 
+    public static SharedPreferences mPrefs;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_layout);
+
+        boolean newUser = true;             // first time user or no
+
+        mPrefs = getPreferences(MODE_PRIVATE);
+
+        Gson gson = new Gson();
+        String json = mPrefs.getString("UserDetails", "");  // try to get UserDetails from memory
+
+        if(!json.isEmpty())         // there is a UserDetails stored in memory
+        {
+            Toast.makeText(getApplicationContext(), "Welcome Back", Toast.LENGTH_LONG).show();
+            // get user
+            user = gson.fromJson(json, UserDetails.class);     // load UserDetails into user object
+            user.firstTime = false;
+            newUser = false;
+        }
+
+        else // empty json string, this is the first time
+        {
+            Toast.makeText(getApplicationContext(), "First Time User Welcome", Toast.LENGTH_LONG).show();
+            user = new UserDetails();
+            user.firstTime = true;
+        }
 
         //startTimer();
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             user = (UserDetails)extras.getSerializable("Object");
         }
-        else{
+        else if(newUser){
             user = new UserDetails();
         }
 
-        if(user.firstTime == true){
+        if(user.firstTime == true && newUser){
             //Open PopUp
             user.setFirstTime();
             popUp();
-
         }
 
 
@@ -54,24 +81,24 @@ public class MainActivity extends AppCompatActivity {
         String num = Integer.toString(user.numberOfCards());
         txt.setText(num);
 
-/*
-        if(user != null){
-            String name = Integer.toString(user.getCardTime(0));
-            txt.setText(name);
-        }
-        else{
-            txt.setText("ERROR");
-        }
-        */
+        // Add UserDetails object to memory below
+
+        SharedPreferences.Editor prefsEditor = MainActivity.mPrefs.edit();
+        gson = new Gson();
+        json = gson.toJson(user);
+        prefsEditor.putString("UserDetails", json);
+        prefsEditor.commit();
+
+        Toast.makeText(getApplicationContext(), "Data saved", Toast.LENGTH_LONG).show();
     }
 
     public void popUp() {
         final Intent intent = new Intent(this, AddUserDetailsActivity.class);
         AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
         alertDialog.setTitle("First Time User");
-        alertDialog.setMessage("Please fill in some details about your morning!\n" +
-                "Please turn location services on, " +
-                ", or being in a location where your GPS location cannot be found" +
+        alertDialog.setMessage("Please fill in some details about your morning routine!\n" +
+                "Please turn location services on," +
+                " or being in a location where your GPS location cannot be found" +
                 " you can enter your location manually.");
         alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
                 new DialogInterface.OnClickListener() {
