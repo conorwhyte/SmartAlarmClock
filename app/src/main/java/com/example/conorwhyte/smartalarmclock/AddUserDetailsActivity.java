@@ -37,6 +37,13 @@ public class AddUserDetailsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_user_details);
+
+        if(!MainActivity.user.getFirstTime()) // if not first time user
+            {
+                newUser = MainActivity.user;
+                updateProgress(newUser.getCardCount());
+                updateTime(newUser.getTotalTime());
+            }
     }
 
     //add a morning routine
@@ -106,7 +113,6 @@ public class AddUserDetailsActivity extends AppCompatActivity {
 
     public void updateProgress(Integer count)
     {
-
         TextView textView = (TextView) findViewById(R.id.activityCount);
         textView.setText(count + " Activities");
 
