@@ -2,6 +2,13 @@ package com.example.conorwhyte.smartalarmclock;
 
 /**
  * Created by Paul Ledwith on 15/11/2016.
+ *
+ * This class gets the users prefrences for a start location,
+ * an end location, and the travel mode and makes a request
+ * to google for a JSON file, from which we send to the
+ * DirectionJSONParser Class. This returns the distance and
+ * the duration. These are then printed to the screen and
+ * passed to other methods.
  */
 
 
@@ -48,7 +55,6 @@ import static android.support.v7.media.MediaControlIntent.EXTRA_MESSAGE;
 
 
 /*
-
                 RETURNSECONDS NEEDS AN EDIT
             NEEDS INTERNAL STORAGE OF ALARM TIME
 */
@@ -68,9 +74,12 @@ public class DistanceActivity extends FragmentActivity implements android.locati
     public Criteria criteria;
     public String bestProvider;
     public LatLng destination;
+    int travelMins;
+    int travelHours;
 
     UserDetails user ;
 
+    //waits for a button press to start actvity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -142,13 +151,7 @@ public class DistanceActivity extends FragmentActivity implements android.locati
 
     }
 
-    public void sendMessage(View view) {
-        String pass = String.valueOf(latitude);
-        Toast.makeText(this, pass, Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent(DistanceActivity.this, MapDirections.class);
-        DistanceActivity.this.startActivity(intent);
-    }
-
+    // Gets the latitude and longitude from a string address
     public LatLng getLocationFromAddress(String strAddress) {
 
         Geocoder coder = new Geocoder(this);
@@ -173,11 +176,10 @@ public class DistanceActivity extends FragmentActivity implements android.locati
     }
 
     /*
-
                 RETURNSECONDS NEEDS AN EDIT
             NEEDS INTERNAL STORAGE OF ALARM TIME
      */
-
+    // gets the seconds from epoch time
     public long returnSeconds() {
         Calendar calendar1 = Calendar.getInstance();
         Calendar calendar2 = Calendar.getInstance();
@@ -199,6 +201,7 @@ public class DistanceActivity extends FragmentActivity implements android.locati
         return seconds;
     }
 
+    // method for putting the url together
     private String getDirectionsUrl(LatLng loca, LatLng dest, String mode) {
         String str_mode = "";
         String str_origin = "";
@@ -236,9 +239,7 @@ public class DistanceActivity extends FragmentActivity implements android.locati
         return url;
     }
 
-    /**
-     * A method to download json data from url
-     */
+     // A method to download json data from url
     private String downloadUrl(String strUrl) throws IOException {
         String data = "";
         InputStream iStream = null;
@@ -281,7 +282,7 @@ public class DistanceActivity extends FragmentActivity implements android.locati
         //...............
         return true;
     }
-
+    // gets current location
     protected void getLocation() {
         if (isLocationEnabled(DistanceActivity.this)) {
             locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
@@ -322,6 +323,7 @@ public class DistanceActivity extends FragmentActivity implements android.locati
         }
     }
 
+    //asks for location services permission
     @Override
     public void onRequestPermissionsResult(int requestCode,
                                            String permissions[], int[] grantResults) {
@@ -354,6 +356,7 @@ public class DistanceActivity extends FragmentActivity implements android.locati
         super.onPause();
     }
 
+    // updates the users location
     @Override
     public void onLocationChanged(Location location) {
         if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION)
@@ -420,8 +423,7 @@ public class DistanceActivity extends FragmentActivity implements android.locati
     /**
      * A class to parse the Google Places in JSON format
      */
-    int travelMins ;
-    int travelHours ;
+
 
     private class ParserTask extends AsyncTask<String, Integer, List<List<HashMap<String, String>>>> {
         JSONObject jObject;

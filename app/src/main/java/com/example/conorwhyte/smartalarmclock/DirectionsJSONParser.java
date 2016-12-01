@@ -2,7 +2,8 @@ package com.example.conorwhyte.smartalarmclock;
 
 /**
  * Created by Paul Ledwith on 11/11/2016.
- */
+ * Receives a JSONObject and returns a list of lists containing latitude and longitude
+*/
 
 
 import java.util.ArrayList;
@@ -17,7 +18,6 @@ import com.google.android.gms.maps.model.LatLng;
 
 public class DirectionsJSONParser {
 
-    /** Receives a JSONObject and returns a list of lists containing latitude and longitude */
     public List<List<HashMap<String,String>>> parse(JSONObject jObject){
 
         List<List<HashMap<String, String>>> routes = new ArrayList<List<HashMap<String,String>>>() ;
@@ -82,10 +82,6 @@ public class DirectionsJSONParser {
         return routes;
     }
 
-    /**
-     * Method to decode polyline points
-     * Courtesy : jeffreysambells.com/2010/05/27/decoding-polylines-from-google-maps-direction-api-with-java
-     * */
     private List<LatLng> decodePoly(String encoded) {
 
         List<LatLng> poly = new ArrayList<LatLng>();
