@@ -10,26 +10,6 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.conorwhyte.smartalarmclock.AddUserDetailsActivity">
 
-    <Button
-        android:text="ADD"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/editText3"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="60dp"
-        android:id="@+id/button8"
-        android:onClick="addDetails"/>
-
-    <Button
-        android:text="FINISH"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignEnd="@+id/button8"
-        android:layout_marginBottom="32dp"
-        android:id="@+id/button9"
-        android:onClick="sendDetails"/>
-
     <AutoCompleteTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -78,5 +58,25 @@
         android:layout_marginTop="11dp"
         android:layout_below="@+id/textView11"
         android:layout_centerHorizontal="true" />
+
+    <Button
+        android:text="ADD"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button8"
+        android:onClick="addDetails"
+        android:layout_above="@+id/editText3"
+        android:layout_toEndOf="@+id/activityCount"
+        android:layout_marginStart="15dp" />
+
+    <Button
+        android:text="FINISH"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button9"
+        android:onClick="sendDetails"
+        android:layout_below="@+id/editText3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="43dp" />
 
 </RelativeLayout>

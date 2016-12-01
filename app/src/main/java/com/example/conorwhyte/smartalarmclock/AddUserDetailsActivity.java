@@ -61,7 +61,7 @@ public class AddUserDetailsActivity extends AppCompatActivity {
         else {
             int timeRequired = Integer.parseInt(editText1.getText().toString());
             count++;
-            int progress = count;
+            int progress = count + newUser.getCardCount();
             updateProgress(progress);       // updates activity count
             updateTime(timeRequired);      // update total time
             name.add(morningName);
