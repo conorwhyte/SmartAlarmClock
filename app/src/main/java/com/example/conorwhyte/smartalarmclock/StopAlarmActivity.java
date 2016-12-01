@@ -26,8 +26,8 @@ public class StopAlarmActivity extends AppCompatActivity {
 
         setQuote();
 
-        media_song = MediaPlayer.create(this, R.raw.killerwhale_resident);
-        media_song.start();
+      //  media_song = MediaPlayer.create(this, R.raw.killerwhale_resident);
+       // media_song.start();
 
     }
 

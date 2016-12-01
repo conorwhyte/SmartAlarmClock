@@ -44,8 +44,8 @@ public class PunisherActivity extends AppCompatActivity implements LocationListe
         checkSMSPermissions();
         checkPermissions();
 
-        media_song = MediaPlayer.create(this, R.raw.killerwhale_resident);
-        media_song.start();
+        //media_song = MediaPlayer.create(this, R.raw.killerwhale_resident);
+        //media_song.start();
 
         startLocationTracker();
         final TextView mTextField = (TextView) findViewById(R.id.textView3);
