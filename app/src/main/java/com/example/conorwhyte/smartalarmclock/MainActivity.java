@@ -24,12 +24,9 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 
-import java.util.ArrayList;
-import java.util.Calendar;
-
 public class MainActivity extends AppCompatActivity {
 
-    UserDetails user;
+    static UserDetails user;
 
     public static SharedPreferences mPrefs;
 
@@ -50,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "Welcome Back", Toast.LENGTH_LONG).show();
             // get user
             user = gson.fromJson(json, UserDetails.class);     // load UserDetails into user object
-            user.firstTime = false;
+            user.setFirstTime(false);
             newUser = false;
         }
 
@@ -58,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         {
             Toast.makeText(getApplicationContext(), "First Time User Welcome", Toast.LENGTH_LONG).show();
             user = new UserDetails();
-            user.firstTime = true;
+            user.setFirstTime(true);
         }
 
         //startTimer();
@@ -70,16 +67,16 @@ public class MainActivity extends AppCompatActivity {
             user = new UserDetails();
         }
 
-        if(user.firstTime == true && newUser){
+        if(user.getFirstTime() == true && newUser){
             //Open PopUp
-            user.setFirstTime();
+            user.setFirstTime(false);
             popUp();
         }
 
 
         TextView txt = (TextView) this.findViewById(R.id.textView14);
-        String num = Integer.toString(user.numberOfCards());
-        txt.setText(num);
+
+        txt.setText(Integer.toString(user.getCardCount()));
 
         // Add UserDetails object to memory below
 

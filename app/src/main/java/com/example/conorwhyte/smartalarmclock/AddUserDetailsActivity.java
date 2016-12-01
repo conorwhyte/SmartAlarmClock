@@ -67,12 +67,16 @@ public class AddUserDetailsActivity extends AppCompatActivity {
         */
     }
 
-    //finish with the morning routines and go back to menu, sends user object back 
-    public void sendDetails(View view){
-        newUser.setCardWakeTime(time);
-        newUser.setCardName(name);
-        newUser.setNumber(count);
-        newUser.setFirstTime();
+    //finish with the morning routines and go back to menu, sends user object back
+    public void sendDetails(View view)
+    {
+        for(int i = 0; i < time.size(); i++)
+        {
+            newUser.addCard(name.get(i));
+            newUser.addTime(time.get(i));
+        }
+
+        newUser.setFirstTime(false);
 
         Intent i = new Intent(getApplicationContext(), MainActivity.class);
         i.putExtra("Object", newUser);
@@ -86,7 +90,7 @@ public class AddUserDetailsActivity extends AppCompatActivity {
         AlertDialog alertDialog = new AlertDialog.Builder(AddUserDetailsActivity.this).create();
         alertDialog.setTitle("ERROR");
         alertDialog.setMessage("One of the fields have been left empty, please try again."
-                );
+        );
         alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {

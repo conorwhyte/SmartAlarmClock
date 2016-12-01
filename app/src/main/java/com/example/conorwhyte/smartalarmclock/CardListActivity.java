@@ -56,10 +56,10 @@ public class CardListActivity extends Activity {
         final int[] images = {R.drawable.breakfast, R.drawable.shower, R.drawable.suit, R.drawable.food, R.drawable.car};
 
         if(user != null){
-            for (int i = 0; i < user.numberOfCards(); i++) {
+            for (int i = 0; i < user.getCardCount(); i++) {
 
-                String name1 = user.getCardName(i);
-                String time1 = Integer.toString(user.getCardTime(i));
+                String name1 = user.getCardNames().get(i);
+                String time1 = Integer.toString(user.getCardTimes().get(i));
                 Card card = new Card(name1, time1, images[1]);
                 cardArrayAdapter.add(card);
             }
@@ -133,7 +133,7 @@ public class CardListActivity extends Activity {
     public void checkTimer(){
         int time ;
         if (user != null){
-            time = user.getCardTime(0) ;
+            time = user.getCardTimes().get(0) ;
         }
         else {
             time = 0 ;
