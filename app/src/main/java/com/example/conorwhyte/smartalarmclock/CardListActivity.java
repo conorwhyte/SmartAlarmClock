@@ -119,7 +119,15 @@ public class CardListActivity extends Activity {
             checkTimer();
         }
     };
-
+/*
+    // starts google maps with direction to location
+    public void startMap() {
+        String pass = String.valueOf();             //get value of location from the database
+        Toast.makeText(this, pass, Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(CardListActivity.this, MapDirections.class);
+        CardListActivity.this.startActivity(intent);
+    }
+*/
     //Method used to set off each individual alarm based on the users input
     boolean[] alarmGone = {false, false, false};
     public void checkTimer(){
