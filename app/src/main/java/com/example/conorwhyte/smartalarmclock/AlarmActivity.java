@@ -85,29 +85,34 @@ public class AlarmActivity extends AppCompatActivity implements SensorEventListe
             @Override
             public void onClick(View v) {
 
+                final int hour = alarmTimePicker.getHour();
+                final int minute = alarmTimePicker.getMinute();
+
                 calendar.set(Calendar.HOUR_OF_DAY, alarmTimePicker.getHour());
                 calendar.set(Calendar.MINUTE, alarmTimePicker.getMinute());
-                               final int hour ;
-                                final int minute ;
-                                if(user.getAlarmHour() != -1){
-                                        hour = user.getAlarmHour();
-                                        minute = user.getAlarmMin();
-                                    }
-                                else{
-                                        hour = alarmTimePicker.getHour();
-                                        minute = alarmTimePicker.getMinute();
-                                    }
-                String minute_string = String.valueOf(minute);
-                String hour_string = String.valueOf(hour);
-                Boolean pm = false;
-                String alarmtext;
 
-                if (minute < 10) {minute_string = "0" + String.valueOf(minute);}
-                if (hour > 12) {hour_string = String.valueOf(hour - 12); pm = true;}
-                if (hour == 12) {pm = true;}
+                user.setArrivalHour(hour);      // set desired arrival hour and minutes
+                user.setArrivalMin(minute);
+
+                user.setAlarm();                // call set alarm after getting arrival time
+
+                String minute_string = String.valueOf(user.getAlarmMin());
+                String hour_string = String.valueOf(user.getAlarmHour());
+
+                Boolean pm = false;
+
+                if (user.getAlarmMin() < 10) {minute_string = "0" + minute_string;}
+                if (user.getAlarmHour() > 12) {hour_string = String.valueOf(user.getAlarmHour() - 12); pm = true;}
+                if (user.getAlarmHour() == 12) {pm = true;}
+                if (user.getAlarmHour() == 24 ||
+                        user.getAlarmHour() == 0) {user.setAlarmHour(0); pm = false;}
 
                 if(pm){minute_string += " pm";}
                 else {minute_string += " am";}
+
+                String alarmtext = hour_string + ":" + minute_string;
+
+                Toast.makeText(getApplicationContext(), "Alarm set for " + alarmtext , Toast.LENGTH_SHORT).show();
 
                 Bundle extras = new Bundle();
                 extras.putSerializable("Object", user);
@@ -116,15 +121,13 @@ public class AlarmActivity extends AppCompatActivity implements SensorEventListe
                 pending_intent = PendingIntent.getBroadcast(AlarmActivity.this, 0, myIntent, PendingIntent.FLAG_UPDATE_CURRENT);
                 alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pending_intent);
 
-                alarmtext = hour_string + ":" + minute_string;
-
-                Toast.makeText(getApplicationContext(), "Alarm set for " + alarmtext , Toast.LENGTH_SHORT).show();
-
             }
 
         });
 
         Button stop_alarm= (Button) findViewById(R.id.stop_alarm);
+
+        Button reset_alarm= (Button) findViewById(R.id.resetAlarm);
 
         stop_alarm.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -135,6 +138,16 @@ public class AlarmActivity extends AppCompatActivity implements SensorEventListe
                 sendBroadcast(myIntent);
                 alarmManager.cancel(pending_intent);
                 //setAlarmText("Alarm canceled");
+            }
+        });
+
+        reset_alarm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                user.setArrivalMin(0);
+                user.setArrivalHour(0);
+                user.setAlarm();     // reset alarm
+                Toast.makeText(getApplicationContext(), "Alarm reset" , Toast.LENGTH_SHORT).show();
             }
         });
     }

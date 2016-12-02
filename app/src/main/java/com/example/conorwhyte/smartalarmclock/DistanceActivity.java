@@ -239,7 +239,7 @@ public class DistanceActivity extends FragmentActivity implements android.locati
         return url;
     }
 
-     // A method to download json data from url
+    // A method to download json data from url
     private String downloadUrl(String strUrl) throws IOException {
         String data = "";
         InputStream iStream = null;

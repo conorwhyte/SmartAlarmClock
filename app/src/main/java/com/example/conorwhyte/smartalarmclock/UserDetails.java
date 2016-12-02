@@ -1,6 +1,9 @@
 package com.example.conorwhyte.smartalarmclock;
 
+import android.content.Context;
 import android.location.Location;
+import android.widget.Toast;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 
@@ -25,8 +28,8 @@ public class UserDetails implements Serializable{
     private int journeyTime;
     private int arrivalHour;
     private int arrivalMinute;
-    private int alarmHour = 9;
-    private int alarmMinute = 59;
+    private int alarmHour = -1;
+    private int alarmMinute = -1;
 
     // add / get cards
     public void addCard(String name)
@@ -104,5 +107,22 @@ public class UserDetails implements Serializable{
     public void setAlarmMinute(Integer m)
         {this.alarmMinute = m;}
     public int getAlarmMin()
-        {return this.alarmMinute - getTotalTime();}
+        {return this.alarmMinute;}
+
+    public void setAlarm()
+    {
+        int m = getArrivalMin();
+        int h = getArrivalHour();
+
+        m -= getTotalTime();    // get minutes when
+
+        while(m < 0)        // in case we have a lot of activities
+        {
+            m += 60;        // increase minutes by an hour
+            h -= 1;         // decrease hour by 1
+        }
+
+        setAlarmMinute(m);
+        setAlarmHour(h);
+    }
 }

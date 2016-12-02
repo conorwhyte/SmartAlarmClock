@@ -117,7 +117,6 @@ public class MainActivity extends AppCompatActivity {
     public void openDirection(View view){
         Intent intent = new Intent(this, DistanceActivity.class);
         intent.putExtra("Object", user);
-        finish();
         startActivity(intent);
     }
 
