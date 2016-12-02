@@ -1,12 +1,20 @@
 package com.example.conorwhyte.smartalarmclock;
 
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.location.Location;
 import android.location.LocationManager;
 import android.media.MediaPlayer;
 import android.os.CountDownTimer;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -16,6 +24,7 @@ import android.widget.TextView;
 import com.google.android.gms.maps.model.LatLng;
 
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 import java.util.Random;
 
 /**
@@ -25,16 +34,28 @@ import java.util.Random;
  * Author: Conor Whyte
  */
 
-public class StopAlarmActivity extends AppCompatActivity {
+public class StopAlarmActivity extends AppCompatActivity implements SensorEventListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stop_alarm);
+
+        sensorMan = (SensorManager) getSystemService(SENSOR_SERVICE);
+        accelerometer = sensorMan.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+        mAccel = 0.00f;
+        mAccelCurrent = SensorManager.GRAVITY_EARTH;
+        mAccelLast = SensorManager.GRAVITY_EARTH;
+
+        if(isMovementEnough() == true){
+            stopAlarm();
+        }
+
         setQuote();
         Intent service_intent = new Intent(getApplicationContext(), RingtonePlayingService.class);
         service_intent.putExtra("extra", "yes");
         getApplicationContext().startService(service_intent);
+
 
     }
 
@@ -80,6 +101,13 @@ public class StopAlarmActivity extends AppCompatActivity {
 
     }
 
+    public void stopAlarm(){
+        Intent service_intent = new Intent(getApplicationContext(), RingtonePlayingService.class);
+        service_intent.putExtra("extra", "no");
+        getApplicationContext().startService(service_intent);
+        finish();
+    }
+
     //Used to stop the alarm when button is pressed
     public void stopButton(View view){
         Intent service_intent = new Intent(getApplicationContext(), RingtonePlayingService.class);
@@ -87,6 +115,30 @@ public class StopAlarmActivity extends AppCompatActivity {
         getApplicationContext().startService(service_intent);
         finish();
     }
+
+    public void pushNotification(){
+        Intent notificationIntent = new Intent(Intent.ACTION_VIEW);
+        PendingIntent contentIntent = PendingIntent.getActivity(StopAlarmActivity.this, 0, notificationIntent, 0);
+        Intent intent = new Intent(this, StopAlarmActivity.class);
+        PendingIntent pi = PendingIntent.getActivity(this, 0, intent, 0);
+
+        Notification notification = new NotificationCompat.Builder(this)
+                .setCategory(Notification.CATEGORY_PROMO)
+                .setContentTitle("Morning Manager")
+                .setContentText("Its Time to Start")
+                .setSmallIcon(R.drawable.car)
+                .setAutoCancel(true)
+                .setVisibility(1)
+                .addAction(android.R.drawable.ic_lock_idle_alarm, "Edit Activity", pi)
+                .setContentIntent(pi)
+                .setPriority(Notification.PRIORITY_HIGH)
+                .setVibrate(new long[]{1000, 1000, 1000, 1000, 1000}).build();
+        NotificationManager notificationManager =
+                (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        notificationManager.notify(1, notification);
+
+    }
+
 
     //Used to snooze the alarm once the button is pressed
     public void snoozeButton(View view){
@@ -109,4 +161,76 @@ public class StopAlarmActivity extends AppCompatActivity {
             }
         }.start();
     }
+
+
+    private SensorManager sensorMan;
+    private Sensor accelerometer;
+    private float[] mGravity;
+    private float mAccel;
+    private float mAccelCurrent;
+    private float mAccelLast;
+
+    public void onResume() {
+        super.onResume();
+        sensorMan.registerListener(this, accelerometer, SensorManager.SENSOR_DELAY_UI);
+    }
+
+    protected void onPause() {
+        super.onPause();
+        sensorMan.unregisterListener(this);
+    }
+
+    private boolean isShaking = false; //detect is accelerometer is in use
+
+    public void onSensorChanged(SensorEvent event) {
+        if (event.sensor.getType() == Sensor.TYPE_ACCELEROMETER) {
+            mGravity = event.values.clone();
+            // Shake detection
+            float x = mGravity[0];
+            float y = mGravity[1];
+            float z = mGravity[2];
+            mAccelLast = mAccelCurrent;
+            mAccelCurrent = (float) Math.sqrt(x * x + y * y + z * z);
+            float delta = mAccelCurrent - mAccelLast;
+            mAccel = mAccel * 0.9f + delta;
+
+            detectSignificantMovement(mAccel);
+            //this should be changed with a more accurate set of data in the future
+        }
+    }
+
+    @Override
+    public void onAccuracyChanged(Sensor sensor, int accuracy) {
+
+    }
+
+    ArrayList<Float> arrayAccel = new ArrayList<Float>();
+    public void detectSignificantMovement(float currentAcceleration) {
+        double minShake = 3.0;
+
+        if (currentAcceleration > minShake) {
+            isShaking = true;
+        } else if (currentAcceleration <= minShake) {
+            //isShaking = false ;
+        }
+        arrayAccel.add(currentAcceleration);
+    }
+
+    public boolean isMovementEnough() {
+        boolean check = false;
+        int count = 0;
+
+        for (Float f : arrayAccel) {
+            if (f > 3.0) {   //min shake required for movement
+                count++;
+            }
+        }
+        if (count > 30) {    //num of shakes of a minRequirement needed for "walking" to be detected
+            check = true;
+        } else {
+            check = false;
+        }
+        return check;
+    }
+
 }
