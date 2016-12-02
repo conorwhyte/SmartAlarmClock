@@ -5,21 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.example.conorwhyte.smartalarmclock.MainActivity">
-
-    <android.support.design.widget.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/AppTheme">
-
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme" />
-
-    </android.support.design.widget.AppBarLayout>
+    tools:context="com.example.conorwhyte.smartalarmclock.MainActivity"
+    android:background="@drawable/timebackground">
 
     <include layout="@layout/content_main"
         android:layout_width="match_parent"

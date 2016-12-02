@@ -2,13 +2,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DistanceActivity" >
+    tools:context=".DistanceActivity"
+    android:background="@drawable/distancebackground"
+    >
 
     <TextView
         android:id="@+id/tv_distance_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/hello_world"
+        android:textColor="#FFFFFF"
         android:layout_alignParentTop="true" />
 
     <Button
@@ -25,6 +28,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/autocomplete"
         android:hint="Leave Blank to use current location"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
         android:layout_below="@+id/tv_distance_time"
         android:layout_alignParentStart="true" />
 
@@ -33,6 +38,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/autocomplete2"
         android:hint="Traveling to..."
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
         android:layout_below="@+id/autocomplete"
         android:layout_alignParentStart="true" />
 
@@ -46,28 +53,36 @@
         android:layout_marginEnd="13dp">
         <RadioButton
             android:text="Driving"
+            android:textColor="#FFFFFF"
             android:checked="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="17dp"
+            android:buttonTint="#08AD00"
             android:id="@+id/radioButton1" />
 
         <RadioButton
             android:text="Cycling"
+            android:textColor="#FFFFFF"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:buttonTint="#08AD00"
             android:id="@+id/radioButton2" />
 
         <RadioButton
             android:text="Walking"
+            android:textColor="#FFFFFF"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:buttonTint="#08AD00"
             android:id="@+id/radioButton3" />
 
         <RadioButton
             android:text="Public Transport"
+            android:textColor="#FFFFFF"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:buttonTint="#08AD00"
             android:id="@+id/radioButton4" />
     </RadioGroup>
 

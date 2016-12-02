@@ -8,7 +8,9 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.conorwhyte.smartalarmclock.AddUserDetailsActivity">
+    android:background="@drawable/bed"
+    tools:context="com.example.conorwhyte.smartalarmclock.AddUserDetailsActivity"
+    >
 
     <AutoCompleteTextView
         android:layout_width="wrap_content"
@@ -19,10 +21,15 @@
         android:id="@+id/editText3"
         android:layout_below="@+id/editText4"
         android:layout_centerHorizontal="true"
+        android:textStyle="bold"
+        android:textColorHint="#FFFFFF"
+        android:textColor="#FFFFFF"
         android:hint="Duration in Minutes: " />
 
     <TextView
         android:text="Add Activity Cards"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
         android:textSize="32sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -35,6 +42,9 @@
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:hint="Activity Name"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        android:textStyle="bold"
         android:ems="10"
         android:layout_marginTop="55dp"
         android:id="@+id/editText4"
@@ -43,6 +53,9 @@
 
     <TextView
         android:hint="0 Minutes"
+        android:textColorHint="#FFFFFF"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/totalTime"
@@ -52,6 +65,9 @@
 
     <TextView
         android:hint="0 Activities Added"
+        android:textColorHint="#FFFFFF"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/activityCount"

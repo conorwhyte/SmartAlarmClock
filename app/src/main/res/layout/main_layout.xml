@@ -2,7 +2,19 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/tempbackground"><![CDATA[
+    >
+
+    ]]>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/food2"
+        android:layout_alignTop="@+id/imageView"
+        android:layout_toEndOf="@+id/button10"
+        android:id="@+id/imageView3" />
 
     <ImageView
         android:layout_width="wrap_content"
@@ -13,8 +25,17 @@
         android:layout_marginTop="109dp"
         android:id="@+id/imageView" />
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/shower"
+        android:layout_alignTop="@+id/imageView2"
+        android:layout_toStartOf="@+id/imageView2"
+        android:layout_marginEnd="19dp"
+        android:id="@+id/imageView4" />
+
     <Button
-        android:text="Open DIStance"
+        android:text="Open Distance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
@@ -25,6 +46,8 @@
 
     <TextView
         android:text="Welcome to Morning Manager"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/imageView"
@@ -54,12 +77,44 @@
         android:id="@+id/textView14" />
 
     <Button
-        android:text="User Details"
+        android:text="Edit Cards"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
-        android:onClick="openUserDetails"
+        android:onClick="openManager"
         android:id="@+id/button12" />
+
+    <Button
+        android:text="Add More Activites"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:onClick="openUserDetails"
+        android:id="@+id/button13" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/suit"
+        android:id="@+id/imageView5"
+        android:layout_above="@+id/textView13"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="16dp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/breakfast"
+        android:id="@+id/imageView2"
+        android:layout_above="@+id/textView13"
+        android:layout_toStartOf="@+id/button10" />
+
+    <ExpandableListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/imageView4"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>

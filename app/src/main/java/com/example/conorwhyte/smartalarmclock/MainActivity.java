@@ -16,6 +16,7 @@ import android.os.Build;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -34,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_layout);
+
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
 
         boolean newUser = true;             // first time user or no
 
@@ -86,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
         prefsEditor.putString("UserDetails", json);
         prefsEditor.commit();
 
-        Toast.makeText(getApplicationContext(), "Data saved", Toast.LENGTH_LONG).show();
+        //Toast.makeText(getApplicationContext(), "Data saved", Toast.LENGTH_LONG).show();
     }
 
     public void popUp() {
@@ -126,11 +129,6 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, DistanceActivity.class);
         intent.putExtra("Object", user);
         finish();
-        startActivity(intent);
-    }
-
-    public void openPunisher(View view){
-        Intent intent = new Intent(this, PunisherActivity.class);
         startActivity(intent);
     }
 
