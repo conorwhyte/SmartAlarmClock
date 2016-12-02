@@ -149,9 +149,9 @@ public class CardListActivity extends Activity {
         }
 
         String currentmins = Integer.toString(localTimer);
-
+    ////////////////////////////////////// THIS ERRORRR \\\\\\\\\\\\\\\\\\\\\\
         Toast.makeText(getApplicationContext(),
-                currentmins, Toast.LENGTH_LONG).show();
+                currentmins, Toast.LENGTH_SHORT).show();
         //  if(current<user.numberOfCards()){
         if (localTimer == time && !last_alarm) { // Alert One
             Intent intent = new Intent(this, StopAlarmActivity.class);

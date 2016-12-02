@@ -34,6 +34,12 @@ public class UserDetails implements Serializable{
     public ArrayList<String> getCardNames()
         {return this.cardNames;}
 
+    // remove card
+    public void removeCard(String name)
+        {int i = getCardNames().indexOf(name);
+            this.cardNames.remove(i);
+        }
+
     // add / get times
     public void addTime(Integer time)
         {this.cardTimes.add(time);}
