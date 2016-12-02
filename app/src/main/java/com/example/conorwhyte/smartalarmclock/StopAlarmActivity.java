@@ -4,7 +4,7 @@ import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Intent;
-<<<<<<< HEAD
+
 import android.content.pm.PackageManager;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
@@ -16,21 +16,19 @@ import android.media.MediaPlayer;
 import android.os.CountDownTimer;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.NotificationCompat;
-=======
+
 import android.os.Bundle;
 import android.os.CountDownTimer;
->>>>>>> origin/master
+
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
-<<<<<<< HEAD
 import com.google.android.gms.maps.model.LatLng;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
-=======
->>>>>>> origin/master
+
 import java.util.Random;
 
 /**

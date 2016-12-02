@@ -116,38 +116,12 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-<<<<<<< HEAD
+
     public void openDirection(View view){
-        /*
-=======
-    public void openDirection(View view) {
->>>>>>> origin/master
+
         Intent intent = new Intent(this, DistanceActivity.class);
         intent.putExtra("Object", user);
         startActivity(intent);
-        */
-
-
-        Intent notificationIntent = new Intent(Intent.ACTION_VIEW);
-        PendingIntent contentIntent = PendingIntent.getActivity(MainActivity.this, 0, notificationIntent, 0);
-        Intent intent = new Intent(this, StopAlarmActivity.class);
-        PendingIntent pi = PendingIntent.getActivity(this, 0, intent, 0);
-
-        Notification notification = new NotificationCompat.Builder(this)
-                .setCategory(Notification.CATEGORY_PROMO)
-                .setContentTitle("Morning Manager")
-                .setContentText("Its Time to Start")
-                .setSmallIcon(R.drawable.car)
-                .setAutoCancel(true)
-                .setVisibility(1)
-                .addAction(android.R.drawable.ic_lock_idle_alarm, "Edit Activity", pi)
-                .setContentIntent(pi)
-                .setPriority(Notification.PRIORITY_HIGH)
-                .setVibrate(new long[]{1000, 1000, 1000, 1000, 1000}).build();
-        NotificationManager notificationManager =
-                (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-        notificationManager.notify(1, notification);
-
 
     }
 

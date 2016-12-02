@@ -139,7 +139,7 @@ public class AlarmActivity extends AppCompatActivity implements SensorEventListe
 
         Button stop_alarm = (Button) findViewById(R.id.stop_alarm);
 
-        Button reset_alarm = (Button) findViewById(R.id.resetAlarm);
+        //Button reset_alarm = (Button) findViewById(R.id.resetAlarm);
 
         stop_alarm.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -153,15 +153,7 @@ public class AlarmActivity extends AppCompatActivity implements SensorEventListe
             }
         });
 
-        reset_alarm.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                user.setArrivalMin(0);
-                user.setArrivalHour(0);
-                user.setAlarm();     // reset alarm
-                Toast.makeText(getApplicationContext(), "Alarm reset", Toast.LENGTH_SHORT).show();
-            }
-        });
+
     }
 
     public void onResume() {
