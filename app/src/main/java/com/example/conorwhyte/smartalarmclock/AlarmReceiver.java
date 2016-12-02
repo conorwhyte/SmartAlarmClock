@@ -12,32 +12,27 @@ import android.widget.Toast;
  */
 
 public class AlarmReceiver extends BroadcastReceiver {
-   //Intent i;
+    //Intent i;
 
-  //  UserDetails user ;
+    //  UserDetails user ;
 
     @Override
     public void onReceive(Context context, Intent intent) {
         Bundle extras = intent.getExtras();
         UserDetails user;
-        String state =  extras.getString("extra","yes");
+        String state = extras.getString("extra", "yes");
 
         if (extras != null) {
-            user = (UserDetails)extras.getSerializable("Object");
-        }
-        else{
+            user = (UserDetails) extras.getSerializable("Object");
+        } else {
             user = new UserDetails();
         }
 
 
-        if(state == "yes")
-        {
+        if (state == "yes") {
             Toast.makeText(context, "Beep beep, time to move!", Toast.LENGTH_LONG).show();
 
-        }
-
-        else
-        {
+        } else {
             Intent i = new Intent();
             i.putExtra("Object", user);
             i.setClassName("com.example.conorwhyte.smartalarmclock", "com.example.conorwhyte.smartalarmclock.CardListActivity");
@@ -50,13 +45,7 @@ public class AlarmReceiver extends BroadcastReceiver {
         context.startService(service_intent);
 
 
-
-
-
-
         ////Log.e("MyActivity", "In the receiver with " + state);
-
-
 
 
     }

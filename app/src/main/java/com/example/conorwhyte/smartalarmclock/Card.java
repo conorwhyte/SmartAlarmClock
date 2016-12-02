@@ -18,10 +18,10 @@ import static android.graphics.Color.*;
 /**
  * This is an individual card which will be passed into the ArrayAdapter. Here the name, time and
  * image id of the card is set.
- *
+ * <p>
  * Created with the help of following tutorial:
  * http://javapapers.com/android/android-cards-list-view/
- *
+ * <p>
  * Created by conorwhyte on 16/11/2016.
  */
 
@@ -37,7 +37,6 @@ public class Card {
     }
 
 
-
     public String getLine1() {
         return line1;
     }
@@ -46,7 +45,7 @@ public class Card {
         return line2;
     }
 
-    public int getId(){
+    public int getId() {
         return id;
     }
 

@@ -102,7 +102,7 @@ public class CardListActivity extends Activity {
         */
 
         listView.setAdapter(cardArrayAdapter);
-         startTimer();
+        startTimer();
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
@@ -149,23 +149,19 @@ public class CardListActivity extends Activity {
         }
 
         String currentmins = Integer.toString(localTimer);
-    ////////////////////////////////////// THIS ERRORRR \\\\\\\\\\\\\\\\\\\\\\
-        Toast.makeText(getApplicationContext(),
-                currentmins, Toast.LENGTH_SHORT).show();
+
         //  if(current<user.numberOfCards()){
         if (localTimer == time && !last_alarm) { // Alert One
             Intent intent = new Intent(this, StopAlarmActivity.class);
             current++;                              //change time being checked
-            if (current == user.getCardCount() - 1)
-            {
+            if (current == user.getCardCount() - 1) {
                 last_alarm = true;
             }
             refreshCards(current);
             startTime = System.currentTimeMillis();
             startActivity(intent);
 
-        }
-        else if (localTimer == time && last_alarm) { // Alert Two
+        } else if (localTimer == time && last_alarm) { // Alert Two
             Intent intent = new Intent(this, StopAlarmActivity.class);
             current++;
             listView.setAdapter(cardArrayAdapter);
@@ -233,11 +229,12 @@ public class CardListActivity extends Activity {
         AppIndex.AppIndexApi.end(client, getIndexApiAction());
         client.disconnect();
     }
-        public void startMap() {
-               String pass = String.valueOf(user.getDestination());             //get value of location from the database
-                Toast.makeText(this, pass, Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(CardListActivity.this, MapDirections.class);
-                CardListActivity.this.startActivity(intent);
-            }
+
+    public void startMap() {
+        String pass = String.valueOf(user.getDestination());             //get value of location from the database
+        Toast.makeText(this, pass, Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(CardListActivity.this, MapDirections.class);
+        CardListActivity.this.startActivity(intent);
+    }
 
 }

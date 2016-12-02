@@ -41,16 +41,14 @@ public class MainActivity extends AppCompatActivity {
         Gson gson = new Gson();
         String json = mPrefs.getString("UserDetails", "");  // try to get UserDetails from memory
 
-        if(!json.isEmpty())         // there is a UserDetails stored in memory
+        if (!json.isEmpty())         // there is a UserDetails stored in memory
         {
             Toast.makeText(getApplicationContext(), "Welcome Back", Toast.LENGTH_LONG).show();
             // get user
             user = gson.fromJson(json, UserDetails.class);     // load UserDetails into user object
             user.setFirstTime(false);
             newUser = false;
-        }
-
-        else // empty json string, this is the first time
+        } else // empty json string, this is the first time
         {
             Toast.makeText(getApplicationContext(), "First Time User Welcome", Toast.LENGTH_LONG).show();
             user = new UserDetails();
@@ -60,13 +58,12 @@ public class MainActivity extends AppCompatActivity {
         //startTimer();
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
-            user = (UserDetails)extras.getSerializable("Object");
-        }
-        else if(newUser){
+            user = (UserDetails) extras.getSerializable("Object");
+        } else if (newUser) {
             user = new UserDetails();
         }
 
-        if(user.getFirstTime() == true && newUser){
+        if (user.getFirstTime() == true && newUser) {
             //Open PopUp
             user.setFirstTime(false);
             popUp();
@@ -107,23 +104,26 @@ public class MainActivity extends AppCompatActivity {
         alertDialog.show();
     }
 
-    public void openAlarm(View view){
+    public void openAlarm(View view) {
         Intent intent = new Intent(this, AlarmActivity.class);
         intent.putExtra("Object", user);
         startActivity(intent);
     }
 
-    public void openManager(View view){
+    public void openManager(View view) {
         Intent intent = new Intent(this, CardListActivity.class);
         intent.putExtra("Object", user);
         startActivity(intent);
     }
 
+<<<<<<< HEAD
     public void openDirection(View view){
         /*
+=======
+    public void openDirection(View view) {
+>>>>>>> origin/master
         Intent intent = new Intent(this, DistanceActivity.class);
         intent.putExtra("Object", user);
-        finish();
         startActivity(intent);
         */
 
@@ -151,13 +151,13 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void openUserDetails(View view){
+    public void openUserDetails(View view) {
         Intent intent = new Intent(this, AddUserDetailsActivity.class);
         intent.putExtra("Object", user);
         startActivity(intent);
     }
 
-    public void openSetAlarm(View view){
+    public void openSetAlarm(View view) {
         Intent intent = new Intent(this, CardListActivity.class);
         intent.putExtra("Object", user);
         startActivity(intent);

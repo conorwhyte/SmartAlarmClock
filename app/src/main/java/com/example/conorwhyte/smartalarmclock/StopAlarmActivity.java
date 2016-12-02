@@ -4,6 +4,7 @@ import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Intent;
+<<<<<<< HEAD
 import android.content.pm.PackageManager;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
@@ -15,22 +16,27 @@ import android.media.MediaPlayer;
 import android.os.CountDownTimer;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.NotificationCompat;
-import android.support.v7.app.AppCompatActivity;
+=======
 import android.os.Bundle;
-import android.util.Log;
+import android.os.CountDownTimer;
+>>>>>>> origin/master
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
+<<<<<<< HEAD
 import com.google.android.gms.maps.model.LatLng;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+=======
+>>>>>>> origin/master
 import java.util.Random;
 
 /**
  * This activity is used not only to set off the alarm noise, but also to stop and snooze it. It sets
  * a daily motivational quote at random also. This is simply the traditional stop and start alarm.
- *
+ * <p>
  * Author: Conor Whyte
  */
 
@@ -60,13 +66,14 @@ public class StopAlarmActivity extends AppCompatActivity implements SensorEventL
     }
 
     //Sets the daily quote at random
-    String quote ;
-    String author ;
-    public void setQuote(){
-        Random rand = new Random();
-        int  random = rand.nextInt(3) + 1;
+    String quote;
+    String author;
 
-        switch(random){
+    public void setQuote() {
+        Random rand = new Random();
+        int random = rand.nextInt(3) + 1;
+
+        switch (random) {
             case 0:
                 quote = "'Lose an hour in the morning, and you will be all day hunting for it.'";
                 author = "-Richard Whately";
@@ -93,10 +100,10 @@ public class StopAlarmActivity extends AppCompatActivity implements SensorEventL
                 break;
         }
 
-        TextView quoteField = (TextView)this.findViewById(R.id.textView) ;
+        TextView quoteField = (TextView) this.findViewById(R.id.textView);
         quoteField.setText(String.valueOf(quote));
 
-        TextView authorField = (TextView)this.findViewById(R.id.textView5) ;
+        TextView authorField = (TextView) this.findViewById(R.id.textView5);
         authorField.setText(String.valueOf(author));
 
     }
@@ -109,7 +116,7 @@ public class StopAlarmActivity extends AppCompatActivity implements SensorEventL
     }
 
     //Used to stop the alarm when button is pressed
-    public void stopButton(View view){
+    public void stopButton(View view) {
         Intent service_intent = new Intent(getApplicationContext(), RingtonePlayingService.class);
         service_intent.putExtra("extra", "no");
         getApplicationContext().startService(service_intent);
@@ -141,13 +148,13 @@ public class StopAlarmActivity extends AppCompatActivity implements SensorEventL
 
 
     //Used to snooze the alarm once the button is pressed
-    public void snoozeButton(View view){
+    public void snoozeButton(View view) {
 
         new CountDownTimer(30000, 1000) {       //set snooze time here
             public void onTick(long millisUntilFinished) {
                 long secondsRemaining = millisUntilFinished / 1000;
 
-                if (secondsRemaining < 15){
+                if (secondsRemaining < 15) {
 
                     //FrameLayout layout =(FrameLayout) findViewById(R.id.frame);
                     // layout.setBackgroundResource(R.drawable.card_state_pressed);

@@ -9,9 +9,6 @@ import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.IBinder;
 import android.util.Log;
-import android.widget.Toast;
-
-import com.example.conorwhyte.smartalarmclock.R;
 
 public class RingtonePlayingService extends Service {
     MediaPlayer media_song;
@@ -22,8 +19,7 @@ public class RingtonePlayingService extends Service {
 
 
     @Override
-    public IBinder onBind(Intent intent)
-    {
+    public IBinder onBind(Intent intent) {
         Log.e("MyActivity", "In the Richard service");
         return null;
     }
@@ -35,8 +31,7 @@ public class RingtonePlayingService extends Service {
 
         String state = intent.getExtras().getString("extra");
         assert state != null;
-        switch (state)
-        {
+        switch (state) {
             case "no":
                 startId = 0;
                 break;
@@ -47,8 +42,7 @@ public class RingtonePlayingService extends Service {
                 startId = 0;
                 break;
         }
-        if (!this.isRunning && startId == 1)
-        {
+        if (!this.isRunning && startId == 1) {
             Log.e("Going on here  ", "Served");
             Uri uri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM);
             ringtone = RingtoneManager.getRingtone(this, uri);
@@ -59,8 +53,7 @@ public class RingtonePlayingService extends Service {
             //finish();
 
         }
-        if(startId ==0)
-        {
+        if (startId == 0) {
             ringtone.stop();
         }
 

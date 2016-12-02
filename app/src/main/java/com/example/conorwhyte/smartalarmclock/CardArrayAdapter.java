@@ -4,12 +4,13 @@ package com.example.conorwhyte.smartalarmclock;
  * This class stores each card in an ArrayAdapter of cards for display in the card list activity,
  * each card gets passed into this class and given a view. Images are set in this class for each
  * card also.
- *
+ * <p>
  * Created with the help of following tutorial:
  * http://javapapers.com/android/android-cards-list-view/
- *
+ * <p>
  * Created by conorwhyte on 16/11/2016.
  */
+
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -23,15 +24,15 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CardArrayAdapter  extends ArrayAdapter<Card> {
+public class CardArrayAdapter extends ArrayAdapter<Card> {
     private static final String TAG = "CardArrayAdapter";
     private List<Card> cardList = new ArrayList<Card>();
-    public int indicator ;
+    public int indicator;
 
     static class CardViewHolder {
         TextView line1;
         TextView line2;
-        ImageView img ;
+        ImageView img;
     }
 
     public CardArrayAdapter(Context context, int textViewResourceId) {
@@ -49,7 +50,7 @@ public class CardArrayAdapter  extends ArrayAdapter<Card> {
         return this.cardList.size();
     }
 
-    public void setImg(int indication){
+    public void setImg(int indication) {
         indicator = indication;
     }
 
@@ -71,7 +72,7 @@ public class CardArrayAdapter  extends ArrayAdapter<Card> {
             viewHolder.img = (ImageView) row.findViewById(R.id.person_photo1);
             row.setTag(viewHolder);
         } else {
-            viewHolder = (CardViewHolder)row.getTag();
+            viewHolder = (CardViewHolder) row.getTag();
         }
         Card card = getItem(position);
         viewHolder.line1.setText(card.getLine1());

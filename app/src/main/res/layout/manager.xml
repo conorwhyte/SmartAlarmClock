@@ -11,43 +11,43 @@
         android:layout_marginRight="6dp"
         android:layout_marginTop="119dp"
 
-        android:minHeight="60dp"
-        android:background="@drawable/bg_card">
+        android:background="@drawable/bg_card"
+        android:minHeight="60dp">
 
         <ImageView
+            android:id="@+id/person_photo1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/person_photo1"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:layout_marginRight="16dp"
             android:src="@mipmap/ic_launcher" />
 
         <TextView
+            android:id="@+id/person_name1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/person_name1"
-            android:text="Conor Whyte "
-            android:layout_toRightOf="@+id/person_photo1"
             android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/person_photo1"
+            android:text="Conor Whyte "
             android:textSize="30sp" />
 
         <TextView
+            android:id="@+id/person_age1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/person_age1"
-            android:text="Age: 18"
+            android:layout_below="@+id/person_name1"
             android:layout_toRightOf="@+id/person_photo1"
-            android:layout_below="@+id/person_name1" />
+            android:text="Age: 18" />
 
         <TextView
+            android:id="@+id/textView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=" €170"
-            android:id="@+id/textView1"
-            android:layout_marginLeft="10dp"
             android:layout_below="@+id/person_name1"
-            android:layout_toEndOf="@+id/person_age1" />
+            android:layout_marginLeft="10dp"
+            android:layout_toEndOf="@+id/person_age1"
+            android:text=" €170" />
 
         <!-- Card Contents go here -->
 

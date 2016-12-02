@@ -13,31 +13,31 @@
     tools:context="com.example.conorwhyte.smartalarmclock.MainActivity">
 
     <TimePicker
+        android:id="@+id/timePicker"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/timePicker"
-        android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:layout_marginTop="38dp" />
 
     <Button
-        android:text="Stop Alarm"
+        android:id="@+id/stop_alarm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginRight="24dp"
-        android:layout_marginEnd="24dp"
-        android:id="@+id/stop_alarm"
+        android:layout_alignParentEnd="true"
         android:layout_below="@+id/timePicker"
-        android:layout_alignParentEnd="true" />
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:text="Stop Alarm" />
 
     <Button
-        android:text="Set Alarm"
+        android:id="@+id/start_alarm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/timePicker"
         android:layout_marginLeft="46dp"
         android:layout_marginStart="46dp"
-        android:id="@+id/start_alarm"
-        android:layout_below="@+id/timePicker"
-        android:layout_alignParentStart="true" />
+        android:text="Set Alarm" />
 
 </RelativeLayout>
