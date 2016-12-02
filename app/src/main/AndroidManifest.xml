@@ -31,13 +31,14 @@
             android:name=".RingtonePlayingService"
             android:enabled="true" />
 
-        <activity android:name=".PunisherActivity" />
-        <activity android:name=".PuzzleActivity" />
-        <activity android:name=".StopAlarmActivity" />
-        <activity android:name=".ManagerHomeActivity" />
-        <activity android:name=".CardListActivity" />
-        <activity android:name=".DistanceActivity" />
-        <activity android:name=".MapDirections" />
+        <activity android:name=".StopAlarmActivity"
+            android:theme="@style/AppTheme"/>
+        <activity android:name=".CardListActivity"
+            android:theme="@style/AppTheme"/>
+        <activity android:name=".DistanceActivity"
+            android:theme="@style/AppTheme"/>
+        <activity android:name=".MapDirections"
+            android:theme="@style/AppTheme"/>
 
         <meta-data
             android:name="com.google.android.maps.v4.API_KEY"
@@ -56,10 +57,14 @@
 
         <activity
             android:name=".MapsActivity"
-            android:label="@string/title_activity_maps" />
-        <activity android:name=".AlarmActivity" />
-        <activity android:name=".AddUserDetailsActivity" />
-        <activity android:name=".ViewDetailsActivity"></activity>
+            android:label="@string/title_activity_maps"
+            android:theme="@style/AppTheme"/>
+        <activity android:name=".AlarmActivity"
+            android:theme="@style/AppTheme"/>
+        <activity android:name=".AddUserDetailsActivity"
+            android:theme="@style/AppTheme"/>
+        <activity android:name=".ViewDetailsActivity"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

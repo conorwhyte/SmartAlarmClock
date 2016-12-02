@@ -129,11 +129,6 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void openPunisher(View view){
-        Intent intent = new Intent(this, PunisherActivity.class);
-        startActivity(intent);
-    }
-
     public void openUserDetails(View view){
         Intent intent = new Intent(this, AddUserDetailsActivity.class);
         intent.putExtra("Object", user);

@@ -45,7 +45,7 @@
 
     <TextView
         android:text="Quote of the Day goes into here"
-        android:textColour="#FA3E71"
+        android:textColor="#FA3E71"
         android:textColorHighlight="#FA3E71"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -58,7 +58,7 @@
 
     <TextView
         android:text="- Author"
-        android:textColour="#FA3E71"
+        android:textColor="#FA3E71"
         android:textColorHighlight="#FA3E71"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
