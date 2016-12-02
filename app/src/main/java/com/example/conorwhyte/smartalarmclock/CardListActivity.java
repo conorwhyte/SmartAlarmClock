@@ -170,7 +170,9 @@ public class CardListActivity extends Activity {
             current++;
             listView.setAdapter(cardArrayAdapter);
             startActivity(intent);
-            stopTimer();                            //old timer for this card
+            stopTimer();//old timer for this card
+            startMap();
+
 
         }
     }
@@ -230,4 +232,12 @@ public class CardListActivity extends Activity {
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         AppIndex.AppIndexApi.end(client, getIndexApiAction());
         client.disconnect();
-    }}
+    }
+        public void startMap() {
+               String pass = String.valueOf(user.getDestination());             //get value of location from the database
+                Toast.makeText(this, pass, Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(CardListActivity.this, MapDirections.class);
+                CardListActivity.this.startActivity(intent);
+            }
+
+}
