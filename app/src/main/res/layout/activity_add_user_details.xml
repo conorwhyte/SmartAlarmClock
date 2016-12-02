@@ -4,95 +4,94 @@
     android:id="@+id/activity_add_user_details"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bed"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="@drawable/bed"
-    tools:context="com.example.conorwhyte.smartalarmclock.AddUserDetailsActivity"
-    >
+    tools:context="com.example.conorwhyte.smartalarmclock.AddUserDetailsActivity">
 
     <AutoCompleteTextView
+        android:id="@+id/editText3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="10"
-        android:layout_marginTop="34dp"
-        android:id="@+id/editText3"
         android:layout_below="@+id/editText4"
         android:layout_centerHorizontal="true"
-        android:textStyle="bold"
-        android:textColorHint="#FFFFFF"
+        android:layout_marginTop="34dp"
+        android:ems="10"
+        android:hint="Duration in Minutes: "
+        android:inputType="number"
         android:textColor="#FFFFFF"
-        android:hint="Duration in Minutes: " />
+        android:textColorHint="#FFFFFF"
+        android:textStyle="bold" />
 
     <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
         android:text="Add Activity Cards"
-        android:textStyle="bold"
         android:textColor="#FFFFFF"
         android:textSize="32sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView11"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:textStyle="bold" />
 
     <AutoCompleteTextView
+        android:id="@+id/editText4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
+        android:layout_alignStart="@+id/editText3"
+        android:layout_below="@+id/totalTime"
+        android:layout_marginTop="55dp"
+        android:ems="10"
         android:hint="Activity Name"
+        android:inputType="textPersonName"
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
-        android:textStyle="bold"
-        android:ems="10"
-        android:layout_marginTop="55dp"
-        android:id="@+id/editText4"
-        android:layout_below="@+id/totalTime"
-        android:layout_alignStart="@+id/editText3" />
+        android:textStyle="bold" />
 
     <TextView
-        android:hint="0 Minutes"
-        android:textColorHint="#FFFFFF"
-        android:textColor="#FFFFFF"
-        android:textStyle="bold"
+        android:id="@+id/totalTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/totalTime"
         android:layout_below="@+id/activityCount"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp" />
+        android:layout_marginTop="15dp"
+        android:hint="0 Minutes"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        android:textStyle="bold" />
 
     <TextView
-        android:hint="0 Activities Added"
-        android:textColorHint="#FFFFFF"
-        android:textColor="#FFFFFF"
-        android:textStyle="bold"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/activityCount"
-        android:layout_marginTop="11dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/textView11"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="11dp"
+        android:hint="0 Activities Added"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        android:textStyle="bold" />
 
     <Button
-        android:text="ADD"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/button8"
-        android:onClick="addDetails"
-        android:layout_above="@+id/editText3"
-        android:layout_toEndOf="@+id/activityCount"
-        android:layout_marginStart="15dp" />
-
-    <Button
-        android:text="FINISH"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/editText3"
+        android:layout_marginStart="15dp"
+        android:layout_toEndOf="@+id/activityCount"
+        android:onClick="addDetails"
+        android:text="ADD" />
+
+    <Button
         android:id="@+id/button9"
-        android:onClick="sendDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/editText3"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="43dp" />
+        android:layout_marginTop="43dp"
+        android:onClick="sendDetails"
+        android:text="FINISH" />
 
 </RelativeLayout>

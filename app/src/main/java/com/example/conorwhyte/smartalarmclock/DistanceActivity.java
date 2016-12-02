@@ -2,7 +2,7 @@ package com.example.conorwhyte.smartalarmclock;
 
 /**
  * Created by Paul Ledwith on 15/11/2016.
- *
+ * <p>
  * This class gets the users prefrences for a start location,
  * an end location, and the travel mode and makes a request
  * to google for a JSON file, from which we send to the
@@ -13,7 +13,6 @@ package com.example.conorwhyte.smartalarmclock;
 
 
 import android.*;
-import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -36,6 +35,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.maps.model.LatLng;
+
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
@@ -77,7 +77,7 @@ public class DistanceActivity extends FragmentActivity implements android.locati
     int travelMins;
     int travelHours;
 
-    UserDetails user ;
+    UserDetails user;
 
     //waits for a button press to start actvity
     @Override
@@ -87,9 +87,8 @@ public class DistanceActivity extends FragmentActivity implements android.locati
 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
-            user = (UserDetails)extras.getSerializable("Object");
-        }
-        else{
+            user = (UserDetails) extras.getSerializable("Object");
+        } else {
             user = new UserDetails();
         }
 
@@ -143,7 +142,6 @@ public class DistanceActivity extends FragmentActivity implements android.locati
                 // Start downloading json data from Google Directions API
                 DownloadTask downloadTask = new DownloadTask();
                 downloadTask.execute(url);
-
 
 
             }
@@ -221,9 +219,9 @@ public class DistanceActivity extends FragmentActivity implements android.locati
         deslon = dest.longitude;
 
         // Travel mode
-        if (mode.equals("transit")){
-            str_mode = "mode=" + mode + "&arrival_time="+returnSeconds();
-        }else {
+        if (mode.equals("transit")) {
+            str_mode = "mode=" + mode + "&arrival_time=" + returnSeconds();
+        } else {
             str_mode = "mode=" + mode;
         }
 
@@ -282,6 +280,7 @@ public class DistanceActivity extends FragmentActivity implements android.locati
         //...............
         return true;
     }
+
     // gets current location
     protected void getLocation() {
         if (isLocationEnabled(DistanceActivity.this)) {
@@ -505,8 +504,8 @@ public class DistanceActivity extends FragmentActivity implements android.locati
                     hours = Integer.parseInt(m.group(1));
                     minutes = Integer.parseInt(m.group(2));
                     tvDistanceDuration.setText("Distance: " + distance + ", Duration: " + hours + " Hours " + minutes + " Minutes");
-                    travelHours = hours ;
-                    travelMins = minutes ;
+                    travelHours = hours;
+                    travelMins = minutes;
                 }
             }
             Toast.makeText(DistanceActivity.this, "Duration: " + hours + " Hours " + minutes + " Minutes", Toast.LENGTH_LONG).show();

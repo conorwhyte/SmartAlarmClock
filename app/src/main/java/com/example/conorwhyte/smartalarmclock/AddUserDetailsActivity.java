@@ -20,7 +20,7 @@ import java.util.ArrayList;
  * activity will take. If null a popup will show up to prompt the user to try again. This will
  * be opened on the first time the user uses the app. It then sends the user object back to the
  * main activity with all relevant information stored in the user object.
- *
+ * <p>
  * Author: Conor Whyte
  */
 
@@ -28,7 +28,7 @@ public class AddUserDetailsActivity extends AppCompatActivity {
 
     ArrayList<String> name = new ArrayList<String>();
     ArrayList<Integer> time = new ArrayList<Integer>();
-    int count = 0 ;
+    int count = 0;
     int totalTime = 0;
 
     UserDetails newUser = new UserDetails();
@@ -38,16 +38,16 @@ public class AddUserDetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_user_details);
 
-        if(!MainActivity.user.getFirstTime()) // if not first time user
-            {
-                newUser = MainActivity.user;
-                updateProgress(newUser.getCardCount());
-                updateTime(newUser.getTotalTime());
-            }
+        if (!MainActivity.user.getFirstTime()) // if not first time user
+        {
+            newUser = MainActivity.user;
+            updateProgress(newUser.getCardCount());
+            updateTime(newUser.getTotalTime());
+        }
     }
 
     //add a morning routine
-    public void addDetails(View view){
+    public void addDetails(View view) {
 
         EditText editText = (EditText) findViewById(R.id.editText4);
         String morningName = editText.getText().toString();
@@ -55,10 +55,9 @@ public class AddUserDetailsActivity extends AppCompatActivity {
         EditText editText1 = (EditText) findViewById(R.id.editText3);
         String timeNeeded = editText.getText().toString();
 
-        if(editText1.getText().toString().trim().length() == 0 || editText.getText().toString().trim().length() == 0){
+        if (editText1.getText().toString().trim().length() == 0 || editText.getText().toString().trim().length() == 0) {
             popUpEmptyTextView();
-        }
-        else {
+        } else {
             int timeRequired = Integer.parseInt(editText1.getText().toString());
             count++;
             int progress = count + newUser.getCardCount();
@@ -75,10 +74,8 @@ public class AddUserDetailsActivity extends AppCompatActivity {
     }
 
     //finish with the morning routines and go back to menu, sends user object back
-    public void sendDetails(View view)
-    {
-        for(int i = 0; i < time.size(); i++)
-        {
+    public void sendDetails(View view) {
+        for (int i = 0; i < time.size(); i++) {
             newUser.addCard(name.get(i));
             newUser.addTime(time.get(i));
         }
@@ -111,16 +108,14 @@ public class AddUserDetailsActivity extends AppCompatActivity {
         alertDialog.show();
     }
 
-    public void updateProgress(Integer count)
-    {
+    public void updateProgress(Integer count) {
         TextView textView = (TextView) findViewById(R.id.activityCount);
         textView.setText(count + " Activities");
 
         return;
     }
 
-    public void updateTime(Integer time)
-    {
+    public void updateTime(Integer time) {
         totalTime += time;
         TextView textView = (TextView) findViewById(R.id.totalTime);
         textView.setText(totalTime + " Minutes Total");

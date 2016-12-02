@@ -21,7 +21,7 @@ import android.widget.Toast;
 
 import java.util.Calendar;
 
-public class AlarmActivity extends AppCompatActivity implements SensorEventListener{
+public class AlarmActivity extends AppCompatActivity implements SensorEventListener {
 
     //Accelerometer Variables
     private SensorManager sensorMan;
@@ -39,7 +39,7 @@ public class AlarmActivity extends AppCompatActivity implements SensorEventListe
     private TextView alarmTextView;
     private Context context;
 
-    UserDetails user ;
+    UserDetails user;
 
     @TargetApi(Build.VERSION_CODES.M)
     @Override
@@ -49,18 +49,17 @@ public class AlarmActivity extends AppCompatActivity implements SensorEventListe
 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
-            user = (UserDetails)extras.getSerializable("Object");
-        }
-        else{
+            user = (UserDetails) extras.getSerializable("Object");
+        } else {
             user = new UserDetails();
-                  }
+        }
 
         Intent intent = new Intent(this, AddUserDetailsActivity.class);
         intent.putExtra("Object", user);
 
         //startTimer();
 
-        sensorMan = (SensorManager)getSystemService(SENSOR_SERVICE);
+        sensorMan = (SensorManager) getSystemService(SENSOR_SERVICE);
         accelerometer = sensorMan.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         mAccel = 0.00f;
         mAccelCurrent = SensorManager.GRAVITY_EARTH;
@@ -78,7 +77,7 @@ public class AlarmActivity extends AppCompatActivity implements SensorEventListe
         //calendar.add(Calendar.SECOND, 3);
         alarmTimePicker = (TimePicker) findViewById(R.id.timePicker);
 
-        Button start_alarm= (Button) findViewById(R.id.start_alarm);
+        Button start_alarm = (Button) findViewById(R.id.start_alarm);
 
         start_alarm.setOnClickListener(new View.OnClickListener() {
 
@@ -101,18 +100,31 @@ public class AlarmActivity extends AppCompatActivity implements SensorEventListe
 
                 Boolean pm = false;
 
-                if (user.getAlarmMin() < 10) {minute_string = "0" + minute_string;}
-                if (user.getAlarmHour() > 12) {hour_string = String.valueOf(user.getAlarmHour() - 12); pm = true;}
-                if (user.getAlarmHour() == 12) {pm = true;}
+                if (user.getAlarmMin() < 10) {
+                    minute_string = "0" + minute_string;
+                }
+                if (user.getAlarmHour() > 12) {
+                    hour_string = String.valueOf(user.getAlarmHour() - 12);
+                    pm = true;
+                }
+                if (user.getAlarmHour() == 12) {
+                    pm = true;
+                }
                 if (user.getAlarmHour() == 24 ||
-                        user.getAlarmHour() == 0) {user.setAlarmHour(0); pm = false;}
+                        user.getAlarmHour() == 0) {
+                    user.setAlarmHour(0);
+                    pm = false;
+                }
 
-                if(pm){minute_string += " pm";}
-                else {minute_string += " am";}
+                if (pm) {
+                    minute_string += " pm";
+                } else {
+                    minute_string += " am";
+                }
 
                 String alarmtext = hour_string + ":" + minute_string;
 
-                Toast.makeText(getApplicationContext(), "Alarm set for " + alarmtext , Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Alarm set for " + alarmtext, Toast.LENGTH_SHORT).show();
 
                 Bundle extras = new Bundle();
                 extras.putSerializable("Object", user);
@@ -125,9 +137,9 @@ public class AlarmActivity extends AppCompatActivity implements SensorEventListe
 
         });
 
-        Button stop_alarm= (Button) findViewById(R.id.stop_alarm);
+        Button stop_alarm = (Button) findViewById(R.id.stop_alarm);
 
-        Button reset_alarm= (Button) findViewById(R.id.resetAlarm);
+        Button reset_alarm = (Button) findViewById(R.id.resetAlarm);
 
         stop_alarm.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -147,7 +159,7 @@ public class AlarmActivity extends AppCompatActivity implements SensorEventListe
                 user.setArrivalMin(0);
                 user.setArrivalHour(0);
                 user.setAlarm();     // reset alarm
-                Toast.makeText(getApplicationContext(), "Alarm reset" , Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Alarm reset", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -171,18 +183,18 @@ public class AlarmActivity extends AppCompatActivity implements SensorEventListe
 
     @Override
     public void onSensorChanged(SensorEvent event) {
-        if (event.sensor.getType() == Sensor.TYPE_ACCELEROMETER){
+        if (event.sensor.getType() == Sensor.TYPE_ACCELEROMETER) {
             mGravity = event.values.clone();
             // Shake detection
             float x = mGravity[0];
             float y = mGravity[1];
             float z = mGravity[2];
             mAccelLast = mAccelCurrent;
-            mAccelCurrent = (float)Math.sqrt(x*x + y*y + z*z);
+            mAccelCurrent = (float) Math.sqrt(x * x + y * y + z * z);
             float delta = mAccelCurrent - mAccelLast;
             mAccel = mAccel * 0.9f + delta;
 
-            if(mAccel > 0.5 && timer > 10){
+            if (mAccel > 0.5 && timer > 10) {
                 Toast.makeText(getApplicationContext(), "Movement Detected", Toast.LENGTH_SHORT).show();
             }
         }
@@ -190,13 +202,13 @@ public class AlarmActivity extends AppCompatActivity implements SensorEventListe
     }
 
     //Timer Variables
-    public void startTimer(){
+    public void startTimer() {
 
         startTime = System.currentTimeMillis();
         timerHandler.postDelayed(timerRunnable, 0);
     }
 
-    private int timer  ;
+    private int timer;
 
     long startTime = 0;
     Handler timerHandler = new Handler();
@@ -206,7 +218,7 @@ public class AlarmActivity extends AppCompatActivity implements SensorEventListe
             int seconds = (int) (millis / 1000);
             int minutes = seconds / 60;
             seconds = seconds % 60;
-            timer = seconds ;
+            timer = seconds;
             timerHandler.postDelayed(this, 500);
         }
     };

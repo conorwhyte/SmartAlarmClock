@@ -1,12 +1,12 @@
 package com.example.conorwhyte.smartalarmclock;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
 public class ViewDetailsActivity extends AppCompatActivity {
 
-    UserDetails user ;
+    UserDetails user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,9 +15,8 @@ public class ViewDetailsActivity extends AppCompatActivity {
 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
-            user = (UserDetails)extras.getSerializable("Object");
-        }
-        else{
+            user = (UserDetails) extras.getSerializable("Object");
+        } else {
             user = new UserDetails();
         }
 

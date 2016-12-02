@@ -39,10 +39,10 @@ public class MapDirections extends FragmentActivity implements OnMapReadyCallbac
 
     @Override
     public void onMapReady(GoogleMap map) {
-        Toast.makeText(this, deslat+"," +deslon, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, deslat + "," + deslon, Toast.LENGTH_SHORT).show();
         Uri gmmIntentUri = Uri.parse("http://maps.google.com/maps?saddr="
-                +originlat+","+originlon
-                +"&daddr="+""+deslat+","+deslon+"&mode="+mode);
+                + originlat + "," + originlon
+                + "&daddr=" + "" + deslat + "," + deslon + "&mode=" + mode);
         //Uri gmmIntentUri = Uri.parse("google.navigation:q=Dundrum,+Dublin&mode="+mode);
 
         Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);

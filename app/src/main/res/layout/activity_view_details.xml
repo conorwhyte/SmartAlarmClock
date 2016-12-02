@@ -11,11 +11,11 @@
     tools:context="com.example.conorwhyte.smartalarmclock.ViewDetailsActivity">
 
     <TextView
-        android:text="TextView"
+        android:id="@+id/textView15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="84dp"
-        android:id="@+id/textView15" />
+        android:text="TextView" />
 </RelativeLayout>
