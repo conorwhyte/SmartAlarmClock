@@ -27,12 +27,10 @@ import java.util.Random;
 
 public class StopAlarmActivity extends AppCompatActivity {
 
-    MediaPlayer media_song;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stop_alarm);
-
         setQuote();
         Intent service_intent = new Intent(getApplicationContext(), RingtonePlayingService.class);
         service_intent.putExtra("extra", "yes");
