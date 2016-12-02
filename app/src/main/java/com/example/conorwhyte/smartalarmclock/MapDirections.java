@@ -20,13 +20,15 @@ import com.google.android.gms.maps.SupportMapFragment;
 
 public class MapDirections extends FragmentActivity implements OnMapReadyCallback {
 
-    private String mode = "walking";
+    UserDetails user;
+
+    private String mode = user.getMode();
     //start locaion
-    private double originlat = 53.305257;
-    private double originlon = -6.216885;
+    private double originlat = user.getHome().latitude;
+    private double originlon = user.getHome().longitude;
     //destination
-    private double deslat = 53.293176;
-    private double deslon = -6.246175;
+    private double deslat = user.getDestination().latitude;
+    private double deslon = user.getDestination().longitude;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,8 +45,6 @@ public class MapDirections extends FragmentActivity implements OnMapReadyCallbac
         Uri gmmIntentUri = Uri.parse("http://maps.google.com/maps?saddr="
                 + originlat + "," + originlon
                 + "&daddr=" + "" + deslat + "," + deslon + "&mode=" + mode);
-        //Uri gmmIntentUri = Uri.parse("google.navigation:q=Dundrum,+Dublin&mode="+mode);
-
         Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
         mapIntent.setPackage("com.google.android.apps.maps");
         startActivity(mapIntent);

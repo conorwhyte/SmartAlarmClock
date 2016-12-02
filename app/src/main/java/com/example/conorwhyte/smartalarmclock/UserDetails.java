@@ -1,8 +1,6 @@
 package com.example.conorwhyte.smartalarmclock;
 
-import android.content.Context;
-import android.location.Location;
-import android.widget.Toast;
+import com.google.android.gms.maps.model.LatLng;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -23,8 +21,13 @@ public class UserDetails implements Serializable {
 
     private ArrayList<String> cardNames = new ArrayList<String>();
     private ArrayList<Integer> cardTimes = new ArrayList<Integer>();
-    private Location home;
-    private Location destination;
+    private LatLng home;
+    private LatLng destination;
+    private String mode;
+    private double homelat;
+    private double destlat;
+    private double homelon;
+    private double destlon;
     private int journeyTime;
     private int arrivalHour;
     private int arrivalMinute;
@@ -56,21 +59,62 @@ public class UserDetails implements Serializable {
     }
 
     // set / get home location
-    public void setHome(Location home) {
+    public void setHome(LatLng home) {
         this.home = home;
     }
 
-    public Location getHome() {
+    public LatLng getHome() {
         return this.home;
     }
 
+    public double getDestLat() {
+        return this.destlat;
+    }
+
+    public void setDestLat(double lat) {
+        this.destlat = lat;
+    }
+
+    public double getDestLon() {
+        return this.destlon;
+    }
+
+    public void setDestLon(double lon) {
+        this.destlon = lon;
+    }
+
+    public double getHomeLat() {
+        return this.homelat;
+    }
+
+    public void setHomeLon(double lon) {
+        this.homelon = lon;
+    }
+
+
+    public double getHomeLon() {
+        return this.homelon;
+    }
+
+    public void setHomeLat(double lat) {
+        this.homelat = lat;
+    }
+
     // set / get destination location
-    public void setDestination(Location dest) {
+    public void setDestination(LatLng dest) {
         this.destination = dest;
     }
 
-    public Location getDestination() {
+    public LatLng getDestination() {
         return this.destination;
+    }
+
+    public void setMode(String mode) {
+        this.mode = mode;
+    }
+
+    public String getMode() {
+        return this.mode;
     }
 
     // get card count / get total time of all cards

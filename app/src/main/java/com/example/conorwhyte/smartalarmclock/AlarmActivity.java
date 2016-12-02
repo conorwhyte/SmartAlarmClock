@@ -10,12 +10,11 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Build;
+import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
@@ -26,7 +25,6 @@ public class AlarmActivity extends AppCompatActivity implements SensorEventListe
     //Accelerometer Variables
     private SensorManager sensorMan;
     private Sensor accelerometer;
-    private float[] mGravity;
     private float mAccel;
     private float mAccelCurrent;
     private float mAccelLast;
@@ -35,11 +33,8 @@ public class AlarmActivity extends AppCompatActivity implements SensorEventListe
     AlarmManager alarmManager;
     private PendingIntent pending_intent;
     private TimePicker alarmTimePicker;
-    private static MainActivity inst;
-    private TextView alarmTextView;
-    private Context context;
-
     UserDetails user;
+    CalculateDuration calculateDuration = new CalculateDuration();
 
     @TargetApi(Build.VERSION_CODES.M)
     @Override
@@ -65,12 +60,12 @@ public class AlarmActivity extends AppCompatActivity implements SensorEventListe
         mAccelCurrent = SensorManager.GRAVITY_EARTH;
         mAccelLast = SensorManager.GRAVITY_EARTH;
 
-        this.context = this;
+        Context context = this;
 
         // message on open
         Toast.makeText(getApplicationContext(), "Enter your desired alarm time: ", Toast.LENGTH_SHORT).show();
 
-        final Intent myIntent = new Intent(this.context, AlarmReceiver.class);
+        final Intent myIntent = new Intent(context, AlarmReceiver.class);
         alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
         // set the alarm to the time that you picked
         final Calendar calendar = Calendar.getInstance();
@@ -130,6 +125,9 @@ public class AlarmActivity extends AppCompatActivity implements SensorEventListe
                 extras.putSerializable("Object", user);
                 extras.putString("extra", "yes");
                 myIntent.putExtras(extras);
+                System.out.println("Lat, lon " + user.getHomeLat() + "," + user.getHomeLon());
+
+                calculateDuration.getDirectionsUrl();
                 pending_intent = PendingIntent.getBroadcast(AlarmActivity.this, 0, myIntent, PendingIntent.FLAG_UPDATE_CURRENT);
                 alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pending_intent);
 
@@ -138,8 +136,6 @@ public class AlarmActivity extends AppCompatActivity implements SensorEventListe
         });
 
         Button stop_alarm = (Button) findViewById(R.id.stop_alarm);
-
-        //Button reset_alarm = (Button) findViewById(R.id.resetAlarm);
 
         stop_alarm.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -152,20 +148,12 @@ public class AlarmActivity extends AppCompatActivity implements SensorEventListe
                 //setAlarmText("Alarm canceled");
             }
         });
-
-
     }
 
     public void onResume() {
         super.onResume();
         sensorMan.registerListener(this, accelerometer, SensorManager.SENSOR_DELAY_UI);
     }
-
-//    public void openPuzzle(View view){
-//        Intent intent = new Intent(this, CardListActivity.class);
-//        startActivity(intent);
-//        finish();
-//    }
 
     @Override
     protected void onPause() {
@@ -176,7 +164,7 @@ public class AlarmActivity extends AppCompatActivity implements SensorEventListe
     @Override
     public void onSensorChanged(SensorEvent event) {
         if (event.sensor.getType() == Sensor.TYPE_ACCELEROMETER) {
-            mGravity = event.values.clone();
+            float[] mGravity = event.values.clone();
             // Shake detection
             float x = mGravity[0];
             float y = mGravity[1];
