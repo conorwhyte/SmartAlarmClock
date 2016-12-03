@@ -27,8 +27,12 @@
 
         <receiver android:name=".AlarmReceiver" />
 
+        <service
+            android:name=".RingtonePlayingService"
+            android:enabled="true" />
+
         <activity android:name=".StopAlarmActivity"
-            android:theme="@style/AppTheme" />
+            android:theme="@style/AppTheme"/>
         <activity android:name=".CardListActivity"
             android:theme="@style/AppTheme"/>
         <activity android:name=".DistanceActivity"

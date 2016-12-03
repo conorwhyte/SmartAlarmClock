@@ -4,9 +4,19 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+
+import android.support.v4.app.NotificationCompat;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.Button;
+
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,10 +31,12 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.main_layout);
         ActivityHelper.initialize(MainActivity.this);
 
 
+        setContentView(R.layout.main_layout);
         boolean newUser = true;             // first time user or no
 
         mPrefs = getPreferences(MODE_PRIVATE);
@@ -87,10 +99,8 @@ public class MainActivity extends AppCompatActivity {
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();
-                        //Intent intent = new Intent(this, AddUserDetailsActivity.class);
                         startActivity(intent);
                         finish();
-
                     }
                 });
         alertDialog.show();
@@ -110,11 +120,9 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void openDirection(View view){
-
-        Intent intent = new Intent(this, DistanceActivity.class);
+        Intent intent = new Intent(this, NavActivity.class);
         intent.putExtra("Object", user);
         startActivity(intent);
-
     }
 
     public void openUserDetails(View view) {

@@ -17,6 +17,8 @@ import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Adapter;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -58,6 +60,7 @@ public class CardArrayAdapter extends ArrayAdapter<Card> {
     public Card getItem(int index) {
         return this.cardList.get(index);
     }
+
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {

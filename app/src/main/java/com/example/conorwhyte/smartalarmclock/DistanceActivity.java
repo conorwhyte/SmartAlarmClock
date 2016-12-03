@@ -129,6 +129,8 @@ public class DistanceActivity extends Activity implements android.location.Locat
                 user.setMode(mode);
             }
         });
+
+
     }
 
     // Gets the latitude and longitude from a string address
@@ -248,6 +250,7 @@ public class DistanceActivity extends Activity implements android.location.Locat
     public void onStatusChanged(String provider, int status, Bundle extras) {
 
     }
+
 
     @Override
     public void onProviderEnabled(String provider) {
