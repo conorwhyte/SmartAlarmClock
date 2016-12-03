@@ -3,14 +3,11 @@ package com.example.conorwhyte.smartalarmclock;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.TextUtils;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -26,8 +23,8 @@ import java.util.ArrayList;
 
 public class AddUserDetailsActivity extends AppCompatActivity {
 
-    ArrayList<String> name = new ArrayList<String>();
-    ArrayList<Integer> time = new ArrayList<Integer>();
+    ArrayList<String> name = new ArrayList<>();
+    ArrayList<Integer> time = new ArrayList<>();
     int count = 0;
     int totalTime = 0;
 
@@ -36,6 +33,7 @@ public class AddUserDetailsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ActivityHelper.initialize(AddUserDetailsActivity.this);
         setContentView(R.layout.activity_add_user_details);
 
         if (!MainActivity.user.getFirstTime()) // if not first time user
@@ -53,7 +51,6 @@ public class AddUserDetailsActivity extends AppCompatActivity {
         String morningName = editText.getText().toString();
 
         EditText editText1 = (EditText) findViewById(R.id.editText3);
-        String timeNeeded = editText.getText().toString();
 
         if (editText1.getText().toString().trim().length() == 0 || editText.getText().toString().trim().length() == 0) {
             popUpEmptyTextView();
@@ -111,15 +108,11 @@ public class AddUserDetailsActivity extends AppCompatActivity {
     public void updateProgress(Integer count) {
         TextView textView = (TextView) findViewById(R.id.activityCount);
         textView.setText(count + " Activities");
-
-        return;
     }
 
     public void updateTime(Integer time) {
         totalTime += time;
         TextView textView = (TextView) findViewById(R.id.totalTime);
         textView.setText(totalTime + " Minutes Total");
-
-        return;
     }
 }

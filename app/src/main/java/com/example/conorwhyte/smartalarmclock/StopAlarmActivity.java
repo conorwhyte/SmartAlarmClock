@@ -4,31 +4,18 @@ import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Intent;
-
-import android.content.pm.PackageManager;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
-import android.location.Location;
-import android.location.LocationManager;
-import android.media.MediaPlayer;
-import android.os.CountDownTimer;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.NotificationCompat;
-
 import android.os.Bundle;
 import android.os.CountDownTimer;
-
+import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
-import com.google.android.gms.maps.model.LatLng;
-
-import java.text.DecimalFormat;
 import java.util.ArrayList;
-
 import java.util.Random;
 
 /**
@@ -44,14 +31,14 @@ public class StopAlarmActivity extends AppCompatActivity implements SensorEventL
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stop_alarm);
-
+        ActivityHelper.initialize(StopAlarmActivity.this);
         sensorMan = (SensorManager) getSystemService(SENSOR_SERVICE);
         accelerometer = sensorMan.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         mAccel = 0.00f;
         mAccelCurrent = SensorManager.GRAVITY_EARTH;
         mAccelLast = SensorManager.GRAVITY_EARTH;
 
-        if(isMovementEnough() == true){
+        if (isMovementEnough()) {
             stopAlarm();
         }
 
@@ -123,7 +110,7 @@ public class StopAlarmActivity extends AppCompatActivity implements SensorEventL
 
     public void pushNotification(){
         Intent notificationIntent = new Intent(Intent.ACTION_VIEW);
-        PendingIntent contentIntent = PendingIntent.getActivity(StopAlarmActivity.this, 0, notificationIntent, 0);
+        PendingIntent.getActivity(StopAlarmActivity.this, 0, notificationIntent, 0);
         Intent intent = new Intent(this, StopAlarmActivity.class);
         PendingIntent pi = PendingIntent.getActivity(this, 0, intent, 0);
 
@@ -170,7 +157,6 @@ public class StopAlarmActivity extends AppCompatActivity implements SensorEventL
 
     private SensorManager sensorMan;
     private Sensor accelerometer;
-    private float[] mGravity;
     private float mAccel;
     private float mAccelCurrent;
     private float mAccelLast;
@@ -185,11 +171,9 @@ public class StopAlarmActivity extends AppCompatActivity implements SensorEventL
         sensorMan.unregisterListener(this);
     }
 
-    private boolean isShaking = false; //detect is accelerometer is in use
-
     public void onSensorChanged(SensorEvent event) {
         if (event.sensor.getType() == Sensor.TYPE_ACCELEROMETER) {
-            mGravity = event.values.clone();
+            float[] mGravity = event.values.clone();
             // Shake detection
             float x = mGravity[0];
             float y = mGravity[1];
@@ -214,7 +198,7 @@ public class StopAlarmActivity extends AppCompatActivity implements SensorEventL
         double minShake = 3.0;
 
         if (currentAcceleration > minShake) {
-            isShaking = true;
+            boolean isShaking = true;
         } else if (currentAcceleration <= minShake) {
             //isShaking = false ;
         }
@@ -222,7 +206,7 @@ public class StopAlarmActivity extends AppCompatActivity implements SensorEventL
     }
 
     public boolean isMovementEnough() {
-        boolean check = false;
+        boolean check;
         int count = 0;
 
         for (Float f : arrayAccel) {
@@ -230,11 +214,8 @@ public class StopAlarmActivity extends AppCompatActivity implements SensorEventL
                 count++;
             }
         }
-        if (count > 30) {    //num of shakes of a minRequirement needed for "walking" to be detected
-            check = true;
-        } else {
-            check = false;
-        }
+        //num of shakes of a minRequirement needed for "walking" to be detected
+        check = count > 30;
         return check;
     }
 

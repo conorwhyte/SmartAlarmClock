@@ -1,9 +1,7 @@
 package com.example.conorwhyte.smartalarmclock;
 
 import android.app.Service;
-import android.content.Context;
 import android.content.Intent;
-import android.media.MediaPlayer;
 import android.media.Ringtone;
 import android.media.RingtoneManager;
 import android.net.Uri;
@@ -11,11 +9,12 @@ import android.os.IBinder;
 import android.util.Log;
 
 public class RingtonePlayingService extends Service {
-    MediaPlayer media_song;
     private boolean isRunning;
-    private Context context;
-    private int startId;
     private Ringtone ringtone;
+
+    public RingtonePlayingService(boolean isRunning) {
+        this.isRunning = isRunning;
+    }
 
 
     @Override

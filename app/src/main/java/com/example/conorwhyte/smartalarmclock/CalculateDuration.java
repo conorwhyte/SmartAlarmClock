@@ -29,11 +29,12 @@ class CalculateDuration {
     // method for putting the url together
     public void getDirectionsUrl() {
         String str_mode;
-        // Origin of route
-        String str_origin = "origin=" + user.getHomeLat() + "," + user.getHomeLon();
 
         // Destination of route
         String str_dest = "destination=" + user.getDestLat() + "," + user.getDestLon();
+
+        // Origin of route
+        String str_origin = "origin=" + user.getHomeLat() + "," + user.getHomeLon();
 
         // Travel mode
         String mode = "driving";

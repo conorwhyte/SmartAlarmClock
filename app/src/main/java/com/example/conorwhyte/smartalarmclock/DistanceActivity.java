@@ -28,7 +28,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioGroup;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.maps.model.LatLng;
@@ -43,7 +42,6 @@ import java.util.List;
 public class DistanceActivity extends FragmentActivity implements android.location.LocationListener {
 
     ArrayList<LatLng> markerPoints;
-    TextView tvDistanceDuration;
     private RadioGroup radioGroup;
     public String mode = "driving";
     public double latitude = 0.0;
@@ -60,6 +58,7 @@ public class DistanceActivity extends FragmentActivity implements android.locati
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ActivityHelper.initialize(DistanceActivity.this);
         setContentView(R.layout.activity_distance);
 
         Bundle extras = getIntent().getExtras();
@@ -80,7 +79,7 @@ public class DistanceActivity extends FragmentActivity implements android.locati
                     1);     // ask for permission !
         }
 
-        markerPoints = new ArrayList<LatLng>();
+        markerPoints = new ArrayList<>();
 
         radioGroup = (RadioGroup) findViewById(R.id.radioButton);
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -153,16 +152,10 @@ public class DistanceActivity extends FragmentActivity implements android.locati
         }
         return p1;
     }
-
-    /*
-                RETURNSECONDS NEEDS AN EDIT
-            NEEDS INTERNAL STORAGE OF ALARM TIME
-     */
     // gets the seconds from epoch time
 
 
     public static boolean isLocationEnabled(Context context) {
-        //...............
         return true;
     }
 
@@ -188,7 +181,6 @@ public class DistanceActivity extends FragmentActivity implements android.locati
                     != PackageManager.PERMISSION_GRANTED &&
                     ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION)
                             != PackageManager.PERMISSION_GRANTED) {
-                //Toast.makeText(DistanceActivity.this, "Location Services Must be turned on", Toast.LENGTH_SHORT).show();
                 return;
             }
 
@@ -227,11 +219,7 @@ public class DistanceActivity extends FragmentActivity implements android.locati
                     // functionality that depends on this permission.
                     Toast.makeText(this, "Permission denied to your Location Services", Toast.LENGTH_SHORT).show();
                 }
-                return;
             }
-
-            // other 'case' lines to check for other
-            // permissions this app might request
         }
     }
 

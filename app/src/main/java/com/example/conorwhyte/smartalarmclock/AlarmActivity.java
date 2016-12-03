@@ -41,6 +41,7 @@ public class AlarmActivity extends AppCompatActivity implements SensorEventListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ActivityHelper.initialize(AlarmActivity.this);
 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
@@ -196,7 +197,6 @@ public class AlarmActivity extends AppCompatActivity implements SensorEventListe
         public void run() {
             long millis = System.currentTimeMillis() - startTime;
             int seconds = (int) (millis / 1000);
-            int minutes = seconds / 60;
             seconds = seconds % 60;
             timer = seconds;
             timerHandler.postDelayed(this, 500);
