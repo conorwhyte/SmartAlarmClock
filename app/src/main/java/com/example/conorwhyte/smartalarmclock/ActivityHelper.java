@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.pm.ActivityInfo;
 
 /**
- * Created by Paul Ledwith on 03/12/2016.
+ * Created by Paul Ledwith on 03/12/2016
  */
 
 public class ActivityHelper {

@@ -24,7 +24,7 @@ import java.util.regex.Pattern;
 
 class CalculateDuration {
 
-    UserDetails user;
+    UserDetails user = new UserDetails();
 
     // method for putting the url together
     public void getDirectionsUrl() {
