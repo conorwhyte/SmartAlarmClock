@@ -394,7 +394,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="85e3b221e65298ef08ab38b7d85b7d3c7b2039ea">
+        sha1="9a25534fcb95e828c693379325f98a215a960b1e">
         <dex dex="C:\Users\Paul Ledwith\Desktop\Android\SmartAlarmClock\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_c1b9b0835167da8f807854ac0da57dc6d1c210fa\classes.dex" />
     </item>
     <item
@@ -493,7 +493,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="8bd26ca3d089bf4e7b6eb7d2bb22d635ae5662f9">
+        sha1="53836639424b9b6bfe2c99b64628732ce9908de4">
         <dex dex="C:\Users\Paul Ledwith\Desktop\Android\SmartAlarmClock\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_e334fbf90b4c6d3ec5ac935a98f1e945b40458c3\classes.dex" />
     </item>
     <item

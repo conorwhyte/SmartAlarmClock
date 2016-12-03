@@ -12,6 +12,7 @@ package com.example.conorwhyte.smartalarmclock;
  */
 
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.location.Address;
@@ -21,10 +22,11 @@ import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.ContextCompat;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioGroup;
@@ -39,14 +41,13 @@ import java.util.List;
                 RETURNSECONDS NEEDS AN EDIT
             NEEDS INTERNAL STORAGE OF ALARM TIME
 */
-public class DistanceActivity extends FragmentActivity implements android.location.LocationListener {
+public class DistanceActivity extends Activity implements android.location.LocationListener {
 
     ArrayList<LatLng> markerPoints;
     private RadioGroup radioGroup;
     public String mode = "driving";
     public double latitude = 0.0;
     public double longitude = 0.0;
-
     public LocationManager locationManager;
     public Criteria criteria;
     public String bestProvider;
@@ -58,8 +59,8 @@ public class DistanceActivity extends FragmentActivity implements android.locati
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ActivityHelper.initialize(DistanceActivity.this);
         setContentView(R.layout.activity_distance);
+        ActivityHelper.initialize(DistanceActivity.this);
 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
@@ -80,6 +81,7 @@ public class DistanceActivity extends FragmentActivity implements android.locati
         }
 
         markerPoints = new ArrayList<>();
+
 
         radioGroup = (RadioGroup) findViewById(R.id.radioButton);
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -255,5 +257,31 @@ public class DistanceActivity extends FragmentActivity implements android.locati
     @Override
     public void onProviderDisabled(String provider) {
 
+    }
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        View v = getCurrentFocus();
+
+        if (v != null &&
+                (ev.getAction() == MotionEvent.ACTION_UP || ev.getAction() == MotionEvent.ACTION_MOVE) &&
+                v instanceof EditText &&
+                !v.getClass().getName().startsWith("android.webkit.")) {
+            int scrcoords[] = new int[2];
+            v.getLocationOnScreen(scrcoords);
+            float x = ev.getRawX() + v.getLeft() - scrcoords[0];
+            float y = ev.getRawY() + v.getTop() - scrcoords[1];
+
+            if (x < v.getLeft() || x > v.getRight() || y < v.getTop() || y > v.getBottom())
+                hideKeyboard(this);
+        }
+        return super.dispatchTouchEvent(ev);
+    }
+
+    public static void hideKeyboard(Activity activity) {
+        if (activity != null && activity.getWindow() != null && activity.getWindow().getDecorView() != null) {
+            InputMethodManager imm = (InputMethodManager) activity.getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(activity.getWindow().getDecorView().getWindowToken(), 0);
+        }
     }
 }
