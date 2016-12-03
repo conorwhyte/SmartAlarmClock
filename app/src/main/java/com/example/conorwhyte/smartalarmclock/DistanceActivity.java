@@ -12,6 +12,7 @@ package com.example.conorwhyte.smartalarmclock;
  */
 
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.location.Address;
@@ -25,6 +26,7 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioGroup;
@@ -127,6 +129,8 @@ public class DistanceActivity extends FragmentActivity implements android.locati
                 user.setMode(mode);
             }
         });
+
+
     }
 
     // Gets the latitude and longitude from a string address
@@ -246,6 +250,7 @@ public class DistanceActivity extends FragmentActivity implements android.locati
     public void onStatusChanged(String provider, int status, Bundle extras) {
 
     }
+
 
     @Override
     public void onProviderEnabled(String provider) {
