@@ -2,18 +2,18 @@ package com.example.conorwhyte.smartalarmclock;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.CountDownTimer;
 import android.os.Handler;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.FrameLayout;
+<<<<<<< HEAD
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+=======
+>>>>>>> origin/master
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.appindexing.Action;
@@ -41,20 +41,14 @@ public class CardListActivity extends Activity {
     private int current = 0;
     public long startTime = System.currentTimeMillis();
 
-
-    boolean inActivity = true;
-
     UserDetails user;
-    /**
-     * ATTENTION: This was auto-generated to implement the App Indexing API.
-     * See https://g.co/AppIndexing/AndroidStudio for more information.
-     */
     private GoogleApiClient client;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.listview);
+        ActivityHelper.initialize(CardListActivity.this);
         listView = (ListView) findViewById(R.id.card_listView);
 
         Bundle extras = getIntent().getExtras();

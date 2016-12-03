@@ -11,6 +11,7 @@ public class MenuBarwithBack extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_barwith_back);
+        ActivityHelper.initialize(MenuBarwithBack.this);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 

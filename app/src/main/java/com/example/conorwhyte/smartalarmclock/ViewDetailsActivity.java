@@ -12,6 +12,7 @@ public class ViewDetailsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_details);
+        ActivityHelper.initialize(ViewDetailsActivity.this);
 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {

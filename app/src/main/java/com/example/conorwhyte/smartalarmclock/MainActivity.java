@@ -1,27 +1,25 @@
 package com.example.conorwhyte.smartalarmclock;
 
-import android.annotation.TargetApi;
-import android.app.AlarmManager;
 import android.app.AlertDialog;
-import android.app.Notification;
-import android.app.NotificationManager;
-import android.app.PendingIntent;
-import android.app.TaskStackBuilder;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+<<<<<<< HEAD
 import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+=======
+>>>>>>> origin/master
 import android.os.Bundle;
-
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+<<<<<<< HEAD
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+=======
+>>>>>>> origin/master
 import android.widget.TextView;
-import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
@@ -35,6 +33,12 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+<<<<<<< HEAD
+=======
+        setContentView(R.layout.main_layout);
+        ActivityHelper.initialize(MainActivity.this);
+
+>>>>>>> origin/master
 
         setContentView(R.layout.main_layout);
         boolean newUser = true;             // first time user or no
@@ -66,7 +70,8 @@ public class MainActivity extends AppCompatActivity {
             user = new UserDetails();
         }
 
-        if (user.getFirstTime() == true && newUser) {
+        assert user != null;
+        if (user.getFirstTime() && newUser) {
             //Open PopUp
             user.setFirstTime(false);
             popUp();
@@ -83,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
         gson = new Gson();
         json = gson.toJson(user);
         prefsEditor.putString("UserDetails", json);
-        prefsEditor.commit();
+        prefsEditor.apply();
     }
 
     public void popUp() {
