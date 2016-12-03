@@ -1,6 +1,6 @@
 package com.example.conorwhyte.smartalarmclock;
 
-<<<<<<< HEAD
+
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.PorterDuffColorFilter;
@@ -17,8 +17,7 @@ import android.view.View;
 import static android.content.Context.LAYOUT_INFLATER_SERVICE;
 import static android.graphics.Color.*;
 
-=======
->>>>>>> origin/master
+
 /**
  * This is an individual card which will be passed into the ArrayAdapter. Here the name, time and
  * image id of the card is set.

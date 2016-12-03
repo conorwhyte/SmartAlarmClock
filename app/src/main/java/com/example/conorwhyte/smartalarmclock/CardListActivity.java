@@ -8,11 +8,10 @@ import android.os.Handler;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.FrameLayout;
-<<<<<<< HEAD
+
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-=======
->>>>>>> origin/master
+
 import android.widget.ListView;
 import android.widget.Toast;
 
