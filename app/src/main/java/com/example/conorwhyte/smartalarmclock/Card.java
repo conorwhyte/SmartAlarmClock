@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.graphics.PorterDuffColorFilter;
 import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.FrameLayout;
@@ -48,6 +49,7 @@ public class Card {
     public int getId() {
         return id;
     }
+
 
 
 }

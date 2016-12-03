@@ -6,8 +6,8 @@
     android:background="@drawable/tempbackground"
     android:orientation="vertical"><![CDATA[
     >
+]]>
 
-    ]]>
 
     <ImageView
         android:id="@+id/imageView3"

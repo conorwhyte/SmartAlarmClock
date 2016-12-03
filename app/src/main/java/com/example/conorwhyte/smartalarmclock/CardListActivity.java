@@ -8,8 +8,10 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -63,6 +65,7 @@ public class CardListActivity extends Activity {
         listView.addHeaderView(new View(this));
         listView.addFooterView(new View(this));
 
+        
         cardArrayAdapter = new CardArrayAdapter(getApplicationContext(), R.layout.list_item_card);
 
         for (int i = 0; i < 10; i++) {
@@ -78,9 +81,9 @@ public class CardListActivity extends Activity {
                 String time1 = String.valueOf(user.getCardTimes().get(i));
                 Card card = new Card(name1, time1, images[1]);
                 cardArrayAdapter.add(card);
+
             }
         }
-
 
 
         /*
@@ -229,6 +232,24 @@ public class CardListActivity extends Activity {
         AppIndex.AppIndexApi.end(client, getIndexApiAction());
         client.disconnect();
     }
+
+    public void openPopUp(View view){
+       // Toast.makeText(getApplicationContext(), "Welcome Back", Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(CardListActivity.this, MapDirections.class);
+        startActivity(intent);
+
+    }
+
+    public void test(){
+        LinearLayout app_layer = (LinearLayout) findViewById (R.id.linear);
+        app_layer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), "Welcome Back", Toast.LENGTH_LONG).show();
+            }
+        });
+    }
+
 
     public void startMap() {
         String pass = String.valueOf(user.getDestination());             //get value of location from the database

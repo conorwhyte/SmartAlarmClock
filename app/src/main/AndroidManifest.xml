@@ -17,7 +17,7 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme">
+            android:theme="@style/AppTheme" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -31,14 +31,18 @@
             android:name=".RingtonePlayingService"
             android:enabled="true" />
 
-        <activity android:name=".StopAlarmActivity"
-            android:theme="@style/AppTheme"/>
-        <activity android:name=".CardListActivity"
-            android:theme="@style/AppTheme"/>
-        <activity android:name=".DistanceActivity"
-            android:theme="@style/AppTheme"/>
-        <activity android:name=".MapDirections"
-            android:theme="@style/AppTheme"/>
+        <activity
+            android:name=".StopAlarmActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".CardListActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".DistanceActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".MapDirections"
+            android:theme="@style/AppTheme" />
 
         <meta-data
             android:name="com.google.android.maps.v4.API_KEY"
@@ -58,13 +62,20 @@
         <activity
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps"
-            android:theme="@style/AppTheme"/>
-        <activity android:name=".AlarmActivity"
-            android:theme="@style/AppTheme"/>
-        <activity android:name=".AddUserDetailsActivity"
-            android:theme="@style/AppTheme"/>
-        <activity android:name=".ViewDetailsActivity"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".AlarmActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".AddUserDetailsActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".ViewDetailsActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".NavActivity"
+            android:label="@string/title_activity_nav"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

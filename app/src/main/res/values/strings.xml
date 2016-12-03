@@ -7,4 +7,9 @@
     <string name="str_tv_distance_time">Distance</string>
     <string name="str_atv_places">Enter place here</string>
     <string name="title_activity_menu_barwith_back">MenuBarwithBack</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="title_activity_nav">NavActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
 </resources>
