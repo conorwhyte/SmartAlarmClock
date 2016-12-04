@@ -2,7 +2,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DistanceActivity">
+    tools:context=".DistanceActivity"
+    android:background="@drawable/distancebackground"
+    >
     <Button
         android:id="@+id/button2"
         android:layout_width="wrap_content"
