@@ -103,10 +103,10 @@ public class AlarmActivity extends AppCompatActivity implements SensorEventListe
                     hour_string = String.valueOf(user.getAlarmHour() - 12);
                     pm = true;
                 }
-                if (user.getAlarmHour() == 12) {
+                else if (user.getAlarmHour() == 12) {
                     pm = true;
                 }
-                if (user.getAlarmHour() == 24 ||
+                else if (user.getAlarmHour() == 24 ||
                         user.getAlarmHour() == 0) {
                     user.setAlarmHour(0);
                     pm = false;

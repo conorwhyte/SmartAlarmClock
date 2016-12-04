@@ -45,7 +45,15 @@ public class MainActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                String alarmtime = "Alarm due at - ";
+                int temphour, tempminute;
+                temphour = user.getAlarmHour();
+                tempminute = user.getAlarmMin();
+                if(temphour == -1 && tempminute == -1)
+                    {alarmtime += "Alarm not set yet, go set it!";}
+                else
+                    {alarmtime += temphour + ":" + tempminute;}
+                Snackbar.make(view, alarmtime, Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
@@ -94,13 +102,6 @@ public class MainActivity extends AppCompatActivity
             popUp();
         }
 
-
-        TextView txt = (TextView) this.findViewById(R.id.textView14);
-
-//        txt.setText(Integer.toString(user.getCardCount()));
-
-        // Add UserDetails object to memory below
-
         ImageButton ib3 = (ImageButton) findViewById(R.id.ib3);
         //ImageButton ib4 = (ImageButton) findViewById(R.id.ib4);
 
@@ -111,12 +112,21 @@ public class MainActivity extends AppCompatActivity
                 android.R.attr.selectableItemBackground, outValue, true);
         ib3.setBackgroundResource(outValue.resourceId);
 
+        ib3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openAlarm();
+            }
+        });
+
         /*
         TypedValue outValue1 = new TypedValue();
         getApplicationContext().getTheme().resolveAttribute(
                 android.R.attr.selectableItemBackground, outValue1, true);
         ib4.setBackgroundResource(outValue.resourceId);
         */
+
+
 
         SharedPreferences.Editor prefsEditor = MainActivity.mPrefs.edit();
         gson = new Gson();
@@ -164,15 +174,15 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.nav_camera) {            // view morning routine
             openCardList();
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        } else if (id == R.id.nav_gallery) {    // edit morning routine
             openAddUserDetails();
 
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.nav_slideshow) {  // set smart alarm
+                                            // need to add smart alarm function in to here
+        } else if (id == R.id.nav_manage) {     // set normal alarm
             openAlarm();
         }
 
@@ -208,13 +218,6 @@ public class MainActivity extends AppCompatActivity
 
     public void openManager() {
         Intent intent = new Intent(this, CardListActivity.class);
-        intent.putExtra("Object", user);
-        startActivity(intent);
-    }
-
-
-    public void openDirection(View view){
-        Intent intent = new Intent(this, NavActivity.class);
         intent.putExtra("Object", user);
         startActivity(intent);
     }
