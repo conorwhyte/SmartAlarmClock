@@ -4,18 +4,15 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
-import java.util.Objects;
-
 /**
- * Created by padraigmitchell on 08/11/2016
+ * Created by padraigmitchell on 08/11/2016.
  */
 
 public class AlarmReceiver extends BroadcastReceiver {
-    //Intent i;
 
-    //  UserDetails user ;
 
     @Override
     public void onReceive(Context context, Intent intent) {
@@ -30,7 +27,7 @@ public class AlarmReceiver extends BroadcastReceiver {
         }
 
 
-        if (Objects.equals(state, "yes")) {
+        if (state == "yes") {
             Toast.makeText(context, "Beep beep, time to move!", Toast.LENGTH_LONG).show();
 
         } else {
@@ -46,8 +43,4 @@ public class AlarmReceiver extends BroadcastReceiver {
         context.startService(service_intent);
 
 
-        ////Log.e("MyActivity", "In the receiver with " + state);
-
-
-    }
-}
+    }}
