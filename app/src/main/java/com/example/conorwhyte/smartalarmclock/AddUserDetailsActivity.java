@@ -5,8 +5,11 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.util.TypedValue;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -36,12 +39,26 @@ public class AddUserDetailsActivity extends AppCompatActivity {
         ActivityHelper.initialize(AddUserDetailsActivity.this);
         setContentView(R.layout.activity_add_user_details);
 
+
         if (!MainActivity.user.getFirstTime()) // if not first time user
         {
             newUser = MainActivity.user;
             updateProgress(newUser.getCardCount());
             updateTime(newUser.getTotalTime());
         }
+
+        //Makes the buttons transparent - Taken from Stack Overflow
+        ImageButton ib3 = (ImageButton) findViewById(R.id.ib3);
+        TypedValue outValue = new TypedValue();
+        getApplicationContext().getTheme().resolveAttribute(
+                android.R.attr.selectableItemBackground, outValue, true);
+        ib3.setBackgroundResource(outValue.resourceId);
+
+        ImageButton ib4 = (ImageButton) findViewById(R.id.ib4);
+        TypedValue outValue1 = new TypedValue();
+        getApplicationContext().getTheme().resolveAttribute(
+                android.R.attr.selectableItemBackground, outValue1, true);
+        ib4.setBackgroundResource(outValue1.resourceId);
     }
 
     //add a morning routine

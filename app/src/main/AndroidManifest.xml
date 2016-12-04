@@ -26,7 +26,8 @@
         </activity>
 
         <activity android:name=".MainActivity"
-            android:label="@string/title_activity_nav"
+            android:label="Main Activity"
+
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
 
@@ -40,7 +41,10 @@
         <activity android:name=".StopAlarmActivity"
             android:theme="@style/AppTheme"/>
         <activity android:name=".CardListActivity"
-            android:theme="@style/AppTheme"/>
+            android:label="Card Activity"
+
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".DistanceActivity"
             android:theme="@style/AppTheme"/>
         <activity android:name=".MapDirections"
@@ -57,7 +61,8 @@
         <activity android:name=".AlarmActivity"
             android:theme="@style/AppTheme"/>
         <activity android:name=".AddUserDetailsActivity"
-            android:theme="@style/AppTheme"/>
+            android:theme="@style/AppTheme"
+            android:label="Add Morning Routine" />
         <activity android:name=".ViewDetailsActivity"
             android:theme="@style/AppTheme"></activity>
     </application>

@@ -74,24 +74,27 @@
         android:textColorHint="#FFFFFF"
         android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/button8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/editText3"
-        android:layout_marginStart="15dp"
-        android:layout_toEndOf="@+id/activityCount"
-        android:onClick="addDetails"
-        android:text="ADD" />
 
-    <Button
-        android:id="@+id/button9"
+    <ImageButton
+        android:id="@+id/ib3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/editText3"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="43dp"
+        android:src="@drawable/addactivity"
+        android:onClick="addDetails"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:layout_above="@+id/ib4"
+        android:layout_alignEnd="@+id/editText3" />
+
+    <ImageButton
+        android:id="@+id/ib4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/finish"
         android:onClick="sendDetails"
-        android:text="FINISH" />
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:layout_marginBottom="15dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/ib3" />
+
 
 </RelativeLayout>

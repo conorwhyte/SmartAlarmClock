@@ -5,15 +5,20 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v7.widget.Toolbar;
+import android.util.TypedValue;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.FrameLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import android.widget.ListView;
 import android.widget.Toast;
+import android.support.v7.widget.Toolbar;
 
 import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
@@ -43,10 +48,16 @@ public class CardListActivity extends Activity {
     UserDetails user;
     private GoogleApiClient client;
 
+    /*This will create the card list based on the cards entered in by the user at the inital startup
+    Dynamically changes the image based on the name they gave the card, only a number of option on
+    what they can choose otherwsie it defaults to alarm icon
+    */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.listview);
+
+
         ActivityHelper.initialize(CardListActivity.this);
         listView = (ListView) findViewById(R.id.card_listView);
 
@@ -65,43 +76,48 @@ public class CardListActivity extends Activity {
             //  Card card = new Card("Card " + (i+1) + " Line 1", "Card " + (i+1) + " Line 2");
             // cardArrayAdapter.add(card);
         }
-        final int[] images = {R.drawable.breakfast, R.drawable.shower, R.drawable.suit, R.drawable.food, R.drawable.car};
+        final int[] images = {R.drawable.breakfast, R.drawable.shower, R.drawable.suit, R.drawable.food, R.drawable.car, R.drawable.alarm};
 
         if (user != null) {
             for (int i = 0; i < user.getCardCount(); i++) {
 
                 String name1 = user.getCardNames().get(i);
                 String time1 = String.valueOf(user.getCardTimes().get(i));
-                Card card = new Card(name1, time1, images[1]);
+
+                int imageTracker ;
+                if(name1.toLowerCase().contains("shower")){
+                    imageTracker = 1 ;
+
+                }
+                else if(name1.toLowerCase().contains("breakfast") || name1.toLowerCase().contains("eat")){
+                    imageTracker = 0 ;
+                }
+                else if(name1.toLowerCase().contains("dress")){
+                    imageTracker = 2 ;
+                }
+                else if(name1.toLowerCase().contains("food") || name1.toLowerCase().contains("lunch")){
+                    imageTracker = 3 ;
+                }
+                else if(name1.toLowerCase().contains("leave")|| name1.toLowerCase().contains("car") ||name1.toLowerCase().contains("travel")){
+                    imageTracker = 4 ;
+                }
+                else{
+                    imageTracker = 5 ;
+                }
+
+                Card card = new Card(name1, time1 + "mins", images[imageTracker]);
                 cardArrayAdapter.add(card);
 
             }
         }
-
-
-        /*
-        //String sec = Long.toString(secondsRemaining[0]);
-        final Card cardShower = new Card("Shower" , "8:05am", images[1] );
-        cardArrayAdapter.add(cardShower);
-
-        Card cardDress = new Card("Get Dressed" , "8:15am", images[2]);
-        cardArrayAdapter.add(cardDress);
-
-        final Card cardBreak = new Card("Eat Breakfast" , "8:25am", images[0]);
-        cardArrayAdapter.add(cardBreak);
-
-        Card cardLunch = new Card("Prepare Lunch" , "8:30am", images[3]);
-        cardArrayAdapter.add(cardLunch);
-
-        Card cardLeave = new Card("Leave for Work" , "8:35am", images[4]);
-        cardArrayAdapter.add(cardLeave);
-        */
 
         listView.setAdapter(cardArrayAdapter);
         startTimer();
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
+
+
     }
 
     //Timer methods used to indicate when the alarm should go off next

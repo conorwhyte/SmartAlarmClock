@@ -37,9 +37,11 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nav);
 
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("Morning Manager");
         setSupportActionBar(toolbar);
+
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -102,16 +104,13 @@ public class MainActivity extends AppCompatActivity
             popUp();
         }
 
+        //This makes the image button transparent  -Taken from Stack Overflow
         ImageButton ib3 = (ImageButton) findViewById(R.id.ib3);
-        //ImageButton ib4 = (ImageButton) findViewById(R.id.ib4);
 
-        // Set the third image button background transparent
-        // This method allow us to show click effect
         TypedValue outValue = new TypedValue();
         getApplicationContext().getTheme().resolveAttribute(
                 android.R.attr.selectableItemBackground, outValue, true);
         ib3.setBackgroundResource(outValue.resourceId);
-
         ib3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -119,14 +118,11 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
-        /*
+        ImageButton ib4 = (ImageButton) findViewById(R.id.ib4);
         TypedValue outValue1 = new TypedValue();
         getApplicationContext().getTheme().resolveAttribute(
                 android.R.attr.selectableItemBackground, outValue1, true);
         ib4.setBackgroundResource(outValue.resourceId);
-        */
-
-
 
         SharedPreferences.Editor prefsEditor = MainActivity.mPrefs.edit();
         gson = new Gson();
