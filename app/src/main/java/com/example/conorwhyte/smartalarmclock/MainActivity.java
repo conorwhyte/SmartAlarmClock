@@ -218,6 +218,7 @@ public class MainActivity extends AppCompatActivity
         Intent intent = new Intent(this, AlarmActivity.class);
         intent.putExtra("Object", user);
         startActivity(intent);
+
     }
 
     public void openDistance() {
