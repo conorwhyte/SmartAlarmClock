@@ -14,6 +14,7 @@ package com.example.conorwhyte.smartalarmclock;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Criteria;
@@ -34,8 +35,12 @@ import android.widget.Toast;
 
 import com.google.android.gms.maps.model.LatLng;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+
+import static java.lang.Math.toIntExact;
+
 
 /*
                 RETURNSECONDS NEEDS AN EDIT
@@ -53,7 +58,7 @@ public class DistanceActivity extends Activity implements android.location.Locat
     public String bestProvider;
     public LatLng destination;
     public LatLng location;
-    UserDetails user;
+    UserDetails user = MainActivity.user;
 
     //waits for a button press to start actvity
     @Override
@@ -127,10 +132,12 @@ public class DistanceActivity extends Activity implements android.location.Locat
                 user.setDestLat(destination.latitude);
                 user.setDestination(destination);
                 user.setMode(mode);
+
+                Toast.makeText(getApplicationContext(), "Locations Saved, go set your desired arrival time!", Toast.LENGTH_SHORT).show();
+
+                finish();
             }
         });
-
-
     }
 
     // Gets the latitude and longitude from a string address

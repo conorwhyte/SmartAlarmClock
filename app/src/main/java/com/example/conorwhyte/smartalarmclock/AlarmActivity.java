@@ -33,7 +33,7 @@ public class AlarmActivity extends AppCompatActivity implements SensorEventListe
     AlarmManager alarmManager;
     private PendingIntent pending_intent;
     private TimePicker alarmTimePicker;
-    UserDetails user;
+    UserDetails user = MainActivity.user;
     CalculateDuration calculateDuration = new CalculateDuration();
 
     @TargetApi(Build.VERSION_CODES.M)
@@ -47,7 +47,7 @@ public class AlarmActivity extends AppCompatActivity implements SensorEventListe
         if (extras != null) {
             user = (UserDetails) extras.getSerializable("Object");
         } else {
-            user = new UserDetails();
+            user = MainActivity.user;
         }
 
         Intent intent = new Intent(this, AddUserDetailsActivity.class);
@@ -84,16 +84,32 @@ public class AlarmActivity extends AppCompatActivity implements SensorEventListe
                 calendar.set(Calendar.MINUTE, alarmTimePicker.getMinute());
                 final int hour ;
                 final int minute ;
-                if(user.getAlarmHour() != -1){
+
+                if(user.getAlarmHour() != -1)
+                {
                     hour = user.getAlarmHour();
                     minute = user.getAlarmMin();
                 }
-                else{
+                else
+                {
                     hour = alarmTimePicker.getHour();
                     minute = alarmTimePicker.getMinute();
                 }
-                String minute_string = String.valueOf(minute);
-                String hour_string = String.valueOf(hour);
+
+                user.setArrivalMin(minute);
+                user.setArrivalHour(hour);
+
+                CalculateDuration calc = new CalculateDuration();
+                long ttime = calc.returnSeconds(user);
+
+                user.setJourneyTime((int)ttime);
+
+                System.out.println("Travel time = " + (int) ttime );
+
+                user.setAlarm();
+
+                String minute_string = String.valueOf(user.getAlarmMin());
+                String hour_string = String.valueOf(user.getAlarmHour());
                 Boolean pm = false;
                 String alarmtext;
 

@@ -24,7 +24,7 @@ import java.util.regex.Pattern;
 
 class CalculateDuration {
 
-    UserDetails user = new UserDetails();
+    UserDetails user = MainActivity.user;
 
     // method for putting the url together
     public void getDirectionsUrl() {
@@ -39,7 +39,7 @@ class CalculateDuration {
         // Travel mode
         String mode = "driving";
         if (mode.equals("transit")) {
-            str_mode = "mode=" + mode + "&arrival_time=" + returnSeconds();
+            str_mode = "mode=" + mode + "&arrival_time=" + returnSeconds(user);
         } else {
             str_mode = "mode=" + mode;
         }
@@ -204,7 +204,8 @@ class CalculateDuration {
         }
     }
 
-    private long returnSeconds() {
+    public long returnSeconds(UserDetails u) {
+        user = u;
         Calendar calendar1 = Calendar.getInstance();
         Calendar calendar2 = Calendar.getInstance();
         int year = Calendar.getInstance().get(Calendar.YEAR);
