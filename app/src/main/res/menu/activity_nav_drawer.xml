@@ -12,12 +12,12 @@
             android:title="Edit Morning Routine" />
         <item
             android:id="@+id/nav_slideshow"
-            android:icon="@drawable/backarrow"
-            android:title="View Previous Alarms" />
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Set Smart Alarm" />
         <item
             android:id="@+id/nav_manage"
             android:icon="@drawable/alarm"
-            android:title="Set Alarm" />
+            android:title="Set Normal Alarm" />
     </group>
 
 </menu>
