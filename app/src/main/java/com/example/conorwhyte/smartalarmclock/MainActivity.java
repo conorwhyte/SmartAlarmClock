@@ -123,6 +123,12 @@ public class MainActivity extends AppCompatActivity
         getApplicationContext().getTheme().resolveAttribute(
                 android.R.attr.selectableItemBackground, outValue1, true);
         ib4.setBackgroundResource(outValue.resourceId);
+        ib4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openDistance();
+            }
+        });
 
         SharedPreferences.Editor prefsEditor = MainActivity.mPrefs.edit();
         gson = new Gson();
@@ -131,6 +137,8 @@ public class MainActivity extends AppCompatActivity
         prefsEditor.commit();
     }
 
+
+    //All code below is made by Android studio once a Navigation activity is made
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -212,8 +220,8 @@ public class MainActivity extends AppCompatActivity
         startActivity(intent);
     }
 
-    public void openManager() {
-        Intent intent = new Intent(this, CardListActivity.class);
+    public void openDistance() {
+        Intent intent = new Intent(this, DistanceActivity.class);
         intent.putExtra("Object", user);
         startActivity(intent);
     }
@@ -226,6 +234,13 @@ public class MainActivity extends AppCompatActivity
 
     public void openCardList() {
         Intent intent = new Intent(this, CardListActivity.class);
+        intent.putExtra("Object", user);
+        startActivity(intent);
+        //finish();
+    }
+
+    public void openStopAlarm() {
+        Intent intent = new Intent(this, AddUserDetailsActivity.class);
         intent.putExtra("Object", user);
         startActivity(intent);
         //finish();

@@ -24,13 +24,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".MainActivity"
+        <activity
+            android:name=".MainActivity"
             android:label="Main Activity"
-
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
-
 
         <receiver android:name=".AlarmReceiver" />
 
@@ -38,17 +36,21 @@
             android:name=".RingtonePlayingService"
             android:enabled="true" />
 
-        <activity android:name=".StopAlarmActivity"
-            android:theme="@style/AppTheme"/>
-        <activity android:name=".CardListActivity"
+        <activity
+            android:name=".StopAlarmActivity"
+            android:label="Alarm Activated"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".CardListActivity"
             android:label="Card Activity"
-
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".DistanceActivity"
-            android:theme="@style/AppTheme"/>
-        <activity android:name=".MapDirections"
-            android:theme="@style/AppTheme"/>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".DistanceActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".MapDirections"
+            android:theme="@style/AppTheme" />
 
         <meta-data
             android:name="com.google.android.maps.v4.API_KEY"
@@ -57,14 +59,17 @@
         <activity
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps"
-            android:theme="@style/AppTheme"/>
-        <activity android:name=".AlarmActivity"
-            android:theme="@style/AppTheme"/>
-        <activity android:name=".AddUserDetailsActivity"
-            android:theme="@style/AppTheme"
-            android:label="Add Morning Routine" />
-        <activity android:name=".ViewDetailsActivity"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".AlarmActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".AddUserDetailsActivity"
+            android:label="Add Morning Routine"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".ViewDetailsActivity"
+            android:theme="@style/AppTheme" />
     </application>
 
 </manifest>
