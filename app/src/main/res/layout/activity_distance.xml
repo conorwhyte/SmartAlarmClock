@@ -3,15 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".DistanceActivity">
-
-    <TextView
-        android:id="@+id/tv_distance_time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:text="@string/hello_world"
-        android:textColor="#FFFFFF" />
-
     <Button
         android:id="@+id/button2"
         android:layout_width="wrap_content"
@@ -26,7 +17,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/tv_distance_time"
         android:hint="Leave Blank to use current location"
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF" />
@@ -84,5 +74,13 @@
             android:text="Public Transport"
             android:textColor="#FFFFFF" />
     </RadioGroup>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:src="@drawable/powered_by_google_light"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>

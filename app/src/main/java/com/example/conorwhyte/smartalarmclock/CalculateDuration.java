@@ -52,6 +52,7 @@ class CalculateDuration {
 
         // Building the url to the web service
         String url = "https://maps.googleapis.com/maps/api/directions/json?" + parameters;
+        System.out.println(url);
         DownloadTask downloadTask = new DownloadTask();
         downloadTask.execute(url);
     }

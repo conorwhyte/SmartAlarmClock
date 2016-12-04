@@ -5,6 +5,8 @@ import android.content.pm.ActivityInfo;
 
 /**
  * Created by Paul Ledwith on 03/12/2016
+ * Class used to set common additions
+ * through all activity with an onCreate()
  */
 
 public class ActivityHelper {
