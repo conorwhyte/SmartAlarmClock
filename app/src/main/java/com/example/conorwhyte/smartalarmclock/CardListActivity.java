@@ -193,7 +193,27 @@ public class CardListActivity extends Activity {
 
                 String name1 = user.getCardNames().get(i);
                 String time1 = user.getCardNames().get(i);
-                Card card = new Card(name1, time1, images[1]);
+                int imageTracker ;
+                if(name1.toLowerCase().contains("shower")){
+                    imageTracker = 1 ;
+
+                }
+                else if(name1.toLowerCase().contains("breakfast") || name1.toLowerCase().contains("eat")){
+                    imageTracker = 0 ;
+                }
+                else if(name1.toLowerCase().contains("dress")){
+                    imageTracker = 2 ;
+                }
+                else if(name1.toLowerCase().contains("food") || name1.toLowerCase().contains("lunch")){
+                    imageTracker = 3 ;
+                }
+                else if(name1.toLowerCase().contains("leave")|| name1.toLowerCase().contains("car") ||name1.toLowerCase().contains("travel")){
+                    imageTracker = 4 ;
+                }
+                else{
+                    imageTracker = 5 ;
+                }
+                Card card = new Card(name1, time1, images[imageTracker]);
                 cardArrayAdapter.add(card);
             }
             listView.setAdapter(cardArrayAdapter);
