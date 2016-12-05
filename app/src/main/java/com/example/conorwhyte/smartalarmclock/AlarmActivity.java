@@ -92,19 +92,11 @@ public class AlarmActivity extends AppCompatActivity implements SensorEventListe
                 final int hour ;
                 final int minute ;
 
-                // set arrival min/hour or get alarm min/hour if one saved
-                if(user.getAlarmHour() != -1)
-                {
-                    hour = user.getAlarmHour();
-                    minute = user.getAlarmMin();
-                }
-                else
-                {
-                    hour = alarmTimePicker.getHour();
-                    minute = alarmTimePicker.getMinute();
-                    user.setArrivalMin(minute);
-                    user.setArrivalHour(hour);
-                }
+                // get time desired to arrive at
+                hour = alarmTimePicker.getHour();
+                minute = alarmTimePicker.getMinute();
+                user.setArrivalMin(minute);
+                user.setArrivalHour(hour);
 
                 // set alarm time based on arrival time and activity + travel time
                 user.setAlarm();
@@ -124,18 +116,19 @@ public class AlarmActivity extends AppCompatActivity implements SensorEventListe
 
                 int morningMillis = user.getTotalTime() * 60 * 1000; // minutes to seconds then milliseconds
 
+                // alarm time = arrival time - activity time
                 long alarmMillis = calendar.getTimeInMillis() - (long) morningMillis;       // get alarm time
                 System.out.println("Alarm: " + alarmMillis + " Calendar: " + calendar.getTimeInMillis() + " Activity: " + morningMillis);
                 System.out.println(System.currentTimeMillis());
                 System.out.println(alarmMillis - System.currentTimeMillis());
-
-                alarmManager.setExact(AlarmManager.RTC_WAKEUP, alarmMillis, pending_intent);
 
                 Bundle extras = new Bundle();
                 extras.putSerializable("Object", user);
                 extras.putString("extra", "yes");       //signal for alarm reciever to start ringtone reciever
                 myIntent.putExtras(extras);
                 pending_intent = PendingIntent.getBroadcast(AlarmActivity.this, 0, myIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+
+                alarmManager.setExact(AlarmManager.RTC_WAKEUP, alarmMillis, pending_intent);
 
                 alarmtext = hour_string + ":" + minute_string;
 
