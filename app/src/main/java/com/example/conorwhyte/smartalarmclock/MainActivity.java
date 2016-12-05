@@ -193,7 +193,8 @@ public class MainActivity extends AppCompatActivity
             openAddUserDetails();
 
         } else if (id == R.id.nav_slideshow) {  // set smart alarm
-                                            // need to add smart alarm function in to here
+
+            openDistance();        // need to add smart alarm function in to here
         } else if (id == R.id.nav_manage) {     // set normal alarm
             openAlarm();
         }
