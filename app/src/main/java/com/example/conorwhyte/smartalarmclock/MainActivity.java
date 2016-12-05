@@ -47,16 +47,19 @@ public class MainActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String alarmtime = "Alarm due at - ";
-                int temphour, tempminute;
-                temphour = user.getAlarmHour();
-                tempminute = user.getAlarmMin();
-                if(temphour == -1 && tempminute == -1)
-                    {alarmtime += "Alarm not set yet, go set it!";}
-                else
-                    {alarmtime += temphour + ":" + tempminute;}
-                Snackbar.make(view, alarmtime, Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+
+                openStopAlarm();
+
+//                String alarmtime = "Alarm due at - ";
+//                int temphour, tempminute;
+//                temphour = user.getAlarmHour();
+//                tempminute = user.getAlarmMin();
+//                if(temphour == -1 && tempminute == -1)
+//                    {alarmtime += "Alarm not set yet, go set it!";}
+//                else
+//                    {alarmtime += temphour + ":" + tempminute;}
+//                Snackbar.make(view, alarmtime, Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
             }
         });
 
@@ -241,7 +244,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     public void openStopAlarm() {
-        Intent intent = new Intent(this, AddUserDetailsActivity.class);
+        Intent intent = new Intent(this, StopAlarmActivity.class);
         intent.putExtra("Object", user);
         startActivity(intent);
         //finish();
