@@ -54,16 +54,6 @@ public class MainActivity extends AppCompatActivity
 
                 openStopAlarm();
 
-//                String alarmtime = "Alarm due at - ";
-//                int temphour, tempminute;
-//                temphour = user.getAlarmHour();
-//                tempminute = user.getAlarmMin();
-//                if(temphour == -1 && tempminute == -1)
-//                    {alarmtime += "Alarm not set yet, go set it!";}
-//                else
-//                    {alarmtime += temphour + ":" + tempminute;}
-//                Snackbar.make(view, alarmtime, Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
             }
         });
 

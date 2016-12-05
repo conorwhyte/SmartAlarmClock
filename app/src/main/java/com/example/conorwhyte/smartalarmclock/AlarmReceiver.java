@@ -23,7 +23,7 @@ public class AlarmReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         Bundle extras = intent.getExtras();
-        UserDetails user;
+        UserDetails user = MainActivity.user;
         String state = extras.getString("extra", "yes");
 
         if (extras != null) {
@@ -39,7 +39,7 @@ public class AlarmReceiver extends BroadcastReceiver {
         } else {
             Intent i = new Intent();
             i.putExtra("Object", user);
-            i.setClassName("com.example.conorwhyte.smartalarmclock", "com.example.conorwhyte.smartalarmclock.CardListActivity");
+            i.setClassName("com.example.conorwhyte.smartalarmclock", "com.example.conorwhyte.smartalarmclock.StopAlarmActivity");
             i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             context.startActivity(i);
         }

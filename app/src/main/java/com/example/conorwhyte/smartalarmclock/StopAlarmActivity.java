@@ -43,11 +43,6 @@ public class StopAlarmActivity extends AppCompatActivity implements SensorEventL
         }
 
         setQuote();
-        Intent service_intent = new Intent(getApplicationContext(), RingtonePlayingService.class);
-        service_intent.putExtra("extra", "yes");
-        getApplicationContext().startService(service_intent);
-
-
     }
 
     //Sets the daily quote at random
@@ -102,10 +97,15 @@ public class StopAlarmActivity extends AppCompatActivity implements SensorEventL
 
     //Used to stop the alarm when button is pressed
     public void stopButton(View view) {
-        Intent service_intent = new Intent(getApplicationContext(), RingtonePlayingService.class);
-        service_intent.putExtra("extra", "no");
-        getApplicationContext().startService(service_intent);
-        finish();
+        stopAlarm();
+        openCardList();
+    }
+
+    public void openCardList() {
+        Intent intent = new Intent(this, CardListActivity.class);
+        intent.putExtra("Object", MainActivity.user);
+        startActivity(intent);
+        //finish();
     }
 
     public void pushNotification(){
