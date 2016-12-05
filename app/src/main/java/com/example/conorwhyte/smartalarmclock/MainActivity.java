@@ -21,8 +21,12 @@ import android.view.MenuItem;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.google.gson.Gson;
+
+/*
+This is the main activity everything goes from here - all cards can be viewed and added from here.
+The template is based off of the Nav Activity from Android studio for the drawer
+ */
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -94,6 +98,7 @@ public class MainActivity extends AppCompatActivity
         }
 
         //startTimer();
+        //Takes in the user object if any, if not creates a new one
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             user = (UserDetails) extras.getSerializable("Object");
@@ -168,7 +173,7 @@ public class MainActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            finish();
+            System.exit(0);
             return true;
         }
 

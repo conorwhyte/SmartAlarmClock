@@ -121,7 +121,7 @@ public class AlarmActivity extends AppCompatActivity implements SensorEventListe
                 long startTime = System.currentTimeMillis();
                 if (calendar.getTimeInMillis()<=startTime)
                 {
-                    startTime = System.currentTimeMillis() + 86400000;
+                    startTime = System.currentTimeMillis() ;
                 }
 
                 Bundle extras = new Bundle();
@@ -133,7 +133,7 @@ public class AlarmActivity extends AppCompatActivity implements SensorEventListe
                 //to set alarm for the following day or for later on in the current day
                 if (calendar.getTimeInMillis()<=startTime)
                 {
-                    startTime = System.currentTimeMillis() + 86400000;
+                    startTime = System.currentTimeMillis() ;
                 }
                 else
                 {

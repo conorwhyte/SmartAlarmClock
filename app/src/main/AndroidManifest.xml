@@ -67,9 +67,6 @@
             android:name=".AddUserDetailsActivity"
             android:label="Add Morning Routine"
             android:theme="@style/AppTheme" />
-        <activity
-            android:name=".ViewDetailsActivity"
-            android:theme="@style/AppTheme" />
     </application>
 
 </manifest>
