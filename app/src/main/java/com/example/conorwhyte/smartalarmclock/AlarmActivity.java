@@ -142,7 +142,7 @@ public class AlarmActivity extends AppCompatActivity implements SensorEventListe
 
                 alarmtext = hour_string + ":" + minute_string;
 
-                Toast.makeText(getApplicationContext(), "Alarm set for " + alarmtext , Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Alarm set for to include travel time and morning routines" , Toast.LENGTH_SHORT).show();
 
             }
 
