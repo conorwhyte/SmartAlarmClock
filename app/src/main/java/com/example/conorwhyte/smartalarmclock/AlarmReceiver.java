@@ -2,7 +2,7 @@ package com.example.conorwhyte.smartalarmclock;
 /**
  * Created by Padraig Mitchell this broadcast intent waits for the Alarm manager to send the pending
  * intent and then decides basend on the the exttra's what to do if the alarm is being set off a
- * service is started to play an alarm to notify the user and if the alarm is stoped the user is
+ * service is started to play an alarm to notify the user and if the alarm is stopped the user is
  * brought to morning routine page. Inspired by
  * youtube tutorial https://youtu.be/xbBlzOblD10?list=PL4uut9QecF3DLAacEoTctzeqTyvgzqYwA
  */
@@ -19,7 +19,6 @@ import android.widget.Toast;
  */
 
 public class AlarmReceiver extends BroadcastReceiver {
-
 
     @Override
     public void onReceive(Context context, Intent intent) {

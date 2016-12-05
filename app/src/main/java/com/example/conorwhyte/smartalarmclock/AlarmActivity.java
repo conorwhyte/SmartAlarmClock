@@ -85,12 +85,14 @@ public class AlarmActivity extends AppCompatActivity implements SensorEventListe
 
             @Override
             public void onClick(View v) {
-
+                // get arrival time from time picker
                 calendar.set(Calendar.HOUR_OF_DAY, alarmTimePicker.getHour());
                 calendar.set(Calendar.MINUTE, alarmTimePicker.getMinute());
+
                 final int hour ;
                 final int minute ;
 
+                // set arrival min/hour or get alarm min/hour if one saved
                 if(user.getAlarmHour() != -1)
                 {
                     hour = user.getAlarmHour();
@@ -104,8 +106,10 @@ public class AlarmActivity extends AppCompatActivity implements SensorEventListe
                     user.setArrivalHour(hour);
                 }
 
+                // set alarm time based on arrival time and activity + travel time
                 user.setAlarm();
 
+                // sort out alarm string to display time to user in toast
                 String minute_string = String.valueOf(user.getAlarmMin());
                 String hour_string = String.valueOf(user.getAlarmHour());
                 Boolean pm = false;
@@ -118,11 +122,27 @@ public class AlarmActivity extends AppCompatActivity implements SensorEventListe
                 if(pm){minute_string += " pm";}
                 else {minute_string += " am";}
 
+                int alarmMillis = ((user.getAlarmHour() * 60 * 60) + (user.getAlarmMin() * 60)) * 1000;
+                System.out.println(alarmMillis);
+
+                // sort out timing issues ?
                 long startTime = System.currentTimeMillis();
-                if (calendar.getTimeInMillis()<=startTime)
+
+                if(calendar.getTimeInMillis()<=startTime)
                 {
-                    startTime = System.currentTimeMillis() + 86400000;
+                    alarmMillis += 86400000;
                 }
+
+                alarmManager.setExact(AlarmManager.RTC_WAKEUP, alarmMillis, pending_intent);
+
+
+                // sort out timing issues ?
+//                long startTime = System.currentTimeMillis();
+
+//                if(calendar.getTimeInMillis()<=startTime)
+//                {
+//                    startTime = System.currentTimeMillis() + 86400000;
+//                }
 
                 Bundle extras = new Bundle();
                 extras.putSerializable("Object", user);
@@ -131,21 +151,20 @@ public class AlarmActivity extends AppCompatActivity implements SensorEventListe
                 pending_intent = PendingIntent.getBroadcast(AlarmActivity.this, 0, myIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
                 //to set alarm for the following day or for later on in the current day
-                if (calendar.getTimeInMillis()<=startTime)
-                {
-                    startTime = System.currentTimeMillis() + 86400000;
-                }
-                else
-                {
-                    alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pending_intent);
-                }
+//                if (calendar.getTimeInMillis()<=startTime)
+//                {
+//                    startTime = System.currentTimeMillis() + 86400000;
+//
+//                }
+//                else
+//                {
+//                    alarmManager.setExact(AlarmManager.RTC_WAKEUP, alarmMillis, pending_intent);
+//                }
 
                 alarmtext = hour_string + ":" + minute_string;
 
-                Toast.makeText(getApplicationContext(), "Alarm set for to include travel time and morning routines" , Toast.LENGTH_SHORT).show();
-
+                Toast.makeText(getApplicationContext(), "Alarm set to - " + alarmtext , Toast.LENGTH_SHORT).show();
             }
-
         });
 
         Button stop_alarm = (Button) findViewById(R.id.stop_alarm);
