@@ -114,13 +114,26 @@ public class AlarmActivity extends AppCompatActivity implements SensorEventListe
                 if(pm){minute_string += " pm";}
                 else {minute_string += " am";}
 
+                long startTime = System.currentTimeMillis();
+                if (calendar.getTimeInMillis()<=startTime)
+                {
+                    startTime = System.currentTimeMillis() + 86400000;
+                }
                 Bundle extras = new Bundle();
                 extras.putSerializable("Object", user);
-                extras.putString("extra", "yes");
+                extras.putString("extra", "yes");       //signal for alarm reciever to start ringtone reciever
                 myIntent.putExtras(extras);
                 pending_intent = PendingIntent.getBroadcast(AlarmActivity.this, 0, myIntent, PendingIntent.FLAG_UPDATE_CURRENT);
-                alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pending_intent);
 
+                //to set alarm for the following day or for later on in the current day
+                if (calendar.getTimeInMillis()<=startTime)
+                {
+                    startTime = System.currentTimeMillis() + 86400000;
+                }
+                else
+                {
+                    alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pending_intent);
+                }
                 alarmtext = hour_string + ":" + minute_string;
 
                 Toast.makeText(getApplicationContext(), "Alarm set for " + alarmtext , Toast.LENGTH_SHORT).show();
@@ -135,11 +148,10 @@ public class AlarmActivity extends AppCompatActivity implements SensorEventListe
             @Override
             public void onClick(View v) {
 
-                //Stop the alarm
+                //Stop the alarm send signal to alarm reciever using extra and no
                 myIntent.putExtra("extra", "no");
                 sendBroadcast(myIntent);
                 alarmManager.cancel(pending_intent);
-                //setAlarmText("Alarm canceled");
             }
         });
     }
