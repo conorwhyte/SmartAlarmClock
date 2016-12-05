@@ -122,44 +122,20 @@ public class AlarmActivity extends AppCompatActivity implements SensorEventListe
                 if(pm){minute_string += " pm";}
                 else {minute_string += " am";}
 
-                int alarmMillis = ((user.getAlarmHour() * 60 * 60) + (user.getAlarmMin() * 60)) * 1000;
-                System.out.println(alarmMillis);
+                int morningMillis = user.getTotalTime() * 60 * 1000; // minutes to seconds then milliseconds
 
-                // sort out timing issues ?
-                long startTime = System.currentTimeMillis();
-
-                if(calendar.getTimeInMillis()<=startTime)
-                {
-                    alarmMillis += 86400000;
-                }
+                long alarmMillis = calendar.getTimeInMillis() - (long) morningMillis;       // get alarm time
+                System.out.println("Alarm: " + alarmMillis + " Calendar: " + calendar.getTimeInMillis() + " Activity: " + morningMillis);
+                System.out.println(System.currentTimeMillis());
+                System.out.println(alarmMillis - System.currentTimeMillis());
 
                 alarmManager.setExact(AlarmManager.RTC_WAKEUP, alarmMillis, pending_intent);
-
-
-                // sort out timing issues ?
-//                long startTime = System.currentTimeMillis();
-
-//                if(calendar.getTimeInMillis()<=startTime)
-//                {
-//                    startTime = System.currentTimeMillis() + 86400000;
-//                }
 
                 Bundle extras = new Bundle();
                 extras.putSerializable("Object", user);
                 extras.putString("extra", "yes");       //signal for alarm reciever to start ringtone reciever
                 myIntent.putExtras(extras);
                 pending_intent = PendingIntent.getBroadcast(AlarmActivity.this, 0, myIntent, PendingIntent.FLAG_UPDATE_CURRENT);
-
-                //to set alarm for the following day or for later on in the current day
-//                if (calendar.getTimeInMillis()<=startTime)
-//                {
-//                    startTime = System.currentTimeMillis() + 86400000;
-//
-//                }
-//                else
-//                {
-//                    alarmManager.setExact(AlarmManager.RTC_WAKEUP, alarmMillis, pending_intent);
-//                }
 
                 alarmtext = hour_string + ":" + minute_string;
 

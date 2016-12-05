@@ -135,7 +135,8 @@ public class DistanceActivity extends Activity implements android.location.Locat
                 destLon = destination.longitude;
                 destLat = destination.latitude;
                 user.setDestination(destination);
-                user.setMode(mode);
+                String Mode = mode;
+                user.setMode(Mode);
 
                 CalculateDuration calculateDuration = new CalculateDuration();
                 calculateDuration.getDirectionsUrl(destLon, destLat, homeLon, homeLat, mode);
