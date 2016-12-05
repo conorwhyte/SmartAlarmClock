@@ -60,6 +60,7 @@ public class RingtonePlayingService extends Service {
 
 
         }
+
         if(startId ==0)
         {
             ringtone.stop();
