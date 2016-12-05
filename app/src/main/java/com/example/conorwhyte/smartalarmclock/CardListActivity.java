@@ -42,8 +42,8 @@ public class CardListActivity extends Activity {
     private static final String TAG = "CardListActivity";
     private ListView listView;
     private CardArrayAdapter cardArrayAdapter;
-    private int current = 0;
-    public long startTime = System.currentTimeMillis();
+    private int current = 0;                                //current top card
+    public long startTime = System.currentTimeMillis();     //start time of first cards countdown
 
     UserDetails user;
     private GoogleApiClient client;
@@ -72,10 +72,6 @@ public class CardListActivity extends Activity {
         
         cardArrayAdapter = new CardArrayAdapter(getApplicationContext(), R.layout.list_item_card);
 
-        for (int i = 0; i < 10; i++) {
-            //  Card card = new Card("Card " + (i+1) + " Line 1", "Card " + (i+1) + " Line 2");
-            // cardArrayAdapter.add(card);
-        }
         final int[] images = {R.drawable.breakfast, R.drawable.shower, R.drawable.suit, R.drawable.food, R.drawable.car, R.drawable.alarm};
 
         if (user != null) {
@@ -122,8 +118,7 @@ public class CardListActivity extends Activity {
 
     //Timer methods used to indicate when the alarm should go off next
     public void startTimer() {
-        //timerTextView = (TextView) findViewById(R.id.textView2);
-        //startTime = System.currentTimeMillis();
+        startTime = System.currentTimeMillis();
         timerHandler.postDelayed(timerRunnable, 0);
     }
 
@@ -161,9 +156,8 @@ public class CardListActivity extends Activity {
         }
 
         String currentmins = Integer.toString(localTimer);
-
-        //  if(current<user.numberOfCards()){
-        if (localTimer == time && !last_alarm) { // Alert One
+        //If card's time is up and it is the last, set alert, move onto new card, refresh screen
+        if (localTimer == time && !last_alarm) {
             Intent intent = new Intent(this, StopAlarmActivity.class);
             current++;                              //change time being checked
             if (current == user.getCardCount() - 1) {
@@ -172,8 +166,9 @@ public class CardListActivity extends Activity {
             refreshCards(current);
             startTime = System.currentTimeMillis();
             startActivity(intent);
-
-        } else if (localTimer == time && last_alarm) { // Alert Two
+        }
+        //If the activity is the last one it will do the same procedure but open up a map with directions to destination at end
+        else if (localTimer == time && last_alarm) { // Alert Two
             Intent intent = new Intent(this, StopAlarmActivity.class);
             current++;
             listView.setAdapter(cardArrayAdapter);
@@ -189,7 +184,7 @@ public class CardListActivity extends Activity {
         FrameLayout layout = (FrameLayout) findViewById(R.id.frame);
         layout.setBackgroundResource(R.drawable.card_state_pressed);
     }
-
+//remove top card from view
     public void refreshCards(int position) {
         cardArrayAdapter = new CardArrayAdapter(getApplicationContext(), R.layout.list_item_card);
         final int[] images = {R.drawable.breakfast, R.drawable.shower, R.drawable.suit, R.drawable.food, R.drawable.car};
@@ -259,7 +254,7 @@ public class CardListActivity extends Activity {
         });
     }
 
-
+    //open map activity with directions
     public void startMap() {
         String pass = String.valueOf(user.getDestination());             //get value of location from the database
         Toast.makeText(this, pass, Toast.LENGTH_SHORT).show();

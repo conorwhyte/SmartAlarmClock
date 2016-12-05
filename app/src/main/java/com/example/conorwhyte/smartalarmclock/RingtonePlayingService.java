@@ -1,5 +1,10 @@
 package com.example.conorwhyte.smartalarmclock;
 
+/**
+ * Inpired by youtube tutorial https://youtu.be/xbBlzOblD10?list=PL4uut9QecF3DLAacEoTctzeqTyvgzqYwA
+ * this ringtone service plays the default alarm when called and stops the alarm when called to stop
+ */
+
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
@@ -24,7 +29,6 @@ public class RingtonePlayingService extends Service {
     @Override
     public IBinder onBind(Intent intent)
     {
-        Log.e("MyActivity", "In the Richard service");
         return null;
     }
 
@@ -54,9 +58,6 @@ public class RingtonePlayingService extends Service {
             ringtone = RingtoneManager.getRingtone(this, uri);
             ringtone.play();
 
-            //Intent intent2 = new Intent(this, PunisherActivity.class);
-            //startActivity(intent2);
-            //finish();
 
         }
         if(startId ==0)

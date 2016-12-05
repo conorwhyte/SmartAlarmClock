@@ -1,5 +1,11 @@
 package com.example.conorwhyte.smartalarmclock;
 
+/**This activity was created by Padraig, Conor and Conor the initial alarm manager structure
+ was got from a youtube tutorial https://youtu.be/xbBlzOblD10?list=PL4uut9QecF3DLAacEoTctzeqTyvgzqYwA
+ Then the the rest of the structure was set up to assist in our overall implementation
+
+ **/
+
 import android.annotation.TargetApi;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
@@ -188,6 +194,7 @@ public class AlarmActivity extends AppCompatActivity implements SensorEventListe
 
             if (mAccel > 0.5 && timer > 10) {
                 Toast.makeText(getApplicationContext(), "Movement Detected", Toast.LENGTH_SHORT).show();
+
             }
         }
 
