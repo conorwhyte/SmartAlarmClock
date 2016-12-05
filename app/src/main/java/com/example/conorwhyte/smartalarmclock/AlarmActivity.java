@@ -94,17 +94,11 @@ public class AlarmActivity extends AppCompatActivity implements SensorEventListe
                 {
                     hour = alarmTimePicker.getHour();
                     minute = alarmTimePicker.getMinute();
+                    user.setArrivalMin(minute);
+                    user.setArrivalHour(hour);
                 }
 
-                user.setArrivalMin(minute);
-                user.setArrivalHour(hour);
-
-                CalculateDuration calc = new CalculateDuration();
-                long ttime = calc.returnSeconds(user);
-
-                user.setJourneyTime((int)ttime);
-
-                System.out.println("Travel time = " + (int) ttime );
+                System.out.println(user.getURL());
 
                 user.setAlarm();
 

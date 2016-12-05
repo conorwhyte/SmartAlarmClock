@@ -34,6 +34,8 @@ public class UserDetails implements Serializable {
     private int alarmHour = -1;
     private int alarmMinute = -1;
 
+    private String URL;
+
     // add / get cards
     public void addCard(String name) {
         this.cardNames.add(name);
@@ -90,7 +92,6 @@ public class UserDetails implements Serializable {
     public void setHomeLon(double lon) {
         this.homelon = lon;
     }
-
 
     public double getHomeLon() {
         return this.homelon;
@@ -205,4 +206,10 @@ public class UserDetails implements Serializable {
         setAlarmMinute(m);
         setAlarmHour(h);
     }
+
+    public void setURL(String in)
+        {this.URL = in;}
+
+    public String getURL()
+        {return this.URL;}
 }

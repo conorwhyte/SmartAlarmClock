@@ -27,22 +27,22 @@ class CalculateDuration {
     UserDetails user = MainActivity.user;
 
     // method for putting the url together
-    public void getDirectionsUrl() {
+    public void getDirectionsUrl(double destlon, double destlat, double homelon, double homelat, String Mode) {
         String str_mode;
 
         // Destination of route
-        String str_dest = "destination=" + user.getDestLat() + "," + user.getDestLon();
+        String str_dest = "destination=" + destlat + "," + destlon;
 
         // Origin of route
-        String str_origin = "origin=" + user.getHomeLat() + "," + user.getHomeLon();
+        String str_origin = "origin=" + homelat + "," + homelon;
 
         // Travel mode
-        String mode = "driving";
-        if (mode.equals("transit")) {
-            str_mode = "mode=" + mode + "&arrival_time=" + returnSeconds(user);
-        } else {
-            str_mode = "mode=" + mode;
-        }
+//        String mode = "driving";
+//        if (mode.equals(Mode)) {
+//            str_mode = "mode=" + Mode + "&arrival_time=" + returnSeconds();
+//        } else {
+            str_mode = "mode=" + Mode;
+//        }
 
         // Sensor enabled
         String sensor = "sensor=false";
@@ -52,7 +52,9 @@ class CalculateDuration {
 
         // Building the url to the web service
         String url = "https://maps.googleapis.com/maps/api/directions/json?" + parameters;
+        user.setURL(url);
         System.out.println(url);
+        System.out.println(user.getURL());
         DownloadTask downloadTask = new DownloadTask();
         downloadTask.execute(url);
     }
@@ -204,8 +206,7 @@ class CalculateDuration {
         }
     }
 
-    public long returnSeconds(UserDetails u) {
-        user = u;
+    private long returnSeconds() {
         Calendar calendar1 = Calendar.getInstance();
         Calendar calendar2 = Calendar.getInstance();
         int year = Calendar.getInstance().get(Calendar.YEAR);
