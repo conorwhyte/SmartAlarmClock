@@ -120,28 +120,29 @@ public class DistanceActivity extends Activity implements android.location.Locat
                 location = getLocationFromAddress(locationPostalAddress.getText().toString());
                 destination = getLocationFromAddress(destinationPostalAddress.getText().toString());
 
+                double homeLon, homeLat, destLon, destLat;
+
                 if (location != null) {
-                    user.setHomeLon(location.longitude);
-                    user.setHomeLat(location.latitude);
+                    homeLon = (location.longitude);
+                    homeLat = (location.latitude);
                     user.setHome(location);
                 } else {
-                    user.setHomeLon(longitude);
-                    user.setHomeLat(latitude);
-                    user.setHome(new LatLng(latitude, longitude));
+                    homeLon = (longitude);
+                    homeLat = (latitude);
+                    user.setHome(location);
                 }
 
-                user.setDestLon(destination.longitude);
-                System.out.println(user.getDestLon());
-                user.setDestLat(destination.latitude);
+                destLon = destination.longitude;
+                destLat = destination.latitude;
                 user.setDestination(destination);
                 user.setMode(mode);
 
                 CalculateDuration calculateDuration = new CalculateDuration();
-                calculateDuration.getDirectionsUrl(user.getDestLon(), user.getDestLat(), user.getHomeLon(), user.getHomeLat(), user.getMode());
+                calculateDuration.getDirectionsUrl(destLon, destLat, homeLon, homeLat, mode);
 
                 Toast.makeText(getApplicationContext(), "Locations Saved, go set your desired arrival time!", Toast.LENGTH_SHORT).show();
 
-               // finish();
+                finish();
             }
         });
     }

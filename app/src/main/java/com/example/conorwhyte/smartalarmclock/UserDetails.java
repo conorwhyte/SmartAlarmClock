@@ -23,17 +23,12 @@ public class UserDetails implements Serializable {
     private ArrayList<Integer> cardTimes = new ArrayList<Integer>();
     private LatLng home;
     private LatLng destination;
-    private String mode;
-    private double homelat;
-    private double destlat;
-    private double homelon;
-    private double destlon;
     private int journeyTime;
     private int arrivalHour;
     private int arrivalMinute;
     private int alarmHour = -1;
     private int alarmMinute = -1;
-
+    private String mode;
     private String URL;
 
     // add / get cards
@@ -69,38 +64,6 @@ public class UserDetails implements Serializable {
         return this.home;
     }
 
-    public double getDestLat() {
-        return this.destlat;
-    }
-
-    public void setDestLat(double lat) {
-        this.destlat = lat;
-    }
-
-    public double getDestLon() {
-        return this.destlon;
-    }
-
-    public void setDestLon(double lon) {
-        this.destlon = lon;
-    }
-
-    public double getHomeLat() {
-        return this.homelat;
-    }
-
-    public void setHomeLon(double lon) {
-        this.homelon = lon;
-    }
-
-    public double getHomeLon() {
-        return this.homelon;
-    }
-
-    public void setHomeLat(double lat) {
-        this.homelat = lat;
-    }
-
     // set / get destination location
     public void setDestination(LatLng dest) {
         this.destination = dest;
@@ -108,14 +71,6 @@ public class UserDetails implements Serializable {
 
     public LatLng getDestination() {
         return this.destination;
-    }
-
-    public void setMode(String mode) {
-        this.mode = mode;
-    }
-
-    public String getMode() {
-        return this.mode;
     }
 
     // get card count / get total time of all cards
@@ -212,4 +167,10 @@ public class UserDetails implements Serializable {
 
     public String getURL()
         {return this.URL;}
+
+    public void setMode(String in)
+    {this.mode = in;}
+
+    public String getMode()
+    {return this.mode;}
 }

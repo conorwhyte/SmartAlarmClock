@@ -44,7 +44,7 @@ public class AddUserDetailsActivity extends AppCompatActivity {
         {
             newUser = MainActivity.user;
             updateProgress(newUser.getCardCount());
-            updateTime(newUser.getTotalTime());
+            updateTime(newUser.getTotalCardTimes());
         }
 
         //Makes the buttons transparent - Taken from Stack Overflow

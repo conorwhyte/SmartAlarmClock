@@ -98,8 +98,6 @@ public class AlarmActivity extends AppCompatActivity implements SensorEventListe
                     user.setArrivalHour(hour);
                 }
 
-                System.out.println(user.getURL());
-
                 user.setAlarm();
 
                 String minute_string = String.valueOf(user.getAlarmMin());
@@ -119,6 +117,7 @@ public class AlarmActivity extends AppCompatActivity implements SensorEventListe
                 {
                     startTime = System.currentTimeMillis() + 86400000;
                 }
+
                 Bundle extras = new Bundle();
                 extras.putSerializable("Object", user);
                 extras.putString("extra", "yes");       //signal for alarm reciever to start ringtone reciever
@@ -134,6 +133,7 @@ public class AlarmActivity extends AppCompatActivity implements SensorEventListe
                 {
                     alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pending_intent);
                 }
+
                 alarmtext = hour_string + ":" + minute_string;
 
                 Toast.makeText(getApplicationContext(), "Alarm set for " + alarmtext , Toast.LENGTH_SHORT).show();
